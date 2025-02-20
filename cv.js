@@ -40,14 +40,14 @@ window.main = async function main()
 			FROM cte3
 		), cte5(html) AS (
 			SELECT STRING_AGG(FORMAT('
-				<circle r="10" cx="10" cy="10" fill="transparent"
+				<circle r="5" cx="10" cy="10" fill="transparent"
         				stroke="%2s"
         				stroke-width="10"
         				stroke-dasharray="%3s %4s"
         				stroke-dashoffset="%5s"/>',
 				color, --%2
 				dasharray, --%3
-				(3.14*10)::numeric(10,2), --%4
+				(3.14*2*5)::numeric(10,2), --%4
 				-coalesce(dashoffset,0)), --%5
 			 '' ORDER BY idlanguage)
 			FROM cte4
@@ -55,9 +55,9 @@ window.main = async function main()
 			UNION ALL
 
 			SELECT STRING_AGG(FORMAT('
-				<text x="%1s" y="%2s" font-size="3px" fill="black" >%3s</text>',
-				10 + 10*cos((running_total+percentage/2)*2*3.14/100),
-				10 + 10*sin((running_total+percentage/2)*2*3.14/100),
+				<text x="%1s" y="%2s" font-size="1px" fill="black" >%3s</text>',
+				10 + 5*cos((running_total+percentage/2)*2*3.14/100),
+				10 + 5*sin((running_total+percentage/2)*2*3.14/100),
 				name),
 			'' ORDER BY idlanguage)
 			FROM cte4
