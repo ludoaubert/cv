@@ -35,8 +35,8 @@ window.main = async function main()
 				ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS running_total
 			FROM cte2
 		), cte4 AS (
-			SELECT *, 10*3.14*percentage/100 AS dasharray,
-				10*3.14*running_total/100 AS dashoffsert
+			SELECT *, (10*3.14*percentage/100)::numeric(10,2) AS dasharray,
+				(10*3.14*running_total/100)::numeric(10,2) AS dashoffsert
 			FROM cte3
 		), cte5(html) AS (
 			SELECT STRING_AGG(FORMAT('
@@ -47,9 +47,9 @@ window.main = async function main()
         				stroke-dashoffset="%5s"/>',
 				radius, --%1
 				color, --%2
-				dasharray::numeric(10,2), --%3
+				dasharray, --%3
 				(3.14*2*radius)::numeric(10,2), --%4
-				-coalesce(running_total,0)::numeric(10,2)), --%5
+				-coalesce(dashoffset,0)), --%5
 			 '' ORDER BY idlanguage)
 			FROM cte4
 
