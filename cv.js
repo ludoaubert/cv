@@ -4,7 +4,7 @@ const db = new PGlite();
 
 window.main = async function main()
 {
-	const ret = db.exec(`
+	db.exec(`
 		CREATE TABLE language(
 			idlanguage SERIAL PRIMARY KEY,
 			name varchar(128),
@@ -25,12 +25,28 @@ window.main = async function main()
 			SELECT SUM(importance) AS total
 			FROM language
 		), cte2 AS (
-			SELECT idlanguage, name, importance * 100 / total AS percentage
+			SELECT *, importance * 100 / total AS percentage
 			FROM language
 			CROSS JOIN cte
 			FROM language
-		)
-		SELECT id, name, percentage, 10*3.14*percentage/100 AS dasharray
-		FROM cte2
+		), cte3 AS (
+			SELECT *, 10*3.14*percentage/100 AS dasharray
+			FROM cte2
+		), cte4 AS (
+			SELECT *, SUM(dasharray) OVER(ORDER BY id
+				ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_total
+			FROM cte4
+          	)
+		SELECT STRING_AGG(FORMAT('
+<circle r="5" cx="10" cy="10" fill="transparent"
+        stroke="dodgerblue"
+        stroke-width="10"
+        stroke-dasharray="%1$ 31.4"
+        stroke-dashoffset="%2$"/>',
+			dasharray, --%1
+			-running_total)) --%2
+		FROM cte4
 	`);
+
+	console.log(ret[0].string_agg);
 }
