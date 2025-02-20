@@ -33,7 +33,7 @@ window.main = async function main()
 			SELECT *, 10*3.14*percentage/100 AS dasharray
 			FROM cte2
 		), cte4 AS (
-			SELECT *, SUM(dasharray) OVER(ORDER BY id
+			SELECT *, SUM(dasharray) OVER(ORDER BY idlanguage
 				ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_total
 			FROM cte4
           	)
