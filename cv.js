@@ -33,7 +33,7 @@ window.main = async function main()
 			FROM cte2
 		), cte4 AS (
 			SELECT *, SUM(dasharray) OVER(ORDER BY idlanguage
-				ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW - 1) AS running_total
+				ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS running_total
 			FROM cte3
           	)
 		SELECT STRING_AGG(FORMAT('
