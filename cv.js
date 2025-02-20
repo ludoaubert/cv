@@ -35,7 +35,7 @@ window.main = async function main()
 		), cte4 AS (
 			SELECT *, SUM(dasharray) OVER(ORDER BY idlanguage
 				ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_total
-			FROM cte4
+			FROM cte3
           	)
 		SELECT STRING_AGG(FORMAT('
 <circle r="5" cx="10" cy="10" fill="transparent"
