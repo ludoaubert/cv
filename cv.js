@@ -22,7 +22,7 @@ window.main = async function main()
 
 	const ret = await db.query(`
 		WITH cte AS (
-			SELECT SUM(importance) AS total
+			SELECT SUM(importance) AS total, 5 AS radius
 			FROM language
 		), cte2 AS (
 			SELECT *, importance * 100 / total AS percentage
@@ -37,15 +37,19 @@ window.main = async function main()
 			FROM cte3
           	)
 		SELECT STRING_AGG(FORMAT('
-<circle r="5" cx="10" cy="10" fill="transparent"
+<circle r="%1s" cx="10" cy="10" fill="transparent"
         stroke="dodgerblue"
         stroke-width="10"
-        stroke-dasharray="%1s 31.4"
-        stroke-dashoffset="%2s"/>',
-			dasharray::NUMERIC(10, 2), --%1
-			-running_total::NUMERIC(10, 2)), '' ORDER BY idlanguage) --%2
+        stroke-dasharray="%2s 31.4"
+        stroke-dashoffset="%3s"/>',
+			radius, --%1
+			dasharray::NUMERIC(10, 2), --%2
+			-running_total::NUMERIC(10, 2)), --%3
+		 '' ORDER BY idlanguage)
 		FROM cte4
 	`);
 
 	console.log(ret.rows[0].string_agg);
+
+	document.getElementById("svg1").innerHTML = ret.rows[0].string_agg;
 }
