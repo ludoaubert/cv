@@ -43,7 +43,7 @@ window.main = async function main()
         stroke-dasharray="%1$ 31.4"
         stroke-dashoffset="%2$"/>',
 			dasharray, --%1
-			-running_total)) --%2
+			-running_total), '' ORDER BY idlanguage), --%2
 		FROM cte4
 	`);
 
