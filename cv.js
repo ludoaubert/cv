@@ -10,7 +10,8 @@ window.main = async function main()
 			name varchar(128),
 			years integer,
 			importance integer,
-			color varchar(128)
+			color varchar(128),
+			UNIQUE(name)
 		);
 
 		INSERT INTO language(name, years, importance, color) VALUES
