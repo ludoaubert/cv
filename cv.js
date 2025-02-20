@@ -30,28 +30,39 @@ window.main = async function main()
 			FROM language
 			CROSS JOIN cte
 		), cte3 AS (
-			SELECT *, 10*3.14*percentage/100 AS dasharray
-			FROM cte2
-		), cte4 AS (
-			SELECT *, SUM(dasharray) OVER(ORDER BY idlanguage
+			SELECT *, SUM(percentage) OVER(ORDER BY idlanguage
 				ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS running_total
-			FROM cte3
-          	)
-		SELECT STRING_AGG(FORMAT('
-<circle r="%1s" cx="10" cy="10" fill="transparent"
-        stroke="%2s"
-        stroke-width="10"
-        stroke-dasharray="%3s %4s"
-        stroke-dashoffset="%5s"/>
-<text x="10" y="15" font-size="3px" fill="black" >%6s%%</text>',
-			radius, --%1
-			color, --%2
-			dasharray::NUMERIC(10, 2), --%3
-			3.14*2*radius, --%4
-			-coalesce(running_total,0)::NUMERIC(10, 2), --%5
-			percentage::NUMERIC(10,0)), --%6
-		 '' ORDER BY idlanguage)
-		FROM cte4
+		), cte4 AS (
+			SELECT *, 10*3.14*percentage/100 AS dasharray,
+				10*3.14*running_total/100 AS dashoffsert
+			FROM cte2
+		), cte5(html) AS (
+			SELECT STRING_AGG(FORMAT('
+				<circle r="%1s" cx="10" cy="10" fill="transparent"
+        				stroke="%2s"
+        				stroke-width="10"
+        				stroke-dasharray="%3s %4s"
+        				stroke-dashoffset="%5s"/>',
+				radius, --%1
+				color, --%2
+				dasharray::NUMERIC(10, 2), --%3
+				3.14*2*radius, --%4
+				-coalesce(running_total,0)::NUMERIC(10, 2)) --%5
+			 '' ORDER BY idlanguage)
+			FROM cte4
+
+			UNION ALL
+
+			SELECT STRING_AGG(FORMAT('
+				<text x="%1s" y="%2s" font-size="3px" fill="black" >%3s%%</text>',
+				4*radius*cos((running_total+percentage/2)*2*3.14/100),
+				4*radius*sin((running_total+percentage/2)*2*3.14/100),
+				percentage::NUMERIC(10,0))
+			'' ORDER BY idlanguage)
+			FROM cte4
+		)
+		SELECT STRING_AGG(html, '') AS html
+		FROM cte5
 	`);
 
 	console.log(ret.rows[0].string_agg);
