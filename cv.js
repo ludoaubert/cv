@@ -47,7 +47,7 @@ window.main = async function main()
         				stroke-dashoffset="%5s"/>',
 				color, --%2
 				dasharray, --%3
-				(3.14*2*radius)::numeric(10,2), --%4
+				(3.14*10)::numeric(10,2), --%4
 				-coalesce(dashoffset,0)), --%5
 			 '' ORDER BY idlanguage)
 			FROM cte4
