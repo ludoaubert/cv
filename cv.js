@@ -36,7 +36,7 @@ window.main = async function main()
 			FROM cte2
 		), cte4 AS (
 			SELECT *, (10*3.14*percentage/100)::numeric(10,2) AS dasharray,
-				(10*3.14*running_total/100)::numeric(10,2) AS dashoffsert
+				(10*3.14*running_total/100)::numeric(10,2) AS dashoffset
 			FROM cte3
 		), cte5(html) AS (
 			SELECT STRING_AGG(FORMAT('
