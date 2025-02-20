@@ -46,19 +46,19 @@ window.main = async function main()
         				stroke-dashoffset="%5s"/>',
 				radius, --%1
 				color, --%2
-				dasharray::NUMERIC(10, 2), --%3
-				3.14*2*radius, --%4
-				-coalesce(running_total,0)::NUMERIC(10, 2)) --%5
+				dasharray::numeric(10,2), --%3
+				(3.14*2*radius)::numeric(10,2), --%4
+				-coalesce(running_total,0)::numeric(10,2), --%5
 			 '' ORDER BY idlanguage)
 			FROM cte4
 
 			UNION ALL
 
 			SELECT STRING_AGG(FORMAT('
-				<text x="%1s" y="%2s" font-size="3px" fill="black" >%3s%%</text>',
+				<text x="%1s" y="%2s" font-size="3px" fill="black" >%3s</text>',
 				4*radius*cos((running_total+percentage/2)*2*3.14/100),
 				4*radius*sin((running_total+percentage/2)*2*3.14/100),
-				percentage::NUMERIC(10,0))
+				name),
 			'' ORDER BY idlanguage)
 			FROM cte4
 		)
