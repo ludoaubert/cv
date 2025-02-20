@@ -48,7 +48,7 @@ window.main = async function main()
 				color, --%2
 				dasharray::numeric(10,2), --%3
 				(3.14*2*radius)::numeric(10,2), --%4
-				-coalesce(running_total,0)::numeric(10,2), --%5
+				-coalesce(running_total,0)::numeric(10,2)), --%5
 			 '' ORDER BY idlanguage)
 			FROM cte4
 
