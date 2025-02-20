@@ -28,7 +28,6 @@ window.main = async function main()
 			SELECT *, importance * 100 / total AS percentage
 			FROM language
 			CROSS JOIN cte
-			FROM language
 		), cte3 AS (
 			SELECT *, 10*3.14*percentage/100 AS dasharray
 			FROM cte2
