@@ -24,7 +24,7 @@ window.main = async function main()
 
 	const ret = await db.query(`
 		WITH cte AS (
-			SELECT SUM(importance) AS total, 5 AS radius
+			SELECT SUM(importance) AS total
 			FROM language
 		), cte2 AS (
 			SELECT *, importance * 100 / total AS percentage
@@ -36,16 +36,15 @@ window.main = async function main()
 			FROM cte2
 		), cte4 AS (
 			SELECT *, (10*3.14*percentage/100)::numeric(10,2) AS dasharray,
-				(10*3.14*running_total/100)::numeric(10,2) AS dashoffset
+				(10*3.14*coalesce(running_total,0)/100)::numeric(10,2) AS dashoffset
 			FROM cte3
 		), cte5(html) AS (
 			SELECT STRING_AGG(FORMAT('
-				<circle r="%1$s" cx="10" cy="10" fill="transparent"
+				<circle r="10" cx="10" cy="10" fill="transparent"
         				stroke="%2s"
         				stroke-width="10"
         				stroke-dasharray="%3s %4s"
         				stroke-dashoffset="%5s"/>',
-				radius, --%1
 				color, --%2
 				dasharray, --%3
 				(3.14*2*radius)::numeric(10,2), --%4
@@ -57,8 +56,8 @@ window.main = async function main()
 
 			SELECT STRING_AGG(FORMAT('
 				<text x="%1s" y="%2s" font-size="3px" fill="black" >%3s</text>',
-				4*radius*cos((running_total+percentage/2)*2*3.14/100),
-				4*radius*sin((running_total+percentage/2)*2*3.14/100),
+				10 + 10*cos((running_total+percentage/2)*2*3.14/100),
+				10 + 10*sin((running_total+percentage/2)*2*3.14/100),
 				name),
 			'' ORDER BY idlanguage)
 			FROM cte4
