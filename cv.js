@@ -32,10 +32,11 @@ window.main = async function main()
 		), cte3 AS (
 			SELECT *, SUM(percentage) OVER(ORDER BY idlanguage
 				ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS running_total
+			FROM cte2
 		), cte4 AS (
 			SELECT *, 10*3.14*percentage/100 AS dasharray,
 				10*3.14*running_total/100 AS dashoffsert
-			FROM cte2
+			FROM cte3
 		), cte5(html) AS (
 			SELECT STRING_AGG(FORMAT('
 				<circle r="%1s" cx="10" cy="10" fill="transparent"
