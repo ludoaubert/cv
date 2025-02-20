@@ -42,12 +42,14 @@ window.main = async function main()
         stroke="%2s"
         stroke-width="10"
         stroke-dasharray="%3s %4s"
-        stroke-dashoffset="%5s"/>',
+        stroke-dashoffset="%5s"/>
+<text x="10" y="15" font-size="3px" fill="black" >%6s%%</text>',
 			radius, --%1
 			color, --%2
 			dasharray::NUMERIC(10, 2), --%3
 			3.14*2*radius, --%4
-			-coalesce(running_total,0)::NUMERIC(10, 2)), --%5
+			-coalesce(running_total,0)::NUMERIC(10, 2), --%5
+			percentage::NUMERIC(10,0)), --%6
 		 '' ORDER BY idlanguage)
 		FROM cte4
 	`);
