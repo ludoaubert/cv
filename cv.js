@@ -54,5 +54,5 @@ window.main = async function main()
 
 	console.log(ret.rows[0].string_agg);
 
-	document.getElementById("svg1").innerHTML = ret.rows[0].string_agg;
+	document.getElementById("svg2").innerHTML = ret.rows[0].string_agg;
 }
