@@ -39,7 +39,7 @@ window.main = async function main()
 			FROM cte3
 		), cte5(html) AS (
 			SELECT STRING_AGG(FORMAT('
-				<circle r="%1s" cx="10" cy="10" fill="transparent"
+				<circle r="%1$s" cx="10" cy="10" fill="transparent"
         				stroke="%2s"
         				stroke-width="10"
         				stroke-dasharray="%3s %4s"
@@ -66,7 +66,7 @@ window.main = async function main()
 		FROM cte5
 	`);
 
-	console.log(ret.rows[0].string_agg);
+	console.log(ret.rows[0].html);
 
 	document.getElementById("svg2").innerHTML = ret.rows[0].string_agg;
 }
