@@ -4,7 +4,7 @@ const db = new PGlite();
 
 window.main = async function main()
 {
-	db.exec(`
+	const rt = db.exec(`
 		CREATE TABLE language(
 			idlanguage SERIAL PRIMARY KEY,
 			name varchar(128),
@@ -48,5 +48,5 @@ window.main = async function main()
 		FROM cte4
 	`);
 
-	console.log(ret[0].string_agg);
+	console.log(ret.rows[0].string_agg);
 }
