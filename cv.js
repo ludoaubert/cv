@@ -42,8 +42,8 @@ window.main = async function main()
         stroke-width="10"
         stroke-dasharray="%1$ 31.4"
         stroke-dashoffset="%2$"/>',
-			dasharray, --%1
-			-running_total), '' ORDER BY idlanguage), --%2
+			dasharray::NUMERIC(10, 2), --%1
+			-running_total::NUMERIC(10, 2)), '' ORDER BY idlanguage), --%2
 		FROM cte4
 	`);
 
