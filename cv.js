@@ -4,7 +4,7 @@ const db = new PGlite();
 
 window.main = async function main()
 {
-	const rt = db.exec(`
+	const rt = await db.exec(`
 		CREATE TABLE language(
 			idlanguage SERIAL PRIMARY KEY,
 			name varchar(128),
@@ -20,7 +20,7 @@ window.main = async function main()
 			('Python', 2, 5);
 	`);
 
-	const ret = db.query(`
+	const ret = await db.query(`
 		WITH cte AS (
 			SELECT SUM(importance) AS total
 			FROM language
