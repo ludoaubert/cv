@@ -36,7 +36,8 @@ window.main = async function main()
 			FROM cte2
 		), cte4 AS (
 			SELECT *, (10*3.14*percentage/100)::numeric(10,2) AS dasharray,
-				(10*3.14*coalesce(running_total,0)/100)::numeric(10,2) AS dashoffset
+				(10*3.14*coalesce(running_total,0)/100)::numeric(10,2) AS dashoffset,
+				coalesce(running_total, 0) AS running_total_
 			FROM cte3
 		), cte5(html) AS (
 			SELECT STRING_AGG(FORMAT('
@@ -56,8 +57,8 @@ window.main = async function main()
 
 			SELECT STRING_AGG(FORMAT('
 				<text x="%1s" y="%2s" font-size="1px" fill="black" >%3s</text>',
-				10 + 5*cos((running_total+percentage/2)*2*3.14/100),
-				10 + 5*sin((running_total+percentage/2)*2*3.14/100),
+				(10 + 5*cos((running_total_+percentage/2)*2*3.14/100))::numeric(10,2),
+				(10 + 5*sin((running_total_+percentage/2)*2*3.14/100))::numeric(10,2),
 				name),
 			'' ORDER BY idlanguage)
 			FROM cte4
