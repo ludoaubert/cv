@@ -157,6 +157,8 @@ window.main = async function main()
 				(2*${Radius} + 1.5*${Radius}*cos((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
 				(2*${Radius} + 1.5*${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
 				(SELECT FORMAT('<tspan x="0" dy="1.2em">%1s</tspan>', unnest(string_to_array(name, ' '))))
+				(SELECT STRING_AGG(FORMAT('<tspan x="0" dy="1.2em">%1s</tspan>', mot), '')
+				 FROM unnest(string_to_array(name, ' ')) mot)
 				),
 			'' ORDER BY idfield)
 			FROM cte2
