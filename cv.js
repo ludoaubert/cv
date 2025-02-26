@@ -42,16 +42,17 @@ CREATE TABLE IF NOT EXISTS tag(
   UNIQUE(iddiagram, type_code, code),
   FOREIGN KEY (iddiagram) REFERENCES diagram(iddiagram) ON DELETE CASCADE
 );
+`;
+
+const data=`
+INSERT INTO diagram(iddiagram, title) VALUES (1, 'CV Ludovic Aubert');
 
 INSERT INTO tag(type_code, code) VALUES
 ('COLOR','yellow'),('COLOR','pink'),('COLOR','hotpink'),('COLOR','palegreen'),('COLOR','red'),('COLOR','orange'),('COLOR','skyblue'),('COLOR','olive'),('COLOR','grey'),('COLOR','darkviolet'),
 ('COLOR','lime'),('COLOR','fuchsia'),('COLOR','teal'),('COLOR','aqua'),('COLOR','aquamarine'),('COLOR','coral'),('COLOR','cornflowerblue'),('COLOR','darkgray'),('COLOR','darkkhaki'),
 ('COLOR','indianred'),('COLOR','indigo'),('COLOR','ivory'),('COLOR','khaki'),('COLOR','mediumorchid'),('COLOR','mediumpurple'),('COLOR','lawngreen'),('COLOR','lemonchiffon'),
 ('COLOR','lightblue'),('COLOR','lightcoral'),('COLOR','greenyellow'),('COLOR','lightgoldenrodyellow'),('COLOR','lightgray'),('COLOR','lightgreen'),('COLOR','lightgrey'),('COLOR','lightpink'),('COLOR','lightsalmon'),('COLOR','lightseagreen'),('COLOR','lightskyblue'),('COLOR','lightslategray');
-`;
-
-const data=`
-INSERT INTO diagram(iddiagram, title) VALUES (1, 'CV Ludovic Aubert');
+;
 
 WITH cte(box_title) AS (
 	SELECT 'Computer Languages' UNION ALL
