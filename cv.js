@@ -152,7 +152,7 @@ window.main = async function main()
 
 			UNION ALL
 
-			SELECT idbox, 4, '</svg>'
+			SELECT idbox, 5, '</svg>'
 			FROM box
 		)
 		SELECT STRING_AGG(html, '' ORDER BY idbox, "order") AS html
