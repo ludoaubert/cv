@@ -167,7 +167,7 @@ window.main = async function main()
 
 			UNION ALL
 
-			SELECT idbox, 4, FORMAT('<text x="${2*Radius}" y="${2*Radius}">%1s</text>', title)
+			SELECT idbox, 4, FORMAT('<text x="%1s" y="%1s"><tspan x="%1s" dy="%2s">%3s</tspan></text>', `${2*Radius}`, "0.5em", title)
 			FROM box
 
 			UNION ALL
