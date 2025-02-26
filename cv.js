@@ -71,7 +71,7 @@ WITH cte(box_title, field_name, importance) AS (
  	SELECT 'Computer Languages', 'JSON', 10 UNION ALL
   	SELECT 'Computer Languages', 'JS', 30 UNION ALL
 	SELECT 'Computer Languages', 'Html', 10 UNION ALL
-	SELECT 'Computer Langages', 'SVG', 10 UNION ALL
+	SELECT 'Computer Languages', 'SVG', 10 UNION ALL
  	SELECT 'Computer Languages', 'Css', 10 UNION ALL
 	SELECT 'Computer Languages', 'Python', 5 UNION ALL
 	SELECT 'Products', 'SQL Server', 40 UNION ALL
