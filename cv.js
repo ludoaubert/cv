@@ -157,8 +157,8 @@ window.main = async function main()
 			SELECT idbox, 3, STRING_AGG(FORMAT('
 				<text x="%1s" y="%2s">%3s</text>',
 				x,
-				y,
-				(SELECT STRING_AGG(FORMAT('<tspan x="%1s" dy="1.2em">%2s</tspan>', x, mot), '')
+				y-20,
+				(SELECT STRING_AGG(FORMAT('<tspan x="%1s" dy="%2s">%3s</tspan>', x, "1.2em", mot), '')
 				 FROM unnest(string_to_array(name, ' ')) mot)
 				),
 			'' ORDER BY idfield)
