@@ -99,7 +99,7 @@ window.main = async function main()
 	const rt1 = await db.exec(schema);
 	const rt2 = await db.exec(data);
 
-	const Radius = 10;
+	const Radius = 100;
 
 	const ret = await db.query(`
 		WITH cte AS (
