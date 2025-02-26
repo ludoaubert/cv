@@ -56,9 +56,9 @@ INSERT INTO tag(type_code, code) VALUES
 
 WITH cte(box_title) AS (
 	SELECT 'Computer Languages' UNION ALL
-  	SELECT 'Database Products' UNION ALL
-    	SELECT 'Skills' UNION ALL
-      	SELECT 'Centers of interest'
+	SELECT 'Database Products' UNION ALL
+	SELECT 'Skills' UNION ALL
+	SELECT 'Centers of interest'
 )
 INSERT INTO box(title)
 SELECT box_title
@@ -87,13 +87,11 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Centers of interest', 'Regression Monitoring', 30 UNION ALL
 	SELECT 'Centers of interest', 'Evolutivity', 30 UNION ALL
 	SELECT 'Centers of interest', 'Robustness', 30
-
 )
 INSERT INTO field(idbox, name, importance)
 SELECT b.idbox, cte.field_name, cte.importance
 FROM cte
 JOIN box b ON b.title=cte.box_title;
-
 `;
 
 window.main = async function main()
