@@ -78,6 +78,12 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Products', 'PGLite', 10 UNION ALL
 	SELECT 'Products', 'NodeJS', 20 UNION ALL
 	SELECT 'Products', 'Web Browsers', 30 UNION ALL
+	SELECT 'Skills', 'Endurance', 20 UNION ALL
+	SELECT 'Skills', 'Vision', 15 UNION ALL
+	SELECT 'Skills', 'Persistence', 30 UNION ALL
+	SELECT 'Skills', 'Research', 30 UNION ALL
+	SELECT 'Skills', 'Curiosity', 35 UNION ALL
+	SELECT 'Skills', 'Dependable', 25 UNION ALL
 	SELECT 'Centers of interest', 'Queries', 30 UNION ALL
 	SELECT 'Centers of interest', 'functional Programing', 30 UNION ALL
 	SELECT 'Centers of interest', 'Mathematics', 30 UNION ALL
