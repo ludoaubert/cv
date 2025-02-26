@@ -109,7 +109,7 @@ window.main = async function main()
 			FROM field
 		), cte2 AS (
 			SELECT *, (2*${Radius}*3.14*importance/total)::numeric(10,2) AS dasharray,
-				(2*{Radius}*3.14*coalesce(running_total)/total)::numeric(10,2) AS dashoffset,
+				(2*${Radius}*3.14*coalesce(running_total)/total)::numeric(10,2) AS dashoffset,
 				importance * 100 / total AS percentage
 			FROM cte
 		), cte3(idbox, "order", html) AS (
@@ -126,7 +126,7 @@ window.main = async function main()
         				stroke-dashoffset="%4s"/>',
 				code, --%1
 				dasharray, --%2
-				(3.14*2*5)::numeric(10,2), --%3
+				(3.14*2*${Radius})::numeric(10,2), --%3
 				-coalesce(dashoffset,0)), --%4
 			 '' ORDER BY idfield)
 			FROM cte2
@@ -137,8 +137,8 @@ window.main = async function main()
 
 			SELECT idbox, 3, STRING_AGG(FORMAT('
 				<text x="%1s" y="%2s">%3s</text>',
-				(${2*Radius} + ${Radius}*cos((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
-				(${2*Radius} + ${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
+				(2*${Radius} + ${Radius}*cos((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
+				(2*${Radius} + ${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
 				name),
 			'' ORDER BY idfield)
 			FROM cte2
