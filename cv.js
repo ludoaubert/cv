@@ -59,7 +59,8 @@ WITH cte(box_title) AS (
 	SELECT 'Skills' UNION ALL
 	SELECT 'Skills' UNION ALL
 	SELECT 'Interests' UNION ALL
-	SELECT 'Education'
+	SELECT 'Education' UNION ALL
+	SELECT 'International'
 )
 INSERT INTO box(title)
 SELECT box_title
@@ -105,9 +106,8 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Education', 'Maths', 30 UNION ALL
 	SELECT 'Education', 'Computer Science', 30 UNION ALL
 	SELECT 'Education', 'Ecole Centrale', 30 UNION ALL
-	SELECT 'Education', 'International', 30 UNION ALL
-	SELECT 'Education', 'USA', 30 UNION ALL
-	SELECT 'Education', 'Germany', 30
+	SELECT 'International', 'USA', 20 UNION ALL
+	SELECT 'International', 'Germany', 30
 )
 INSERT INTO field(idbox, name, importance)
 SELECT b.idbox, cte.field_name, cte.importance
