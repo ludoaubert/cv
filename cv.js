@@ -56,7 +56,7 @@ INSERT INTO tag(type_code, code) VALUES
 
 WITH cte(box_title) AS (
 	SELECT 'Languages' UNION ALL
-	SELECT 'Products' UNION ALL
+	SELECT 'Skills' UNION ALL
 	SELECT 'Skills' UNION ALL
 	SELECT 'Interests' UNION ALL
 	SELECT 'Education'
@@ -75,13 +75,13 @@ WITH cte(box_title, field_name, importance) AS (
  	SELECT 'Languages', 'Css', 10 UNION ALL
 	SELECT 'Languages', 'Python', 5 UNION ALL
 	SELECT 'Languages', 'regexp', 5 UNION ALL
-	SELECT 'Products', 'SQL Server', 40 UNION ALL
-	SELECT 'Products', 'PostgreSQL', 20 UNION ALL
-	SELECT 'Products', 'Oracle', 10 UNION ALL
-	SELECT 'Products', 'PGLite', 10 UNION ALL
-	SELECT 'Products', 'NodeJS', 20 UNION ALL
-	SELECT 'Products', 'Web Browsers', 30 UNION ALL
-	SELECT 'Products', 'GIT', 10 UNION ALL
+	SELECT 'Skills', 'SQL Server', 40 UNION ALL
+	SELECT 'Skills', 'PostgreSQL', 20 UNION ALL
+	SELECT 'Skills', 'Oracle', 10 UNION ALL
+	SELECT 'Skills', 'PGLite', 10 UNION ALL
+	SELECT 'Skills', 'NodeJS', 20 UNION ALL
+	SELECT 'Skills', 'Web Browsers', 30 UNION ALL
+	SELECT 'Skills', 'GIT', 10 UNION ALL
 	SELECT 'Skills', 'Endurance', 20 UNION ALL
 	SELECT 'Skills', 'Vision', 15 UNION ALL
 	SELECT 'Skills', 'Persistence', 30 UNION ALL
