@@ -99,6 +99,8 @@ window.main = async function main()
 	const rt1 = await db.exec(schema);
 	const rt2 = await db.exec(data);
 
+	const Radius = 10;
+
 	const ret = await db.query(`
 		WITH cte AS (
 			SELECT *, SUM(importance) OVER(PARTITION BY idbox ORDER BY idfield
@@ -106,19 +108,19 @@ window.main = async function main()
 				SUM(importance) OVER(PARTITION BY idbox) AS total
 			FROM field
 		), cte2 AS (
-			SELECT *, (10*3.14*importance/total)::numeric(10,2) AS dasharray,
-				(10*3.14*coalesce(running_total)/total)::numeric(10,2) AS dashoffset,
+			SELECT *, (2*${Radius}*3.14*importance/total)::numeric(10,2) AS dasharray,
+				(2*{Radius}*3.14*coalesce(running_total)/total)::numeric(10,2) AS dashoffset,
 				importance * 100 / total AS percentage
 			FROM cte
 		), cte3(idbox, "order", html) AS (
 			SELECT idbox, 1, FORMAT('
-				<svg id="svg%1s" height="20%%" width="20%%" viewBox="0 0 20 20">', idbox)
+				<svg id="svg%1s" height="20%%" width="20%%" viewBox="0 0 ${4*Radius} ${4*Radius}">', idbox)
 			FROM box
 
 			UNION ALL
 
 			SELECT idbox, 2, STRING_AGG(FORMAT('
-				<circle r="5" cx="10" cy="10"
+				<circle r="${Radius}" cx="${2*Radius}" cy="${2*Radius}"
         				stroke="%1s"
         				stroke-dasharray="%2s %3s"
         				stroke-dashoffset="%4s"/>',
@@ -135,8 +137,8 @@ window.main = async function main()
 
 			SELECT idbox, 3, STRING_AGG(FORMAT('
 				<text x="%1s" y="%2s">%3s</text>',
-				(10 + 5*cos((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
-				(10 + 5*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
+				(${2*Radius} + ${Radius}*cos((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
+				(${2*Radius} + ${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
 				name),
 			'' ORDER BY idfield)
 			FROM cte2
