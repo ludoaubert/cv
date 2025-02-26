@@ -54,17 +54,6 @@ INSERT INTO tag(type_code, code) VALUES
 ('COLOR','lightblue'),('COLOR','lightcoral'),('COLOR','greenyellow'),('COLOR','lightgoldenrodyellow'),('COLOR','lightgray'),('COLOR','lightgreen'),('COLOR','lightgrey'),('COLOR','lightpink'),('COLOR','lightsalmon'),('COLOR','lightseagreen'),('COLOR','lightskyblue'),('COLOR','lightslategray'),
 ('COLOR','chartreuse'),('COLOR','DarkOrange'),('COLOR','BlueViolet'),('COLOR','MediumSeaGreen'),('COLOR','LightSeaGreen'),('COLOR','BurlyWood');
 
-WITH cte(box_title) AS (
-	SELECT 'Languages' UNION ALL
-	SELECT 'Skills' UNION ALL
-	SELECT 'Skills' UNION ALL
-	SELECT 'Interests' UNION ALL
-	SELECT 'Education' UNION ALL
-	SELECT 'International'
-)
-INSERT INTO box(title)
-SELECT box_title
-FROM cte;
 
 WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Languages', 'C++', 35 UNION ALL
@@ -107,12 +96,18 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Education', 'Computer Science', 30 UNION ALL
 	SELECT 'Education', 'Ecole Centrale', 30 UNION ALL
 	SELECT 'International', 'USA', 20 UNION ALL
-	SELECT 'International', 'Germany', 30
+	SELECT 'International', 'Germany', 30 UNION ALL
+	SELECT 'International', 'Switzerland', 15
+), cte_box AS (
+	INSERT INTO box(title)
+	SELECT DISTINCT box_title
+	FROM cte
+	RETURNING *
 )
 INSERT INTO field(idbox, name, importance)
-SELECT b.idbox, cte.field_name, cte.importance
+SELECT cte_box.idbox, cte.field_name, cte.importance
 FROM cte
-JOIN box b ON b.title=cte.box_title;
+JOIN cte_box ON cte.box_title = cte_box.title;
 `;
 
 window.main = async function main()
