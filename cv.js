@@ -91,13 +91,13 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Skills', 'Abstraction', 20 UNION ALL
 	SELECT 'Skills', 'Practical', 15 UNION ALL
 	SELECT 'Interests', 'Queries', 30 UNION ALL
-	SELECT 'Interests', 'functional Programing', 30 UNION ALL
-	SELECT 'Interests', 'Mathematics', 30 UNION ALL
+	SELECT 'Interests', 'Functional', 30 UNION ALL
+	SELECT 'Interests', 'Maths', 30 UNION ALL
 	SELECT 'Interests', 'Statistics', 20 UNION ALL
 	SELECT 'Interests', 'Geometry', 20 UNION ALL
 	SELECT 'Interests', 'Information Structure', 30 UNION ALL
 	SELECT 'Interests', 'Multi Language', 30 UNION ALL
-	SELECT 'Interests', 'Challenging Projects', 30 UNION ALL
+	SELECT 'Interests', 'Challenges', 30 UNION ALL
 	SELECT 'Interests', 'Regression Monitoring', 30 UNION ALL
 	SELECT 'Interests', 'Evolutivity', 30 UNION ALL
 	SELECT 'Interests', 'Integrity', 30 UNION ALL
@@ -105,7 +105,7 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Education', 'Maths', 30 UNION ALL
 	SELECT 'Education', 'Computer Science', 30 UNION ALL
 	SELECT 'Education', 'Ecole Centrale', 30 UNION ALL
-	SELECT 'Education', 'International Experience', 30 UNION ALL
+	SELECT 'Education', 'International', 30 UNION ALL
 	SELECT 'Education', 'USA', 30 UNION ALL
 	SELECT 'Education', 'Germany', 30
 )
