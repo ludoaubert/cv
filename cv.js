@@ -156,7 +156,7 @@ window.main = async function main()
 				<text x="%1s" y="%2s">%3s</text>',
 				(2*${Radius} + 1.5*${Radius}*cos((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
 				(2*${Radius} + 1.5*${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
-				(SELECT FORMAT('<tspan x="0" dy="1.2em">%1s</tspan>', mot) FROM unnest(string_to_array(name, ' ')) mot)
+				(SELECT FORMAT('<tspan x="0" dy="1.2em">%1s</tspan>', unnest(string_to_array(name, ' '))))
 				),
 			'' ORDER BY idfield)
 			FROM cte2
