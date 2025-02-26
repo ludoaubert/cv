@@ -94,7 +94,7 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Centers of interest', 'Geometry', 20 UNION ALL
 	SELECT 'Centers of interest', 'Information Structure', 30 UNION ALL
 	SELECT 'Centers of interest', 'Multi Language', 30 UNION ALL
-	SELECT 'Centers of interest', 'Long Challenging Projects', 30 UNION ALL
+	SELECT 'Centers of interest', 'Challenging Projects', 30 UNION ALL
 	SELECT 'Centers of interest', 'Regression Monitoring', 30 UNION ALL
 	SELECT 'Centers of interest', 'Evolutivity', 30 UNION ALL
 	SELECT 'Centers of interest', 'Robustness', 30
