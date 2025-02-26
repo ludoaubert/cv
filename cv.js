@@ -101,6 +101,7 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Interests', 'Regression Monitoring', 30 UNION ALL
 	SELECT 'Interests', 'Evolutivity', 30 UNION ALL
 	SELECT 'Interests', 'Integrity', 30 UNION ALL
+	SELECT 'Interests', 'Speed', 30 UNION ALL
 	SELECT 'Education', 'Maths', 30 UNION ALL
 	SELECT 'Education', 'Computer Science', 30 UNION ALL
 	SELECT 'Education', 'Ecole Centrale', 30 UNION ALL
