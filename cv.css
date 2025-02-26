@@ -7,6 +7,7 @@ svg {
 
 text {
 	font-size: 20px;
+	dy: 0.5em;
 	fill: black;
 	text-anchor: middle;
 	inline-size: 100px;
