@@ -126,7 +126,9 @@ window.main = async function main()
 		), cte2 AS (
 			SELECT *, (2*${Radius}*3.14*importance/total)::numeric(10,2) AS dasharray,
 				(2*${Radius}*3.14*coalesce(running_total)/total)::numeric(10,2) AS dashoffset,
-				importance * 100 / total AS percentage
+				importance * 100 / total AS percentage,
+				(2*${Radius} + 1.5*${Radius}*cos((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2) AS x,
+				(2*${Radius} + 1.5*${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2) AS y
 			FROM cte
 		), cte3(idbox, "order", html) AS (
 			SELECT idbox, 1, FORMAT('
@@ -154,9 +156,9 @@ window.main = async function main()
 
 			SELECT idbox, 3, STRING_AGG(FORMAT('
 				<text x="%1s" y="%2s">%3s</text>',
-				(2*${Radius} + 1.5*${Radius}*cos((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
-				(2*${Radius} + 1.5*${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
-				(SELECT STRING_AGG(FORMAT('<tspan x="0" dy="1.2em">%1s</tspan>', mot), '')
+				x,
+				y,
+				(SELECT STRING_AGG(FORMAT('<tspan x="%1s" dy="1.2em">%2s</tspan>', x, mot), '')
 				 FROM unnest(string_to_array(name, ' ')) mot)
 				),
 			'' ORDER BY idfield)
