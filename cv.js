@@ -70,6 +70,7 @@ WITH cte(box_title, field_name, importance) AS (
  	SELECT 'Computer Languages', 'JSON', 10 UNION ALL
   	SELECT 'Computer Languages', 'JS', 30 UNION ALL
 	SELECT 'Computer Languages', 'Html', 10 UNION ALL
+	SELECT 'Computer Langages', 'SVG', 10 UNION ALL
  	SELECT 'Computer Languages', 'Css', 10 UNION ALL
 	SELECT 'Computer Languages', 'Python', 5 UNION ALL
 	SELECT 'Products', 'SQL Server', 40 UNION ALL
@@ -89,6 +90,8 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Centers of interest', 'Queries', 30 UNION ALL
 	SELECT 'Centers of interest', 'functional Programing', 30 UNION ALL
 	SELECT 'Centers of interest', 'Mathematics', 30 UNION ALL
+	SELECT 'Centers of interest', 'Statistics', 20 UNION ALL
+	SELECT 'Centers of interest', 'Geometry', 20 UNION ALL
 	SELECT 'Centers of interest', 'Information Structure', 30 UNION ALL
 	SELECT 'Centers of interest', 'Multi Language', 30 UNION ALL
 	SELECT 'Centers of interest', 'Long Challenging Projects', 30 UNION ALL
