@@ -74,12 +74,14 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Computer Languages', 'SVG', 10 UNION ALL
  	SELECT 'Computer Languages', 'Css', 10 UNION ALL
 	SELECT 'Computer Languages', 'Python', 5 UNION ALL
+	SELECT 'Computer Languages', 'regexp', 5 UNION ALL
 	SELECT 'Products', 'SQL Server', 40 UNION ALL
 	SELECT 'Products', 'PostgreSQL', 20 UNION ALL
 	SELECT 'Products', 'Oracle', 10 UNION ALL
 	SELECT 'Products', 'PGLite', 10 UNION ALL
 	SELECT 'Products', 'NodeJS', 20 UNION ALL
 	SELECT 'Products', 'Web Browsers', 30 UNION ALL
+	SELECT 'Products', 'GIT', 10 UNION ALL
 	SELECT 'Skills', 'Endurance', 20 UNION ALL
 	SELECT 'Skills', 'Vision', 15 UNION ALL
 	SELECT 'Skills', 'Persistence', 30 UNION ALL
