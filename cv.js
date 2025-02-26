@@ -84,6 +84,8 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Skills', 'Research', 30 UNION ALL
 	SELECT 'Skills', 'Curiosity', 35 UNION ALL
 	SELECT 'Skills', 'Dependable', 25 UNION ALL
+	SELECT 'Skills', 'Abstraction', 20 UNION ALL
+	SELECT 'Skills', 'Practical', 15 UNION ALL
 	SELECT 'Centers of interest', 'Queries', 30 UNION ALL
 	SELECT 'Centers of interest', 'functional Programing', 30 UNION ALL
 	SELECT 'Centers of interest', 'Mathematics', 30 UNION ALL
