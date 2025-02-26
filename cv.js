@@ -137,8 +137,8 @@ window.main = async function main()
 
 			SELECT idbox, 3, STRING_AGG(FORMAT('
 				<text x="%1s" y="%2s">%3s</text>',
-				(2*${Radius} + ${Radius}*cos((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
-				(2*${Radius} + ${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
+				(2*${Radius} + 1.5*${Radius}*cos((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
+				(2*${Radius} + 1.5*${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
 				name),
 			'' ORDER BY idfield)
 			FROM cte2
