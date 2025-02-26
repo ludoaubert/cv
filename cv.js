@@ -56,7 +56,7 @@ INSERT INTO tag(type_code, code) VALUES
 
 WITH cte(box_title) AS (
 	SELECT 'Computer Languages' UNION ALL
-	SELECT 'Database Products' UNION ALL
+	SELECT 'Products' UNION ALL
 	SELECT 'Skills' UNION ALL
 	SELECT 'Centers of interest'
 )
