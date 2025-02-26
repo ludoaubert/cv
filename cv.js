@@ -108,11 +108,12 @@ window.main = async function main()
 		), cte2 AS (
 			SELECT *, (10*3.14*importance/total)::numeric(10,2) AS dasharray,
 				(10*3.14*coalesce(running_total)/total)::numeric(10,2) AS dashoffset,
-				importance * 100 / total = percentage
+				importance * 100 / total AS percentage
 			FROM cte
-		), cte3(idbox, order, html) AS (
+		), cte3(idbox, "order", html) AS (
 			SELECT idbox, 1, FORMAT('
-				<svg id="svg%1s" height="20%" width="20%" viewBox="0 0 20 20">', idbox)
+				<svg id="svg%1s" height="20%%" width="20%%" viewBox="0 0 20 20">', idbox)
+			FROM box
 
 			UNION ALL
 
@@ -122,7 +123,7 @@ window.main = async function main()
         				stroke-width="10"
         				stroke-dasharray="%2s %3s"
         				stroke-dashoffset="%4s"/>',
-				color, --%1
+				code, --%1
 				dasharray, --%2
 				(3.14*2*5)::numeric(10,2), --%3
 				-coalesce(dashoffset,0)), --%4
@@ -134,7 +135,7 @@ window.main = async function main()
 			UNION ALL
 
 			SELECT idbox, 3, STRING_AGG(FORMAT('
-				<text x="%1s" y="%2s" font-size="1px" fill="black" >%3s</text>',
+				<text x="%1s" y="%2s">%3s</text>',
 				(10 + 5*cos((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
 				(10 + 5*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2),
 				name),
@@ -142,7 +143,7 @@ window.main = async function main()
 			FROM cte2
 			GROUP BY idbox
 		)
-		SELECT STRING_AGG(html, '' ORDER BY idbox, order) AS html
+		SELECT STRING_AGG(html, '' ORDER BY idbox, "order") AS html
 		FROM cte3
 	`);
 
