@@ -55,10 +55,10 @@ INSERT INTO tag(type_code, code) VALUES
 ;
 
 WITH cte(box_title) AS (
-	SELECT 'Computer Languages' UNION ALL
+	SELECT 'Languages' UNION ALL
 	SELECT 'Products' UNION ALL
 	SELECT 'Skills' UNION ALL
-	SELECT 'Centers of interest' UNION ALL
+	SELECT 'Interests' UNION ALL
 	SELECT 'Education'
 )
 INSERT INTO box(title)
@@ -66,15 +66,15 @@ SELECT box_title
 FROM cte;
 
 WITH cte(box_title, field_name, importance) AS (
-	SELECT 'Computer Languages', 'C++', 35 UNION ALL
-	SELECT 'Computer Languages', 'SQL', 35 UNION ALL
- 	SELECT 'Computer Languages', 'JSON', 10 UNION ALL
-  	SELECT 'Computer Languages', 'JS', 30 UNION ALL
-	SELECT 'Computer Languages', 'Html', 10 UNION ALL
-	SELECT 'Computer Languages', 'SVG', 10 UNION ALL
- 	SELECT 'Computer Languages', 'Css', 10 UNION ALL
-	SELECT 'Computer Languages', 'Python', 5 UNION ALL
-	SELECT 'Computer Languages', 'regexp', 5 UNION ALL
+	SELECT 'Languages', 'C++', 35 UNION ALL
+	SELECT 'Languages', 'SQL', 35 UNION ALL
+ 	SELECT 'Languages', 'JSON', 10 UNION ALL
+  	SELECT 'Languages', 'JS', 30 UNION ALL
+	SELECT 'Languages', 'Html', 10 UNION ALL
+	SELECT 'Languages', 'SVG', 10 UNION ALL
+ 	SELECT 'Languages', 'Css', 10 UNION ALL
+	SELECT 'Languages', 'Python', 5 UNION ALL
+	SELECT 'Languages', 'regexp', 5 UNION ALL
 	SELECT 'Products', 'SQL Server', 40 UNION ALL
 	SELECT 'Products', 'PostgreSQL', 20 UNION ALL
 	SELECT 'Products', 'Oracle', 10 UNION ALL
@@ -90,17 +90,17 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Skills', 'Dependable', 25 UNION ALL
 	SELECT 'Skills', 'Abstraction', 20 UNION ALL
 	SELECT 'Skills', 'Practical', 15 UNION ALL
-	SELECT 'Centers of interest', 'Queries', 30 UNION ALL
-	SELECT 'Centers of interest', 'functional Programing', 30 UNION ALL
-	SELECT 'Centers of interest', 'Mathematics', 30 UNION ALL
-	SELECT 'Centers of interest', 'Statistics', 20 UNION ALL
-	SELECT 'Centers of interest', 'Geometry', 20 UNION ALL
-	SELECT 'Centers of interest', 'Information Structure', 30 UNION ALL
-	SELECT 'Centers of interest', 'Multi Language', 30 UNION ALL
-	SELECT 'Centers of interest', 'Challenging Projects', 30 UNION ALL
-	SELECT 'Centers of interest', 'Regression Monitoring', 30 UNION ALL
-	SELECT 'Centers of interest', 'Evolutivity', 30 UNION ALL
-	SELECT 'Centers of interest', 'Robustness', 30 UNION ALL
+	SELECT 'Interests', 'Queries', 30 UNION ALL
+	SELECT 'Interests', 'functional Programing', 30 UNION ALL
+	SELECT 'Interests', 'Mathematics', 30 UNION ALL
+	SELECT 'Interests', 'Statistics', 20 UNION ALL
+	SELECT 'Interests', 'Geometry', 20 UNION ALL
+	SELECT 'Interests', 'Information Structure', 30 UNION ALL
+	SELECT 'Interests', 'Multi Language', 30 UNION ALL
+	SELECT 'Interests', 'Challenging Projects', 30 UNION ALL
+	SELECT 'Interests', 'Regression Monitoring', 30 UNION ALL
+	SELECT 'Interests', 'Evolutivity', 30 UNION ALL
+	SELECT 'Interests', 'Robustness', 30 UNION ALL
 	SELECT 'Education', 'Maths', 30 UNION ALL
 	SELECT 'Education', 'Computer Science', 30 UNION ALL
 	SELECT 'Education', 'Ecole Centrale', 30 UNION ALL
@@ -167,7 +167,7 @@ window.main = async function main()
 
 			UNION ALL
 
-			SELECT idbox, 4, FORMAT('<text x="${2*Radius}" y="20">%1s</text>', title)
+			SELECT idbox, 4, FORMAT('<text x="${2*Radius}" y="${2*Radius}">%1s</text>', title)
 			FROM box
 
 			UNION ALL
