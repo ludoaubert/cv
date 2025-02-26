@@ -114,7 +114,7 @@ window.main = async function main()
 			FROM cte
 		), cte3(idbox, "order", html) AS (
 			SELECT idbox, 1, FORMAT('
-				<svg id="svg%1s" height="20%%" width="20%%" viewBox="0 0 ${4*Radius} ${4*Radius}">', idbox)
+				<svg id="svg%1s" height="{4*Radius}" width="{4*Radius}" viewBox="0 0 ${4*Radius} ${4*Radius}">', idbox)
 			FROM box
 
 			UNION ALL
