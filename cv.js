@@ -99,7 +99,7 @@ window.main = async function main()
 	const rt1 = await db.exec(schema);
 	const rt2 = await db.exec(data);
 
-	const Radius = 10;
+	const Radius = 5;
 
 	const ret = await db.query(`
 		WITH cte AS (
@@ -114,7 +114,7 @@ window.main = async function main()
 			FROM cte
 		), cte3(idbox, "order", html) AS (
 			SELECT idbox, 1, FORMAT('
-				<svg id="svg%1s" height="{4*Radius}" width="{4*Radius}" viewBox="0 0 ${4*Radius} ${4*Radius}">', idbox)
+				<svg id="svg%1s" height="{3*Radius}" width="{3*Radius}">', idbox)
 			FROM box
 
 			UNION ALL
