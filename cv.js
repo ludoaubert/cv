@@ -122,6 +122,7 @@ window.main = async function main()
 			SELECT idbox, 2, STRING_AGG(FORMAT('
 				<circle r="${Radius}" cx="${2*Radius}" cy="${2*Radius}"
         				stroke="%1s"
+					stroke-width="${2*Radius}"
         				stroke-dasharray="%2s %3s"
         				stroke-dashoffset="%4s"/>',
 				code, --%1
