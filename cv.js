@@ -118,9 +118,8 @@ window.main = async function main()
 			UNION ALL
 
 			SELECT idbox, 2, STRING_AGG(FORMAT('
-				<circle r="5" cx="10" cy="10" fill="transparent"
+				<circle r="5" cx="10" cy="10"
         				stroke="%1s"
-        				stroke-width="10"
         				stroke-dasharray="%2s %3s"
         				stroke-dashoffset="%4s"/>',
 				code, --%1
@@ -142,6 +141,11 @@ window.main = async function main()
 			'' ORDER BY idfield)
 			FROM cte2
 			GROUP BY idbox
+
+			UNION ALL
+
+			SELECT idbox, 4, '</svg>'
+			FROM box
 		)
 		SELECT STRING_AGG(html, '' ORDER BY idbox, "order") AS html
 		FROM cte3

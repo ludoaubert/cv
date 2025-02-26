@@ -10,3 +10,10 @@ text {
 	fill: black;
 	text-anchor: middle;
 }
+
+
+circle {
+	fill: transparent;
+	stroke-width:10;
+}
+
