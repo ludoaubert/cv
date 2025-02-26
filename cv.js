@@ -147,6 +147,11 @@ window.main = async function main()
 
 			UNION ALL
 
+			SELECT idbox, 4, FORMAT('<text x="20" y="20">%1s</text>', title)
+			FROM box
+
+			UNION ALL
+
 			SELECT idbox, 4, '</svg>'
 			FROM box
 		)
