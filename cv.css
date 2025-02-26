@@ -9,6 +9,7 @@ text {
 	font-size: 20px;
 	fill: black;
 	text-anchor: middle;
+	inline-size: 100px;
 }
 
 
