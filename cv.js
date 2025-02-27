@@ -131,7 +131,7 @@ window.main = async function main()
 				(2*${Radius} + 1.5*${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2) AS y
 			FROM cte
 		), cte_split AS (
-			SELECT idfield, unnest(string_to_array(name, ' ')) mot
+			SELECT idfield, x, unnest(string_to_array(name, ' ')) mot
 			FROM field
 		), cte3(idfield, html) AS (
 			SELECT idfield, STRING_AGG(FORMAT('<tspan x="%1$s" dy="%2$s">%3$s</tspan>', x, '1.2em', mot), '')
