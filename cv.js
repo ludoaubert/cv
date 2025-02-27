@@ -131,8 +131,7 @@ window.main = async function main()
 				(2*${Radius} + 1.5*${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2) AS y
 			FROM cte
 		), cte3(idbox, "order", html) AS (
-			SELECT idbox, 1, FORMAT('
-				<svg id="svg%1$s" height="%2$s" width="%2$s">', idbox, '${4*Radius}')
+			SELECT idbox, 1, FORMAT('<svg id="svg%1$s" height="%2$s" width="%2$s">', idbox, '${4*Radius}')
 			FROM box
 
 			UNION ALL
@@ -154,8 +153,7 @@ window.main = async function main()
 
 			UNION ALL
 
-			SELECT idbox, 3, STRING_AGG(FORMAT('
-				<text x="%1$s" y="%2$s">%3s</text>',
+			SELECT idbox, 3, STRING_AGG(FORMAT('<text x="%1$s" y="%2$s">%3s</text>',
 				x,
 				y-20,
 				(SELECT STRING_AGG(FORMAT('<tspan x="%1$s" dy="%2$s">%3$s</tspan>', x, '1.2em', mot), '')
