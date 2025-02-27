@@ -80,18 +80,18 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Skills', 'Dependable', 25 UNION ALL
 	SELECT 'Skills', 'Abstraction', 20 UNION ALL
 	SELECT 'Skills', 'Practical', 15 UNION ALL
-	SELECT 'Interests', 'Queries', 30 UNION ALL
-	SELECT 'Interests', 'Functional', 30 UNION ALL
-	SELECT 'Interests', 'Maths', 30 UNION ALL
-	SELECT 'Interests', 'Statistics', 20 UNION ALL
-	SELECT 'Interests', 'Geometry', 20 UNION ALL
-	SELECT 'Interests', 'Information Structure', 30 UNION ALL
-	SELECT 'Interests', 'Multi Language', 30 UNION ALL
-	SELECT 'Interests', 'Challenges', 30 UNION ALL
-	SELECT 'Interests', 'Regression Monitoring', 30 UNION ALL
-	SELECT 'Interests', 'Evolutivity', 30 UNION ALL
-	SELECT 'Interests', 'Integrity', 30 UNION ALL
-	SELECT 'Interests', 'Speed', 30 UNION ALL
+	SELECT 'Experience', 'Queries', 30 UNION ALL
+	SELECT 'Experience', 'Functional', 30 UNION ALL
+	SELECT 'Experience', 'Maths', 30 UNION ALL
+	SELECT 'Experience', 'Statistics', 20 UNION ALL
+	SELECT 'Experience', 'Geometry', 20 UNION ALL
+	SELECT 'Experience', 'Information Structure', 30 UNION ALL
+	SELECT 'Experience', 'Multi Language', 30 UNION ALL
+	SELECT 'Experience', 'Challenges', 30 UNION ALL
+	SELECT 'Experience', 'Regression Monitoring', 30 UNION ALL
+	SELECT 'Experience', 'Evolutivity', 30 UNION ALL
+	SELECT 'Experience', 'Integrity', 30 UNION ALL
+	SELECT 'Experience', 'Speed', 30 UNION ALL
 	SELECT 'Education', 'Maths', 30 UNION ALL
 	SELECT 'Education', 'Computer Science', 30 UNION ALL
 	SELECT 'Education', 'Ecole Centrale', 30 UNION ALL
