@@ -176,7 +176,5 @@ window.main = async function main()
 		FROM cte4
 	`);
 
-	console.log(ret.rows[0].html);
-
 	document.body.innerHTML = ret.rows[0].html;
 }
