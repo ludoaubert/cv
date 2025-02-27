@@ -130,7 +130,14 @@ window.main = async function main()
 				(2*${Radius} + 1.5*${Radius}*cos((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2) AS x,
 				(2*${Radius} + 1.5*${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2) AS y
 			FROM cte
-		), cte3(idbox, "order", html) AS (
+		), cte_split AS (
+			SELECT idfield, unnest(string_to_array(name, ' ')) mot
+			FROM field
+		), cte3(idfield, html) AS (
+			SELECT idfield, STRING_AGG(FORMAT('<tspan x="%1$s" dy="%2$s">%3$s</tspan>', x, '1.2em', mot), '')
+			FROM cte_split
+			GROUP BY idfield
+		), cte4(idbox, "order", html) AS (
 			SELECT idbox, 1, FORMAT('<svg id="svg%1$s" height="%2$s" width="%2$s">', idbox, '${4*Radius}')
 			FROM box
 
@@ -153,14 +160,9 @@ window.main = async function main()
 
 			UNION ALL
 
-			SELECT idbox, 3, STRING_AGG(FORMAT('<text x="%1$s" y="%2$s">%3s</text>',
-				x,
-				y-20,
-				(SELECT STRING_AGG(FORMAT('<tspan x="%1$s" dy="%2$s">%3$s</tspan>', x, '1.2em', mot), '')
-				 FROM unnest(string_to_array(name, ' ')) mot)
-				),
-			'' ORDER BY idfield)
+			SELECT idbox, 3, FORMAT('<text x="%1$s" y="%2$s">%3$s</text>', x, y-20, cte3.html)
 			FROM cte2
+			JOIN cte3 ON cte3.idfield = cte2.idfield
 			GROUP BY idbox
 
 			UNION ALL
@@ -174,7 +176,7 @@ window.main = async function main()
 			FROM box
 		)
 		SELECT STRING_AGG(html, '' ORDER BY idbox, "order") AS html
-		FROM cte3
+		FROM cte4
 	`);
 
 	console.log(ret.rows[0].html);
