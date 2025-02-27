@@ -158,7 +158,7 @@ window.main = async function main()
 				<text x="%1s" y="%2s">%3s</text>',
 				x,
 				y-20,
-				(SELECT STRING_AGG(FORMAT('<tspan x="%1s" dy="%2s">%3s</tspan>', x, "1.2em", mot), '')
+				(SELECT STRING_AGG(FORMAT('<tspan x="%1s" dy="%2s">%3s</tspan>', x, '1.2em', mot), '')
 				 FROM unnest(string_to_array(name, ' ')) mot)
 				),
 			'' ORDER BY idfield)
