@@ -132,17 +132,17 @@ window.main = async function main()
 			FROM cte
 		), cte3(idbox, "order", html) AS (
 			SELECT idbox, 1, FORMAT('
-				<svg id="svg%1s" height="%2s" width="%2s">', idbox, `${4*Radius}`)
+				<svg id="svg%1$s" height="%2$s" width="%2$s">', idbox, `${4*Radius}`)
 			FROM box
 
 			UNION ALL
 
 			SELECT idbox, 2, STRING_AGG(FORMAT('
 				<circle r="${Radius}" cx="${2*Radius}" cy="${2*Radius}"
-        				stroke="%1s"
+        				stroke="%1$s"
 					stroke-width="${2*Radius}"
-        				stroke-dasharray="%2s %3s"
-        				stroke-dashoffset="%4s"/>',
+        				stroke-dasharray="%2$s %3$s"
+        				stroke-dashoffset="%4$s"/>',
 				code, --%1
 				dasharray, --%2
 				(3.14*2*${Radius})::numeric(10,2), --%3
@@ -155,10 +155,10 @@ window.main = async function main()
 			UNION ALL
 
 			SELECT idbox, 3, STRING_AGG(FORMAT('
-				<text x="%1s" y="%2s">%3s</text>',
+				<text x="%1$s" y="%2$s">%3s</text>',
 				x,
 				y-20,
-				(SELECT STRING_AGG(FORMAT('<tspan x="%1s" dy="%2s">%3s</tspan>', x, '1.2em', mot), '')
+				(SELECT STRING_AGG(FORMAT('<tspan x="%1$s" dy="%2$s">%3$s</tspan>', x, '1.2em', mot), '')
 				 FROM unnest(string_to_array(name, ' ')) mot)
 				),
 			'' ORDER BY idfield)
@@ -167,7 +167,7 @@ window.main = async function main()
 
 			UNION ALL
 
-			SELECT idbox, 4, FORMAT('<text x="%1s" y="%1s"><tspan x="%1s" dy="%2s">%3s</tspan></text>', '${2*Radius}', '0.5em', title)
+			SELECT idbox, 4, FORMAT('<text x="%1$s" y="%1$s"><tspan x="%1$s" dy="%2$s">%3$s</tspan></text>', '${2*Radius}', '0.5em', title)
 			FROM box
 
 			UNION ALL
