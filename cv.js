@@ -137,6 +137,10 @@ window.main = async function main()
 			SELECT idfield, STRING_AGG(FORMAT('<tspan x="%1$s" dy="%2$s">%3$s</tspan>', x, '1.2em', mot), '')
 			FROM cte_split
 			GROUP BY idfield,x
+		), cte_color(idcolor, color) AS (
+			SELECT 1, 'lightseagreen'
+			UNION ALL
+			SELECT 2, 'lightskyblue'
 		), cte4(idbox, "order", html) AS (
 			SELECT idbox, 1, FORMAT('<svg id="svg%1$s" height="%2$s" width="%2$s">', idbox, '${4*Radius}')
 			FROM box
@@ -149,12 +153,12 @@ window.main = async function main()
 					stroke-width="${2*Radius}"
         				stroke-dasharray="%2$s %3$s"
         				stroke-dashoffset="%4$s"/>',
-				code, --%1
+				color, --%1
 				dasharray, --%2
 				(3.14*2*${Radius})::numeric(10,2), --%3
 				-coalesce(dashoffset,0)) --%4
 			FROM cte2
-			JOIN tag ON tag.type_code='COLOR' AND idtag=idfield
+			JOIN cte_color ON idcolor=1 + idfield % 2
 
 			UNION ALL
 
