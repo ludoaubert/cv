@@ -67,8 +67,8 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Languages', 'regexp', 5 UNION ALL
 	SELECT 'Tools', 'SQL Server', 40 UNION ALL
 	SELECT 'Tools', 'PostgreSQL', 20 UNION ALL
-	SELECT 'Tools', 'Oracle', 10 UNION ALL
 	SELECT 'Tools', 'PGLite', 10 UNION ALL
+	SELECT 'Tools', 'Oracle', 10 UNION ALL
 	SELECT 'Tools', 'NodeJS', 20 UNION ALL
 	SELECT 'Tools', 'Web Browsers', 30 UNION ALL
 	SELECT 'Tools', 'GIT', 10 UNION ALL
