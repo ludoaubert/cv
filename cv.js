@@ -131,19 +131,19 @@ window.main = async function main()
 				(2*${Radius} + 1.5*${Radius}*sin((COALESCE(running_total,0)+importance/2)*2*3.14/total))::numeric(10,2) AS y
 			FROM cte
 		), cte_split AS (
-			SELECT idfield, x, unnest(string_to_array(name, ' ')) mot
-			FROM field
+			SELECT idfield, x, unnest(string_to_array("name", ' ')) mot
+			FROM cte2
 		), cte3(idfield, html) AS (
 			SELECT idfield, STRING_AGG(FORMAT('<tspan x="%1$s" dy="%2$s">%3$s</tspan>', x, '1.2em', mot), '')
 			FROM cte_split
-			GROUP BY idfield
+			GROUP BY idfield,x
 		), cte4(idbox, "order", html) AS (
 			SELECT idbox, 1, FORMAT('<svg id="svg%1$s" height="%2$s" width="%2$s">', idbox, '${4*Radius}')
 			FROM box
 
 			UNION ALL
 
-			SELECT idbox, 2, STRING_AGG(FORMAT('
+			SELECT idbox, 2, FORMAT('
 				<circle r="${Radius}" cx="${2*Radius}" cy="${2*Radius}"
         				stroke="%1$s"
 					stroke-width="${2*Radius}"
@@ -152,18 +152,15 @@ window.main = async function main()
 				code, --%1
 				dasharray, --%2
 				(3.14*2*${Radius})::numeric(10,2), --%3
-				-coalesce(dashoffset,0)), --%4
-			 '' ORDER BY idfield)
+				-coalesce(dashoffset,0)) --%4
 			FROM cte2
 			JOIN tag ON tag.type_code='COLOR' AND idtag=idfield
-			GROUP BY idbox
 
 			UNION ALL
 
-			SELECT idbox, 3, FORMAT('<text x="%1$s" y="%2$s">%3$s</text>', x, y-20, cte3.html)
+			SELECT idbox, 3, FORMAT('<text x="%1$s" y="%2$s">%3$s</text>', cte2.x, y-20, cte3.html)
 			FROM cte2
 			JOIN cte3 ON cte3.idfield = cte2.idfield
-			GROUP BY idbox
 
 			UNION ALL
 
