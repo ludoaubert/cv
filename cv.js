@@ -65,6 +65,10 @@ WITH cte(box_title, field_name, importance) AS (
  	SELECT 'Languages', 'Css', 10 UNION ALL
 	SELECT 'Languages', 'Python', 5 UNION ALL
 	SELECT 'Languages', 'regexp', 5 UNION ALL
+	SELECT 'Maths', 'Graphs', 30 UNION ALL
+	SELECT 'Maths', 'Algebra', 30 UNION ALL
+	SELECT 'Maths', 'Statistics', 25 UNION ALL
+	SELECT 'Maths', 'Geometry', 20 UNION ALL
 	SELECT 'Tools', 'SQL Server', 40 UNION ALL
 	SELECT 'Tools', 'PostgreSQL', 20 UNION ALL
 	SELECT 'Tools', 'PGLite', 10 UNION ALL
@@ -82,9 +86,6 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Skills', 'Practical', 15 UNION ALL
 	SELECT 'Experience', 'Queries', 30 UNION ALL
 	SELECT 'Experience', 'Functional', 30 UNION ALL
-	SELECT 'Experience', 'Maths', 30 UNION ALL
-	SELECT 'Experience', 'Stats', 20 UNION ALL
-	SELECT 'Experience', 'Geometry', 20 UNION ALL
 	SELECT 'Experience', 'Information Structure', 30 UNION ALL
 	SELECT 'Experience', 'Multi Language', 30 UNION ALL
 	SELECT 'Experience', 'Challenges', 30 UNION ALL
