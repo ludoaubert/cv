@@ -88,7 +88,6 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'Experience', 'Functional', 30 UNION ALL
 	SELECT 'Experience', 'Information Structure', 30 UNION ALL
 	SELECT 'Experience', 'Multi Language', 30 UNION ALL
-	SELECT 'Experience', 'Challenges', 30 UNION ALL
 	SELECT 'Experience', 'Regression Monitoring', 30 UNION ALL
 	SELECT 'Experience', 'Simplicity', 30 UNION ALL
 	SELECT 'Experience', 'Integrity', 30 UNION ALL
