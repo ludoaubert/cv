@@ -116,7 +116,7 @@ window.main = async function main()
 		WITH cte_values(val) AS (
 			VALUES(1),(2),(3),(4),(5),(6)
 		), cte_field_(idbox, idfield, name, state) AS (
-			SELECT *,
+			SELECT idbox, idfield, name,
 				CASE WHEN stars >=val THEN 'full' ELSE 'empty' END AS state
 			FROM field
 			CROSS JOIN cte_values
