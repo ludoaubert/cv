@@ -56,10 +56,10 @@ INSERT INTO tag(type_code, code) VALUES
 
 
 WITH cte(box_title, field_name, stars) AS (
-	SELECT 'Languages', 'C++', 5 UNION ALL
-	SELECT 'Languages', 'SQL', 5 UNION ALL
+	SELECT 'Languages', 'C++', 6 UNION ALL
+	SELECT 'Languages', 'SQL', 6 UNION ALL
+	SELECT 'Languages', 'JS', 5 UNION ALL
  	SELECT 'Languages', 'JSON', 4 UNION ALL
-  	SELECT 'Languages', 'JS', 4 UNION ALL
 	SELECT 'Languages', 'Html', 4 UNION ALL
 	SELECT 'Languages', 'SVG', 4 UNION ALL
  	SELECT 'Languages', 'Css', 4 UNION ALL
@@ -69,13 +69,13 @@ WITH cte(box_title, field_name, stars) AS (
 	SELECT 'Maths', 'Algebra', 4 UNION ALL
 	SELECT 'Maths', 'Statistics', 4 UNION ALL
 	SELECT 'Maths', 'Geometry', 3 UNION ALL
-	SELECT 'Tools', 'SQL Server', 5 UNION ALL
+	SELECT 'Tools', 'SQL Server', 6 UNION ALL
+	SELECT 'Tools', 'Web Browsers', 5 UNION ALL
 	SELECT 'Tools', 'PostgreSQL', 4 UNION ALL
 	SELECT 'Tools', 'PGLite', 4 UNION ALL
+	SELECT 'Tools', 'GIT', 4 UNION ALL
 	SELECT 'Tools', 'Oracle', 3 UNION ALL
 	SELECT 'Tools', 'NodeJS', 3 UNION ALL
-	SELECT 'Tools', 'Web Browsers', 5 UNION ALL
-	SELECT 'Tools', 'GIT', 4 UNION ALL
 	SELECT 'Skills', 'Endurance', 5 UNION ALL
 	SELECT 'Skills', 'Vision', 4 UNION ALL
 	SELECT 'Skills', 'Persistence', 5 UNION ALL
