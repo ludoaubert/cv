@@ -75,7 +75,7 @@ WITH cte(box_title, field_name, stars) AS (
 	SELECT 'Tools', 'Oracle', 3 UNION ALL
 	SELECT 'Tools', 'NodeJS', 3 UNION ALL
 	SELECT 'Tools', 'Web Browsers', 5 UNION ALL
-	SELECT 'Tools', 'GIT', 4 UNION ALL
+	SELECT 'Tools', 'GIT', 4 /*UNION ALL
 	SELECT 'Skills', 'Endurance', 5 UNION ALL
 	SELECT 'Skills', 'Vision', 4 UNION ALL
 	SELECT 'Skills', 'Persistence', 5 UNION ALL
@@ -94,7 +94,7 @@ WITH cte(box_title, field_name, stars) AS (
 	SELECT 'Experience', 'Speed', 4 UNION ALL
 	SELECT 'International', 'USA', 4 UNION ALL
 	SELECT 'International', 'Germany', 5 UNION ALL
-	SELECT 'International', 'Switzerland', 3
+	SELECT 'International', 'Switzerland', 3*/
 ), cte_box AS (
 	INSERT INTO box(title)
 	SELECT DISTINCT box_title
