@@ -126,7 +126,7 @@ window.main = async function main()
 			FROM cte_field_
 			GROUP BY idbox, idfield, name
 		), cte_box AS (
-			SELECT idbox, STRING_AGG(FORMAT('<span><tr><td>%1$s</td> %2$s</tr></span>', name, html), '\n' ORDER BY idfield) AS html
+			SELECT idbox, STRING_AGG(FORMAT('<tr><td>%1$s</td> %2$s</tr>', name, html), '\n' ORDER BY idfield) AS html
 			FROM cte_field
 			GROUP BY idbox
 		)
