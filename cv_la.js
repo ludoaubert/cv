@@ -115,7 +115,7 @@ window.main = async function main()
 	const ret = await db.query(`
 		WITH cte_values(val) AS (
 			VALUES(1),(2),(3),(4),(5),(6)
-		), cte_field(idbox, idfield, name, state) AS (
+		), cte_field_(idbox, idfield, name, state) AS (
 			SELECT *,
 				CASE WHEN stars >=val THEN 'full' ELSE 'empty' END AS state
 			FROM field
@@ -123,7 +123,7 @@ window.main = async function main()
 		), cte_field(idbox, idfield, name,  html) AS (
 			SELECT idbox, idfield, name,
 				STRING_AGG(FORMAT('<input type="checkbox" class="checkbox-round-%1$s" />', state), '\n' ORDER BY val) AS html
-			FROM cte_field
+			FROM cte_field_
 			GROUP BY idbox, idfield, name
 		), cte_box AS (
 			SELECT idbox, STRING_AGG(FORMAT('<span>%1$s %2$s</span>', name, html) '\n' ORDER BY idfield) AS html
