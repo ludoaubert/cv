@@ -135,5 +135,5 @@ window.main = async function main()
 		JOIN box ON box.idbox = cte_box.idbox
 	`);
 
-	document.getElementById("left-panel").innerHTML = ret.rows[0].html;
+	document.getElementById("left-panel").innerHTML += ret.rows[0].html;
 }
