@@ -57,6 +57,10 @@ hr {
     color: #05014A;
 }
 
+.flex-left > h2 {
+   text-align: center;
+}
+
 
 .checkbox-round-full {
     width: 1.3em;
