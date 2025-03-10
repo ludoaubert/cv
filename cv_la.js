@@ -122,15 +122,15 @@ window.main = async function main()
 			CROSS JOIN cte_values
 		), cte_field(idbox, idfield, name,  html) AS (
 			SELECT idbox, idfield, name,
-				STRING_AGG(FORMAT('<input type="checkbox" class="checkbox-round-%1$s" />', state), '\n' ORDER BY val) AS html
+				STRING_AGG(FORMAT('<td><input type="checkbox" class="checkbox-round-%1$s" /></td>', state), '\n' ORDER BY val) AS html
 			FROM cte_field_
 			GROUP BY idbox, idfield, name
 		), cte_box AS (
-			SELECT idbox, STRING_AGG(FORMAT('<span>%1$s %2$s</span>', name, html), '\n' ORDER BY idfield) AS html
+			SELECT idbox, STRING_AGG(FORMAT('<span><tr><td>%1$s</td> %2$s</tr></span>', name, html), '\n' ORDER BY idfield) AS html
 			FROM cte_field
 			GROUP BY idbox
 		)
-		SELECT STRING_AGG(FORMAT('<h2>%1$s</h2>%2$s', title, html), '\n<hr />\n' ORDER BY box.idbox) AS html
+		SELECT STRING_AGG(FORMAT('<h2>%1$s</h2><table>%2$s</table>', title, html), '\n<hr />\n' ORDER BY box.idbox) AS html
 		FROM cte_box
 		JOIN box ON box.idbox = cte_box.idbox
 	`);
