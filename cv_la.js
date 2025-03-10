@@ -130,7 +130,7 @@ window.main = async function main()
 			FROM cte_field
 			GROUP BY idbox
 		)
-		SELECT STRING_AGG(FORMAT('<h2>%1$s</h2>%2$s', title, html) '\n' ORDER BY idbox) AS html
+		SELECT STRING_AGG(FORMAT('<h2>%1$s</h2>%2$s', title, html) '\n<hr />\n' ORDER BY box.idbox) AS html
 		FROM cte_box
 		JOIN box ON box.idbox = cte_box.idbox
 	`);
