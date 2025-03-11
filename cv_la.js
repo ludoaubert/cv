@@ -55,7 +55,7 @@ INSERT INTO tag(type_code, code) VALUES
 ('COLOR','chartreuse'),('COLOR','DarkOrange'),('COLOR','BlueViolet'),('COLOR','MediumSeaGreen'),('COLOR','LightSeaGreen'),('COLOR','BurlyWood');
 
 
-WITH cte(box_title, field_name, stars) AS (
+WITH cte_field(box_title, field_name, stars) AS (
 	VALUES  ('Languages', 'C++', 6),
 		('Languages', 'SQL', 6),
 		('Languages', 'regexp', 5),
@@ -95,15 +95,21 @@ WITH cte(box_title, field_name, stars) AS (
 		('International', 'Germany', 5),
 		('International', 'USA', 4),
 		('International', 'Switzerland', 3)
-), cte_box AS (
+), cte_field_ AS (
+	SELECT *, ROW_NUMBER() OVER() AS rn,
+		ROW_NUMBER() OVER(PARTITION BY box_title) AS rn2
+	FROM cte_field
+),cte_box AS (
 	INSERT INTO box(title)
-	SELECT DISTINCT box_title
-	FROM cte
+	SELECT box_title
+	FROM cte_field
+	WHERE rn2=1
+	ORDER BY rn
 	RETURNING *
 )
 INSERT INTO field(idbox, name, stars)
 SELECT cte_box.idbox, cte.field_name, cte.stars
-FROM cte
+FROM cte_field
 JOIN cte_box ON cte.box_title = cte_box.title;
 `;
 
