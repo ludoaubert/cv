@@ -108,7 +108,7 @@ WITH cte_field(box_title, field_name, stars) AS (
 	RETURNING *
 )
 INSERT INTO field(idbox, name, stars)
-SELECT cte_box.idbox, cte.field_name, cte.stars
+SELECT cte_box.idbox, cte_field.field_name, cte_field.stars
 FROM cte_field
 JOIN cte_box ON cte_field.box_title = cte_box.title;
 `;
