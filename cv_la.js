@@ -87,7 +87,6 @@ WITH cte_field(box_title, field_name, stars) AS (
 		('Experience', 'Queries', 6),
 		('Experience', 'Functional', 5),
 		('Experience', 'Regression Monitoring', 5),
-		('Experience', 'Simplicity', 5),
 		('Experience', 'Information Structure', 4),
 		('Experience', 'Multi Language', 4),
 		('Experience', 'Integrity', 4),
