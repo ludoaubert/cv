@@ -65,17 +65,17 @@ WITH cte_field(box_title, field_name, stars) AS (
 		('Languages', 'SVG', 4),
  		('Languages', 'Css', 4),
 		('Languages', 'Python', 3),
+                ('Tools', 'SQL Server', 6),
+                ('Tools', 'Web Browsers', 5),
+                ('Tools', 'PostgreSQL', 4),
+                ('Tools', 'PGLite', 4),
+                ('Tools', 'GIT', 4),
+                ('Tools', 'Oracle', 3),
+                ('Tools', 'NodeJS', 3),
 		('Maths', 'Graphs', 5),
 		('Maths', 'Algebra', 4),
 		('Maths', 'Statistics', 4),
 		('Maths', 'Geometry', 3),
-		('Tools', 'SQL Server', 6),
-		('Tools', 'Web Browsers', 5),
-		('Tools', 'PostgreSQL', 4),
-		('Tools', 'PGLite', 4),
-		('Tools', 'GIT', 4),
-		('Tools', 'Oracle', 3),
-		('Tools', 'NodeJS', 3),
 		('Skills', 'Endurance', 6),
 		('Skills', 'Curiosity', 6),
 		('Skills', 'Persistence', 5),
@@ -94,10 +94,12 @@ WITH cte_field(box_title, field_name, stars) AS (
 		('International', 'Germany', 5),
 		('International', 'USA', 4),
 		('International', 'Switzerland', 3)
-), cte_field_ AS (
-	SELECT *, ROW_NUMBER() OVER() AS rn,
-		ROW_NUMBER() OVER(PARTITION BY box_title) AS rn2
+), cte_field__ AS (
+	SELECT *, ROW_NUMBER() OVER() AS rn
 	FROM cte_field
+), cte_field_ AS (
+	SELECT *,ROW_NUMBER() OVER(PARTITION BY box_title) AS rn2
+	FROM cte_field__
 ),cte_box AS (
 	INSERT INTO box(title)
 	SELECT box_title
