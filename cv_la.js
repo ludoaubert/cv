@@ -102,7 +102,7 @@ WITH cte_field(box_title, field_name, stars) AS (
 ),cte_box AS (
 	INSERT INTO box(title)
 	SELECT box_title
-	FROM cte_field
+	FROM cte_field_
 	WHERE rn2=1
 	ORDER BY rn
 	RETURNING *
@@ -110,7 +110,7 @@ WITH cte_field(box_title, field_name, stars) AS (
 INSERT INTO field(idbox, name, stars)
 SELECT cte_box.idbox, cte.field_name, cte.stars
 FROM cte_field
-JOIN cte_box ON cte.box_title = cte_box.title;
+JOIN cte_box ON cte_field.box_title = cte_box.title;
 `;
 
 window.main = async function main()
