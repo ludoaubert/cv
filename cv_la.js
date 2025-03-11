@@ -76,24 +76,24 @@ WITH cte(box_title, field_name, stars) AS (
 	SELECT 'Tools', 'GIT', 4 UNION ALL
 	SELECT 'Tools', 'Oracle', 3 UNION ALL
 	SELECT 'Tools', 'NodeJS', 3 UNION ALL
-	SELECT 'Skills', 'Endurance', 5 UNION ALL
-	SELECT 'Skills', 'Vision', 4 UNION ALL
+	SELECT 'Skills', 'Endurance', 6 UNION ALL
+	SELECT 'Skills', 'Curiosity', 6 UNION ALL
 	SELECT 'Skills', 'Persistence', 5 UNION ALL
-	SELECT 'Skills', 'Research', 4 UNION ALL
-	SELECT 'Skills', 'Curiosity', 5 UNION ALL
 	SELECT 'Skills', 'Dependable', 5 UNION ALL
+	SELECT 'Skills', 'Vision', 4 UNION ALL
+	SELECT 'Skills', 'Research', 4 UNION ALL
 	SELECT 'Skills', 'Abstraction', 4 UNION ALL
 	SELECT 'Skills', 'Practical', 4 UNION ALL
-	SELECT 'Experience', 'Queries', 5 UNION ALL
-	SELECT 'Experience', 'Functional', 4 UNION ALL
-	SELECT 'Experience', 'Information Structure', 4 UNION ALL
-	SELECT 'Experience', 'Multi Language', 4 UNION ALL
+	SELECT 'Experience', 'Queries', 6 UNION ALL
+	SELECT 'Experience', 'Functional', 5 UNION ALL
 	SELECT 'Experience', 'Regression Monitoring', 5 UNION ALL
 	SELECT 'Experience', 'Simplicity', 5 UNION ALL
+	SELECT 'Experience', 'Information Structure', 4 UNION ALL
+	SELECT 'Experience', 'Multi Language', 4 UNION ALL
 	SELECT 'Experience', 'Integrity', 4 UNION ALL
 	SELECT 'Experience', 'Speed', 4 UNION ALL
-	SELECT 'International', 'USA', 4 UNION ALL
 	SELECT 'International', 'Germany', 5 UNION ALL
+	SELECT 'International', 'USA', 4 UNION ALL
 	SELECT 'International', 'Switzerland', 3
 ), cte_box AS (
 	INSERT INTO box(title)
