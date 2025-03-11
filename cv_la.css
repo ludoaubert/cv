@@ -63,6 +63,10 @@ hr {
    text-align: center;
 }
 
+img {
+   align:center;
+}
+
 
 .checkbox-round-full {
     width: 1.3em;
