@@ -56,45 +56,45 @@ INSERT INTO tag(type_code, code) VALUES
 
 
 WITH cte(box_title, field_name, stars) AS (
-	SELECT 'Languages', 'C++', 6 UNION ALL
-	SELECT 'Languages', 'SQL', 6 UNION ALL
-	SELECT 'Languages', 'JS', 5 UNION ALL
- 	SELECT 'Languages', 'JSON', 4 UNION ALL
-	SELECT 'Languages', 'Html', 4 UNION ALL
-	SELECT 'Languages', 'SVG', 4 UNION ALL
- 	SELECT 'Languages', 'Css', 4 UNION ALL
-	SELECT 'Languages', 'Python', 3 UNION ALL
-	SELECT 'Languages', 'regexp', 5 UNION ALL
-	SELECT 'Maths', 'Graphs', 5 UNION ALL
-	SELECT 'Maths', 'Algebra', 4 UNION ALL
-	SELECT 'Maths', 'Statistics', 4 UNION ALL
-	SELECT 'Maths', 'Geometry', 3 UNION ALL
-	SELECT 'Tools', 'SQL Server', 6 UNION ALL
-	SELECT 'Tools', 'Web Browsers', 5 UNION ALL
-	SELECT 'Tools', 'PostgreSQL', 4 UNION ALL
-	SELECT 'Tools', 'PGLite', 4 UNION ALL
-	SELECT 'Tools', 'GIT', 4 UNION ALL
-	SELECT 'Tools', 'Oracle', 3 UNION ALL
-	SELECT 'Tools', 'NodeJS', 3 UNION ALL
-	SELECT 'Skills', 'Endurance', 6 UNION ALL
-	SELECT 'Skills', 'Curiosity', 6 UNION ALL
-	SELECT 'Skills', 'Persistence', 5 UNION ALL
-	SELECT 'Skills', 'Dependable', 5 UNION ALL
-	SELECT 'Skills', 'Vision', 4 UNION ALL
-	SELECT 'Skills', 'Research', 4 UNION ALL
-	SELECT 'Skills', 'Abstraction', 4 UNION ALL
-	SELECT 'Skills', 'Practical', 4 UNION ALL
-	SELECT 'Experience', 'Queries', 6 UNION ALL
-	SELECT 'Experience', 'Functional', 5 UNION ALL
-	SELECT 'Experience', 'Regression Monitoring', 5 UNION ALL
-	SELECT 'Experience', 'Simplicity', 5 UNION ALL
-	SELECT 'Experience', 'Information Structure', 4 UNION ALL
-	SELECT 'Experience', 'Multi Language', 4 UNION ALL
-	SELECT 'Experience', 'Integrity', 4 UNION ALL
-	SELECT 'Experience', 'Speed', 4 UNION ALL
-	SELECT 'International', 'Germany', 5 UNION ALL
-	SELECT 'International', 'USA', 4 UNION ALL
-	SELECT 'International', 'Switzerland', 3
+	VALUES  ('Languages', 'C++', 6),
+		('Languages', 'SQL', 6),
+		('Languages', 'regexp', 5),
+		('Languages', 'JS', 5),
+ 		('Languages', 'JSON', 4),
+		('Languages', 'Html', 4),
+		('Languages', 'SVG', 4),
+ 		('Languages', 'Css', 4),
+		('Languages', 'Python', 3),
+		('Maths', 'Graphs', 5),
+		('Maths', 'Algebra', 4),
+		('Maths', 'Statistics', 4),
+		('Maths', 'Geometry', 3),
+		('Tools', 'SQL Server', 6),
+		('Tools', 'Web Browsers', 5),
+		('Tools', 'PostgreSQL', 4),
+		('Tools', 'PGLite', 4),
+		('Tools', 'GIT', 4),
+		('Tools', 'Oracle', 3),
+		('Tools', 'NodeJS', 3),
+		('Skills', 'Endurance', 6),
+		('Skills', 'Curiosity', 6),
+		('Skills', 'Persistence', 5),
+		('Skills', 'Dependable', 5),
+		('Skills', 'Vision', 4),
+		('Skills', 'Research', 4),
+		('Skills', 'Abstraction', 4),
+		('Skills', 'Practical', 4),
+		('Experience', 'Queries', 6),
+		('Experience', 'Functional', 5),
+		('Experience', 'Regression Monitoring', 5),
+		('Experience', 'Simplicity', 5),
+		('Experience', 'Information Structure', 4),
+		('Experience', 'Multi Language', 4),
+		('Experience', 'Integrity', 4),
+		('Experience', 'Speed', 4),
+		('International', 'Germany', 5),
+		('International', 'USA', 4),
+		('International', 'Switzerland', 3)
 ), cte_box AS (
 	INSERT INTO box(title)
 	SELECT DISTINCT box_title
