@@ -55,7 +55,7 @@ INSERT INTO tag(type_code, code) VALUES
 ('COLOR','chartreuse'),('COLOR','DarkOrange'),('COLOR','BlueViolet'),('COLOR','MediumSeaGreen'),('COLOR','LightSeaGreen'),('COLOR','BurlyWood');
 
 
-WITH cte(box_title, field_name, importance) AS (
+WITH cte_field(box_title, field_name, importance) AS (
 	SELECT 'Languages', 'C++', 35 UNION ALL
 	SELECT 'Languages', 'SQL', 35 UNION ALL
  	SELECT 'Languages', 'JSON', 10 UNION ALL
@@ -98,16 +98,24 @@ WITH cte(box_title, field_name, importance) AS (
 	SELECT 'International', 'USA', 20 UNION ALL
 	SELECT 'International', 'Germany', 30 UNION ALL
 	SELECT 'International', 'Switzerland', 15
+), cte_field__ AS (
+	SELECT *, ROW_NUMBER() OVER() AS rn
+	FROM cte_field
+), cte_field_ AS (
+	SELECT *,ROW_NUMBER() OVER(PARTITION BY box_title) AS rn2
+	FROM cte_field__
 ), cte_box AS (
 	INSERT INTO box(title)
-	SELECT DISTINCT box_title
-	FROM cte
+	SELECT box_title
+	FROM cte_field_
+	WHERE rn2=1
+	ORDER BY rn
 	RETURNING *
 )
 INSERT INTO field(idbox, name, importance)
-SELECT cte_box.idbox, cte.field_name, cte.importance
-FROM cte
-JOIN cte_box ON cte.box_title = cte_box.title;
+SELECT cte_box.idbox, cte_field.field_name, cte_field.importance
+FROM cte_field
+JOIN cte_box ON cte_field.box_title = cte_box.title;
 `;
 
 window.main = async function main()
