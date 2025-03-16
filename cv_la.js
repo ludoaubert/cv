@@ -265,6 +265,32 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'Il a subi avec succès un test  de performance très intense réalisé par ma hiérarchie.'
 		'En 2004, Beatware a été racheté par la branche Business Intelligence de Oracle (Hyperion).'
 		AS resultats,
+		'I developed an algorithm in C++ to vectorize 2D graphical data, converting mouse-drawn points into Bézier curves'
+		'while minimizing the number of curves and detecting shapes like polylines, polygons, and ellipses.'
+		'The algorithm was successfully integrated into Beatware’s software, passed rigorous performance tests,'
+		'and was later adopted by Oracle’s Hyperion after the acquisition in 2004.'
+		AS summary
+
+		UNION ALL
+
+		SELECT 'AEG Zahler Gmbh' AS entreprise,
+		'1996-10-01' AS debut,
+		'1998-10-01' AS fin,
+		'conception d’un petit compilateur embarqué pour compteur électrique' AS realisation,
+		'Racheté par Schlumberger pour lequel je suis en CSNE'
+		'On me confie la création d’un compilateur pour permettre d’exprimer la valeur d’output en fonction d’input'
+		'pour les compteurs électriques de manide manière flexible et modifiable à distance.'
+		'On veut aussi comprimer ces expressions au maximum car il y a peu de mémoire disponible.'
+		AS travail_confie,
+		'J’ai modélisé les expressions avec différentes structures de données.'
+		'J’ai testé différentes structures d’arborescences et sélectionné celle qui était la plus appropriée.'
+		'J’ai implémenté la solution en C++.'
+		'J’ai créé des jeux de données pour tester et valider la solution.'
+		'J’ai créé une présentation pour communiquer la solution au Management'
+		AS actions,
+		'J’ai pu présenter ma solution opérationnelle devant le directeur de la R&D en Allemagne.'
+		'Ces algorithmes ont permis de paramétrer de façon flexible des millions de compteurs électriques de nouvelle génération.'
+		AS resultats,
 		'' AS summary
 )
 INSERT INTO achievement(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summary)
@@ -273,29 +299,6 @@ FROM cte;
 
 
 
-conception d’un algorithme pour vectoriser des données graphiques en dimension deux
-
-
-Beatware
-Septembre 2000 Septembre 2001
-Beatware édite un logiciel pour créer des animations Web. 
-On me confie la création d’un algorithme qui doit:
-1)Convertir une liste de points en dimension deux tracés avec la souris sur un écran en une liste de courbes de Béziers.
-2) Minimiser le nombre de courbes de Béziers (smoothing).
-3)Suivant les cas, détecter des polylines, des polygones ou des ellipses.
-L’étape 3) requiert que les étapes 1) et 2) soient très fiables et précises.
-Le tout doit être implémenté en C++ à partir d’une feuille blanche et être performant.
-
-
-
-J’ai recherché et effectué une analyse bibliographique pour trouver des algorithmes répondant au besoin.
-J’ai recherché parmi les algorithmes et les notions mathématiques que je connaissais ceux qui étaient les plus pertinents pour résoudre le problème.
-J’ai pris l’initiative de recopier les algorithmes à partir d’un manuel du MIT et les adapter en C++ à défaut de librairie qui n’existait pas à l’époque.
-J’ai implémenté des algorithmes en C++ et mis au point des jeux de données de test.
-J’ai effectué des itérations de tests, développement et amélioration.
-Mon algorithme a été testé et intégré au produit de Beatware.
-Il a subi avec succès un test  de performance très intense réalisé par ma hiérarchie.
-En 2004, Beatware a été racheté par la branche Business Intelligence de Oracle (Hyperion).
 conception d’un petit compilateur embarqué pour compteur électrique
 
 
