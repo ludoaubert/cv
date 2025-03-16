@@ -122,7 +122,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		SELECT '' AS entreprise,
 		'2024-07-27' AS debut,
 		'2024-08-04' AS fin,
-		'trajet en vélo et camping pour relier Paris à Barcelone en 8 jours' AS realisation,
+		'trajet en vélo et camping pour relier Paris à Barcelone en 8 jours'
+		AS realisation,
 		'Mon fils Edouard, 20 ans , qui sort de prépa, a prévu ce voyage avec des copains qui ont abandonné.'
 		'Je l’accompagne donc. Faire Paris Barcelone en transportant le matériel de camping.'
 		'La date d’arrivée est contrainte car il y a une réunion de famille prévue dans ma belle famille à Barcelone'
@@ -143,7 +144,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 
 	UNION ALL
 
-		SELECT '' AS entreprise,
+		SELECT 'Projet Perso' AS entreprise,
 		'1996-03-11' AS debut,
 		'2025-03-20' AS fin,
 		'conception sur 15 ans d’un algorithme pour comprendre rapidement la structure d’une base de données'
@@ -244,7 +245,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		SELECT 'Beatware' AS entreprise,
 		'2000-09-01' AS debut,
 		'2001-09-01' AS fin,
-		'conception d’un algorithme pour vectoriser des données graphiques en dimension deux' AS realisation,
+		'conception d’un algorithme pour vectoriser des données graphiques en dimension deux'
+		AS realisation,
 		'Beatware édite un logiciel pour créer des animations Web.'
 		'On me confie la création d’un algorithme qui doit:'
 		'1)Convertir une liste de points en dimension deux tracés avec la souris sur un écran en une liste de courbes de Béziers.'
@@ -276,7 +278,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		SELECT 'AEG Zahler Gmbh' AS entreprise,
 		'1996-10-01' AS debut,
 		'1998-10-01' AS fin,
-		'conception d’un petit compilateur embarqué pour compteur électrique' AS realisation,
+		'conception d’un petit compilateur embarqué pour compteur électrique'
+		AS realisation,
 		'Racheté par Schlumberger pour lequel je suis en CSNE'
 		'On me confie la création d’un compilateur pour permettre d’exprimer la valeur d’output en fonction d’input'
 		'pour les compteurs électriques de manide manière flexible et modifiable à distance.'
@@ -301,7 +304,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		SELECT 'Santarelli Group' AS entreprise,
 		'2021-04-01' AS debut,
 		'2025-03-01' AS fin,
-		'déduplication des inventeurs des brevets' AS realisation,
+		'déduplication des inventeurs des brevets'
+		AS realisation,
 		'Dans le cadre de la migration des données des brevets, dans le système source LOLA, il n’y a pas de table'
 		'des inventeurs. Les informations sur les inventeurs sont dupliquées, avec de petites erreurs ou de petits'
 		'changements (n lignes par inventeur). Il faut donc dédupliquer ces informations pour créer une table des inventeurs'
@@ -326,7 +330,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		SELECT 'Euronext' AS entreprise,
 		'2015-12-01' AS debut,
 		'2017-06-30' AS fin,
-		'initiation d’un portefeuille de tests de non régression en utilisant l’outil google tests' AS realisation,
+		'initiation d’un portefeuille de tests de non régression en utilisant l’outil google tests'
+		AS realisation,
 		'dans le cadre du méga projet Optiq de Euronext (environ 100 home années), refonte complète du système'
 		'de la bourse de Paris.'
 		'Dans le cadre de ce méga projet en C++, il est vital de pouvoir s’assurer en temps réel que l’on ne casse'
