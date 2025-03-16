@@ -144,8 +144,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 	UNION ALL
 
 		SELECT '' AS entreprise,
-		'' AS debut,
-		'' AS fin,
+		'1996-03-11' AS debut,
+		'2025-03-20' AS fin,
 		'conception sur 15 ans d’un algorithme pour comprendre rapidement la structure d’une base de données'
 		AS realisation,
 		'Projet perso de création d’un produit en ligne à base d’algorithmes'
@@ -341,22 +341,14 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'Cela a énormément contribué à la réussite du projet Optiq ainsi qu’à la tenue des délais et même à la santé'
 		'mentale des équipes'
 		AS resultats,
-		''
+		'I developed a regression testing portfolio using Google Test for the Optiq project at Euronext, ensuring new'
+		'features didn’t impact existing functionality. This initiative led to widespread adoption of automated unit and'
+		'integration tests, contributing to the project’s success and timely delivery.'
 		AS summary
 )
 INSERT INTO achievement(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summary)
 SELECT *
 FROM cte;
-
-
-dans le cadre du méga projet Optiq de Euronext (environ 100 home années), refonte complète du système de la bourse de Paris.
-Décembre 2015 Juin 2017
-Dans le cadre de ce méga projet en C++, il est vital de pouvoir s’assurer en temps réel que l’on ne casse pas des fonctionnalités déjà développées lorsqu’on en créé de nouvelles
-J’ai utilisé l’outil minimaliste en ligne de commande google test pour développer en C++ les premiers tests unitaires automatisés de non régression sur le périmètre de mon équipe.
-J’ai également créé des tests d’intégration avec le même outil.
-Non seulement l’équipe dont je faisais partie, mais également toutes les autres équipes (environ 50 consultants) se sont mises à  développer ces portefeuilles de test (tests unitaires et test d’intégration).
-Cela a énormément contribué à la réussite du projet Optiq ainsi qu’à la tenue des délais et même à la santé mentale des équipes
-
 
 
 INSERT INTO tag(type_code, code) VALUES
