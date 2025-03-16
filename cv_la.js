@@ -152,7 +152,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 
 	UNION ALL
 
-		SELECT 'Projet Perso' AS entreprise,
+		SELECT 'Personal project' AS entreprise,
 		'1996-03-11'::date AS debut,
 		'2025-03-20'::date AS fin,
 		'conception sur 15 ans d’un algorithme pour comprendre rapidement la structure d’une base de données'
