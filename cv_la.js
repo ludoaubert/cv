@@ -54,6 +54,7 @@ CREATE TABLE IF NOT EXISTS achievement(
   travail_confie VARCHAR,
   actions VARCHAR,
   resultats VARCHAR,
+  headline VARCHAR(100),
   summary VARCHAR
 );
 `;
@@ -61,7 +62,7 @@ CREATE TABLE IF NOT EXISTS achievement(
 const data=`
 INSERT INTO diagram(iddiagram, title) VALUES (1, 'CV Ludovic Aubert');
 
-WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summary) AS (
+WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headline,summary) AS (
 	SELECT 'Santarelli Group' AS entreprise,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
@@ -79,14 +80,16 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'J’ai fait tourner les scripts, en temps très contraint, pour réaliser les 2 migrations'
 		'et les 2 merges. '
 		'Pendant une de ces opérations, j’ai du vite analyser un problème bloquant imprévu et le débloquer en temps imparti.'
-		 AS actions,
+		AS actions,
 		'L’entreprise a pu économiser les abonnements au cloud de l’ancien fournisseur, plusieurs centaines de milliers '
 		'd’euros par an.'
 		'En centralisant les données, elle réduisait les coûts de gestion pour environ 100 000 brevets '
 		'et réduisait les risques d’erreur. '
 		'La migration et la fusion des 3 bases de données matérialise la fusion des 3 sociétés avec un fonctionnement intégré.'
 		'Cela peut se valoriser jusqu’à des millions d’euros.'
-		 AS resultats,
+		AS resultats,
+		'Patent database migration and merge'
+		AS headline,
 		'I performed the migration and merger of patent databases during '
 		'a company acquisition, developing scripts and resolving critical issues. This initiative saved hundreds '
 		'of thousands in cloud costs, streamlined data management, and supported the integration of three companies, '
@@ -112,6 +115,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'Sur la plus grosse base (6 millions de lignes produites), le script livré était évolutif'
 		'et a permis de l’optimiser pour traiter plus rapidement les données'
 		AS resultats,
+		'Plastic recycling plants traceability graph'
+		AS headline,
 		'I created a script to generate traceability graphs for six plastic recycling plants.'
 		'After identifying a bug, I suggested rewriting the script, which was accepted, and I developed'
 		'a more efficient version using advanced SQL features, resulting in a scalable solution'
@@ -138,6 +143,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'Budget: environ 10 euros par jour.'
 		'Nous avons toujours été en sécurité.'
 		AS resultats,
+		'Bike trip and camping: Paris to Barcelona, 8 days'
+		AS headline,
 		'A bike trip and camping journey from Paris to Barcelona in 8 days, initially planned'
 		'by my son Edouard and his friends who later dropped out. I accompanied him, handling the camping gear,'
 		'planning the route, and ensuring the trip ran smoothly within a budget of 10 euros per day.'
@@ -211,6 +218,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'Acquisition de compétences technologiques de pointe sur les langages (C++, SQL, JS, HTML, SVG, CSS),'
 		' les produits (PostgreSQL, PGLite, NodeJS) et en algorithmique.'
 		AS resultats,
+		'15-year algorithm development for database structure understanding'
+		AS headline,
 		'Over 15 years, I developed an algorithm to quickly understand database structures, initially conceived'
 		'during an internship at EDF. Later, I refined this algorithm and expanded its capabilities,'
 		'integrating various technologies like C++, PostgreSQL, and NodeJS to create an interactive web-based'
@@ -236,6 +245,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'On a gagné 1 homme année.'
 		'Une des utilisatrices m’a donné un feedback très positif sur le fonctionnement de l’outil.'
 		AS resultats,
+		'Designing scalable graphical interface for 60 life insurance fields'
+		AS headline,
 		'Design and development of a simple and scalable graphical interface to manage 60 fields for life insurance,'
 		'replacing an overly complex, unmaintainable solution. The project took 3 months, saving 1 full-time year,'
 		'with positive user feedback on its functionality.'
@@ -268,6 +279,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'Il a subi avec succès un test  de performance très intense réalisé par ma hiérarchie.'
 		'En 2004, Beatware a été racheté par la branche Business Intelligence de Oracle (Hyperion).'
 		AS resultats,
+		'Algorithm design for 2D data vectorization'
+		AS headline,
 		'I developed an algorithm in C++ to vectorize 2D graphical data, converting mouse-drawn points into Bézier curves'
 		'while minimizing the number of curves and detecting shapes like polylines, polygons, and ellipses.'
 		'The algorithm was successfully integrated into Beatware’s software, passed rigorous performance tests,'
@@ -295,6 +308,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'J’ai pu présenter ma solution opérationnelle devant le directeur de la R&D en Allemagne.'
 		'Ces algorithmes ont permis de paramétrer de façon flexible des millions de compteurs électriques de nouvelle génération.'
 		AS resultats,
+		'Embedded compiler design for electric meter'
+		AS headline,
 		'Designed an embedded compiler for electric meters, allowing flexible and remotely modifiable output expressions'
 		'based on inputs. The solution, implemented in C++, optimized memory usage and enabled the configuration of millions'
 		'of next-gen meters, successfully presented to R&D management.'
@@ -321,6 +336,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'Une table avec 16000 inventeurs a été créée.'
 		'La table a permis de fiabiliser la gestion des inventeurs'
 		AS resultats,
+		'Patent inventor deduplication process'
+		AS headline,
 		'Developed a Python-based graph algorithm to deduplicate inventor data during patent migration, consolidating'
 		'multiple records into a single inventor table. Successfully created a table with 16,000 unique inventors,'
 		'improving data reliability.'
@@ -347,6 +364,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'Cela a énormément contribué à la réussite du projet Optiq ainsi qu’à la tenue des délais et même à la santé'
 		'mentale des équipes'
 		AS resultats,
+		'Non-regression test portfolio using Google Tests'
+		AS headline,
 		'I developed a regression testing portfolio using Google Test for the Optiq project at Euronext, ensuring new'
 		'features didn’t impact existing functionality. This initiative led to widespread adoption of automated unit and'
 		'integration tests, contributing to the project’s success and timely delivery.'
@@ -430,7 +449,7 @@ window.main = async function main()
 	const rt2 = await db.exec(data);
 	const N=6;
 
-	const ret = await db.query(`
+	const ret3 = await db.query(`
 		WITH cte_values(val) AS (
 			VALUES(1),(2),(3),(4),(5),(6)
 		), cte_field_(idbox, idfield, name, val, state) AS (
@@ -454,5 +473,13 @@ window.main = async function main()
 		JOIN box ON box.idbox = cte_box.idbox
 	`);
 
-	document.getElementById("left-panel").innerHTML += ret.rows[0].html;
+	document.getElementById("left-panel").innerHTML += ret3.rows[0].html;
+
+	const ret4 = await db.query(`
+		SELECT STRING_AGG(FORMAT('<h2>%1$s</h2><p>%2$s</p><hr />', headline, summary), '\n' ORDER BY fin DESC) AS html
+		FROM achievement
+	`);
+
+	document.getElementById("achievements").innerHTML = ret4.rows[0].html;
+
 }
