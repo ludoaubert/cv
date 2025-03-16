@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS achievement(
   actions VARCHAR,
   resultats VARCHAR,
   summary VARCHAR
+);
 `;
 
 const data=`
