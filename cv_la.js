@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS tag(
 );
 
 CREATE TABLE IF NOT EXISTS achievement(
-  idachievement SERIAL
+  idachievement SERIAL,
   iddiagram INTEGER DEFAULT 1,
   PRIMARY KEY (iddiagram, idachievement),
   entreprise VARCHAR(50),
