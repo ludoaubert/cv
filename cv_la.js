@@ -291,27 +291,36 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'J’ai pu présenter ma solution opérationnelle devant le directeur de la R&D en Allemagne.'
 		'Ces algorithmes ont permis de paramétrer de façon flexible des millions de compteurs électriques de nouvelle génération.'
 		AS resultats,
+		'Designed an embedded compiler for electric meters, allowing flexible and remotely modifiable output expressions'
+		'based on inputs. The solution, implemented in C++, optimized memory usage and enabled the configuration of millions'
+		'of next-gen meters, successfully presented to R&D management.'
+		AS summary
+
+	UNION ALL
+
+		SELECT 'Santarelli Group' AS entreprise,
+		'2021-04-01' AS debut,
+		'2025-03-01' AS fin,
+		'déduplication des inventeurs des brevets' AS realisation,
+		'Dans le cadre de la migration des données des brevets, dans le système source LOLA, il n’y a pas de table'
+		'des inventeurs. Les informations sur les inventeurs sont dupliquées, avec de petites erreurs ou de petits'
+		'changements (n lignes par inventeur). Il faut donc dédupliquer ces informations pour créer une table des inventeurs'
+		'(1 ligne par inventeur).'
+		AS travail_confie,
+		'J’ai mis au point un algorithme de graphes avec un nœud par ligne et des connexions entre les lignes lorsque'
+		'le nom et le dossier sont identiques.'
+		'J’ai codé un algorithme simple en python pour calculer les composantes connexes. Une composante connexe correspondait'
+		'à un inventeur'
+		AS actions,
+		'Cet algorithme a été utilisé avec succès pour la migration des données de brevets.'
+		'Une table avec 16000 inventeurs a été créée.'
+		'La table a permis de fiabiliser la gestion des inventeurs'
+		AS resultats,
 		'' AS summary
 )
 INSERT INTO achievement(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summary)
 SELECT *
 FROM cte;
-
-
-
-conception d’un petit compilateur embarqué pour compteur électrique
-
-
-AEG Zahler Gmbh
-Octobre 1996 Octobre 1998
-Racheté par Schlumberger pour lequel je suis en CSNE
-On me confie la création d’un compilateur pour permettre d’exprimer la valeur d’output en fonction d’input pour les compteurs électriques de manière flexible et modifiable à distance. On veut aussi comprimer ces expressions au maximum car il y a peu de mémoire disponible.  
-J’ai modélisé les expressions avec différentes structures de données.
-J’ai testé différentes structures d’arborescences et sélectionné celle qui était la plus appropriée.
-J’ai créé des jeux de données pour tester et valider la solution. 
-J'ai pu présenter ma solution opérationnelle devant le directeur de la R&D en Allemagne.
-Ces algorithmes ont permis de paramétrer de façon flexible des millions de compteurs électriques de nouvelle génération.
-déduplication des inventeurs des brevets
 
 
 dans le cadre d’un rachat d’entreprises.
