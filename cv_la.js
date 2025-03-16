@@ -476,8 +476,17 @@ window.main = async function main()
 	document.getElementById("left-panel").innerHTML += ret3.rows[0].html;
 
 	const ret4 = await db.query(`
-		SELECT STRING_AGG(FORMAT('<h2>%1$s</h2><p>%2$s</p><hr />', headline, summary), '\n' ORDER BY fin DESC) AS html
-		FROM achievement
+		WITH cte AS (
+			SELECT headline,
+				entreprise,
+				date_part('year', debut) AS annee_debut,
+				date_part('year', fin) AS annee_fin,
+				summary
+			FROM achievement
+		)
+		SELECT STRING_AGG(FORMAT('<h2>%1$s</h2><h3>%2$s %3$s %4$s</h3><p>%5$s</p><hr />',
+			headline, entreprise, annee_debut, annee_fin, summary), '\n' ORDER BY fin DESC) AS html
+		FROM cte
 	`);
 
 	document.getElementById("achievements").innerHTML = ret4.rows[0].html;
