@@ -63,8 +63,8 @@ INSERT INTO diagram(iddiagram, title) VALUES (1, 'CV Ludovic Aubert');
 
 WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summary) AS (
 	SELECT 'Santarelli Group' AS entreprise,
-		'2021-04-01' AS debut,
-		'2025-03-01' AS fin,
+		'2021-04-01'::date AS debut,
+		'2025-03-01'::date AS fin,
 		'Migration et fusion des bases de données des brevets'
 		AS realisation,
 		'dans le cadre d’un double rachat d’entreprises.'
@@ -96,8 +96,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 	UNION ALL
 
 	SELECT 'Paprec' AS entreprise,
-		'2019-02-01' AS debut,
-		'2020-06-01' AS fin,
+		'2019-02-01'::date AS debut,
+		'2020-06-01'::date AS fin,
 		'création d’un script pour produire le graphe de traçabilité pour les 6 usines de recyclage de plastique'
 		AS realisation,
 		'Ma hiérarchie m’a demandé de corriger un bug sur le script pour produire le graphe de traçabilité. J’ai proposé '
@@ -121,8 +121,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 	UNION ALL
 
 		SELECT '' AS entreprise,
-		'2024-07-27' AS debut,
-		'2024-08-04' AS fin,
+		'2024-07-27'::date AS debut,
+		'2024-08-04'::date AS fin,
 		'trajet en vélo et camping pour relier Paris à Barcelone en 8 jours'
 		AS realisation,
 		'Mon fils Edouard, 20 ans , qui sort de prépa, a prévu ce voyage avec des copains qui ont abandonné.'
@@ -146,8 +146,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 	UNION ALL
 
 		SELECT 'Projet Perso' AS entreprise,
-		'1996-03-11' AS debut,
-		'2025-03-20' AS fin,
+		'1996-03-11'::date AS debut,
+		'2025-03-20'::date AS fin,
 		'conception sur 15 ans d’un algorithme pour comprendre rapidement la structure d’une base de données'
 		AS realisation,
 		'Projet perso de création d’un produit en ligne à base d’algorithmes'
@@ -220,8 +220,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		UNION ALL
 
 		SELECT 'Quantalys' AS entreprise,
-		'2017-11-01' AS debut,
-		'2018-04-30' AS fin,
+		'2017-11-01'::date AS debut,
+		'2018-04-30'::date AS fin,
 		'conception/réalisation d’une manière simple et évolutive d’une interface graphique gérant 60 champs pour les assurances vies'
 		AS realisation,
 		'On me confie la création d’une interface graphique pour gérer des données sur les assurances vies.'
@@ -244,8 +244,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		UNION ALL
 
 		SELECT 'Beatware' AS entreprise,
-		'2000-09-01' AS debut,
-		'2001-09-01' AS fin,
+		'2000-09-01'::date AS debut,
+		'2001-09-01'::date AS fin,
 		'conception d’un algorithme pour vectoriser des données graphiques en dimension deux'
 		AS realisation,
 		'Beatware édite un logiciel pour créer des animations Web.'
@@ -277,8 +277,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		UNION ALL
 
 		SELECT 'AEG Zahler Gmbh' AS entreprise,
-		'1996-10-01' AS debut,
-		'1998-10-01' AS fin,
+		'1996-10-01'::date AS debut,
+		'1998-10-01'::date AS fin,
 		'conception d’un petit compilateur embarqué pour compteur électrique'
 		AS realisation,
 		'Racheté par Schlumberger pour lequel je suis en CSNE'
@@ -303,8 +303,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 	UNION ALL
 
 		SELECT 'Santarelli Group' AS entreprise,
-		'2021-04-01' AS debut,
-		'2025-03-01' AS fin,
+		'2021-04-01'::date AS debut,
+		'2025-03-01'::date AS fin,
 		'déduplication des inventeurs des brevets'
 		AS realisation,
 		'Dans le cadre de la migration des données des brevets, dans le système source LOLA, il n’y a pas de table'
@@ -329,8 +329,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 	UNION ALL
 
 		SELECT 'Euronext' AS entreprise,
-		'2015-12-01' AS debut,
-		'2017-06-30' AS fin,
+		'2015-12-01'::date AS debut,
+		'2017-06-30'::date AS fin,
 		'initiation d’un portefeuille de tests de non régression en utilisant l’outil google tests'
 		AS realisation,
 		'dans le cadre du méga projet Optiq de Euronext (environ 100 home années), refonte complète du système'
