@@ -234,6 +234,37 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'On a gagné 1 homme année.'
 		'Une des utilisatrices m’a donné un feedback très positif sur le fonctionnement de l’outil.'
 		AS resultats,
+		'Design and development of a simple and scalable graphical interface to manage 60 fields for life insurance,'
+		'replacing an overly complex, unmaintainable solution. The project took 3 months, saving 1 full-time year,'
+		'with positive user feedback on its functionality.'
+		AS summary
+
+		UNION ALL
+
+		SELECT 'Beatware' AS entreprise,
+		'2000-09-01' AS debut,
+		'2001-09-01' AS fin,
+		'conception d’un algorithme pour vectoriser des données graphiques en dimension deux' AS realisation,
+		'Beatware édite un logiciel pour créer des animations Web.'
+		'On me confie la création d’un algorithme qui doit:'
+		'1)Convertir une liste de points en dimension deux tracés avec la souris sur un écran en une liste de courbes de Béziers.'
+		'2) Minimiser le nombre de courbes de Béziers (smoothing).'
+		'3)Suivant les cas, détecter des polylines, des polygones ou des ellipses.'
+		'L’étape 3) requiert que les étapes 1) et 2) soient très fiables et précises.'
+		'Le tout doit être implémenté en C++ à partir d’une feuille blanche et être performant.'
+		AS travail_confie,
+		'J’ai recherché et effectué une analyse bibliographique pour trouver des algorithmes répondant au besoin.'
+		'J’ai recherché parmi les algorithmes et les notions mathématiques que je connaissais ceux qui étaient'
+		'les plus pertinents pour résoudre le problème'
+		'J’ai pris l’initiative de recopier les algorithmes à partir d’un manuel du MIT et les adapter en C++ à défaut'
+		'de librairie qui n’existait pas à l’époque.'
+		'J’ai implémenté des algorithmes en C++ et mis au point des jeux de données de test.'
+		'J’ai effectué des itérations de tests, développement et amélioration.'
+		AS actions,
+		'Mon algorithme a été testé et intégré au produit de Beatware.'
+		'Il a subi avec succès un test  de performance très intense réalisé par ma hiérarchie.'
+		'En 2004, Beatware a été racheté par la branche Business Intelligence de Oracle (Hyperion).'
+		AS resultats,
 		'' AS summary
 )
 INSERT INTO achievement(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summary)
@@ -241,15 +272,7 @@ SELECT *
 FROM cte;
 
 
-Quantalys
-Novembre 2017 à Avril 2018
-On me confie la création d’une interface graphique pour gérer des données sur les assurances vies. 
-Il existe déjà une solution développée précédemment, mais elle est trop complexe et donc impossible à faire évoluer et à maintenir
-J’ai séparé la partie édition localement et la partie synchronisation avec la base de données.
-J’ai utilisé et complété un module de code qui existait déjà dans l’entreprise pour synchroniser les données.
-Le développement a duré seulement 3 mois tandis que celui qu’avait réalisé mon prédécesseur avait duré plus de 6 mois et n’était ni simple, ni  maintenable ni évolutif.
-On a gagné 1 homme année.
-Une des utilisatrices m’a donné un feedback très positif sur le fonctionnement de l’outil.
+
 conception d’un algorithme pour vectoriser des données graphiques en dimension deux
 
 
