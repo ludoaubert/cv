@@ -118,7 +118,7 @@ window.main = async function main()
 {
 	const rt1 = await db.exec(schema);
 	const rt2 = await db.exec(data);
-	const N=4;
+	const N=6;
 
 	const ret = await db.query(`
 		WITH cte_values(val) AS (
