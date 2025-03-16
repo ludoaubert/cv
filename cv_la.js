@@ -209,94 +209,36 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'Acquisition de compétences technologiques de pointe sur les langages (C++, SQL, JS, HTML, SVG, CSS),'
 		' les produits (PostgreSQL, PGLite, NodeJS) et en algorithmique.'
 		AS resultats,
-		'' summary
+		'Over 15 years, I developed an algorithm to quickly understand database structures, initially conceived'
+		'during an internship at EDF. Later, I refined this algorithm and expanded its capabilities,'
+		'integrating various technologies like C++, PostgreSQL, and NodeJS to create an interactive web-based'
+		'solution for visualizing data relationships.'
+		AS summary
+
+		UNION ALL
+
+		SELECT 'Quantalys' AS entreprise,
+		'2017-11-01' AS debut,
+		'2018-04-30' AS fin,
+		'conception/réalisation d’une manière simple et évolutive d’une interface graphique gérant 60 champs pour les assurances vies'
+		AS realisation,
+		'On me confie la création d’une interface graphique pour gérer des données sur les assurances vies.'
+		'Il existe déjà une solution développée précédemment, mais elle est trop complexe et donc impossible'
+		'à faire évoluer et à maintenir'
+		AS travail_confie,
+		'J’ai séparé la partie édition localement et la partie synchronisation avec la base de données.'
+		'J’ai utilisé et complété un module de code qui existait déjà dans l’entreprise pour synchroniser les données.'
+		AS actions,
+		'le développement a duré seulement 3 mois tandis que celui qu’avait réalisé mon prédécesseur avait duré plus'
+		'de 6 mois et n’était ni simple, ni  maintenable ni évolutif.'
+		'On a gagné 1 homme année.'
+		'Une des utilisatrices m’a donné un feedback très positif sur le fonctionnement de l’outil.'
+		AS resultats,
+		'' AS summary
 )
 INSERT INTO achievement(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summary)
 SELECT *
 FROM cte;
-
-
-
-
-conception sur 15 ans d’un algorithme pour comprendre rapidement la structure d’une base de données 
-Projet perso de création d’un produit en ligne à base d’algorithmes
-À l'issue du stage de fin d’étude de mars à Juillet 1996 chez EDF, j'ai envie d'approfondir un sujet qui me paraissait inachevé.
-Initiative personnelle d’approfondir un sujet et un besoin ressenti au fur et à mesure de mon parcours professionnel.
-
-Le stage portait sur le désign d’un algorithme pour tracer des liens graphiques sur un diagramme affichant des blocs fonctionnels sous forme de rectangles.
-Cet algorithme allait être intégré dans un logiciel de CAO pour le design du contrôle commande des centrales nucléaires.
-
-
-
-Un lien graphique doit:
-
-suivre une géométrie Manhattan (segments nord-sud et est-ouest).
-
-éviter les rectangles
-
-minimiser les tournants
-
-avoir une longueur minimale
-
-essayer de joindre les centres des côtés des rectangles source et destination
-
-éviter de croiser les autres liens
-
-Il faut 2 autres modules:
-
-Étant donné une liste de rectangles et une liste de liens logiques, regrouper les rectangles par clusters.
-Pour chaque cluster, positionner les rectangles pour minimiser les longueurs des liens. 
-
-
-
-J’avais implémenté l’algorithme du plus court chemin lors de mon stage et chez Beatware.
-
-Pendant mon stage, je croyais qu’il était impossible de faire modifier le coût des liens d’un graphe par l’algorithme lui-même. Cela aurait été utile pour appliquer une pénalité lors d’un virage. J’avais été obligé d’utiliser un graphe plus complexe, en imaginant des routes nord-sud et est-ouest reliées par des ascenseurs.
-
-En y réfléchissant vers 2012, j’ai appris qu’il était en réalité possible de faire modifier le coût des liens d’un graphe par l’algorithme lui-même.
-
-J’ai implémenté l’algorithme mis au point lors de mon stage chez EDF en C++ de manière plus simple.
-
-J’ai fait des recherches et j’ai appris qu’un mathématicien appelé Lanczos avait inventé une méthode matricielle avec des vecteurs propres pour calculer les clusters d’un graphe.
-J’ai aussi appris d’un autre consultant au travail qu’il existait un excellent module de calcul algébrique en C++ appelé Eigen.
-J’ai développé le module de clustering en utilisant un solveur de Lanczos avec Eigen en C++.
-
-J’ai imaginé un algorithme pour positionner les rectangles en m’inspirant de la façon dont s’enroule une coquille d’escargot.
-J’ai développé un algorithme relativement simple en C++.
-
-Lors de ma mission chez Cap Gemini en 2014, j’ai utilisé ces algorithmes pour produire une cartographie en HTML/SVG des tables du système dont je supervisais les opérations.
-
-A l’époque les algorithmes étaient déployés sur un Raspberry Pi utilisé comme serveur.
-
-La cartographie en HTML n’était pas interactive. Pas de recalcul de liens, de repositionnement de boite…
-
-Vers 2020, j’ai recompilé les algorithmes en Web Assembly afin de faciliter le déploiement et de rendre le HTML interactif.
-J’ai développé un site Web  afin de pouvoir appeler les algorithmes depuis le navigateur.
-J’ai utilisé Github pour développer et déployer le site, ainsi que pour ne pas perdre le code.
-
-2024-2025: J’ai développé de nouveau le site Web en utilisant la base de données embarquée dans le navigateur PGLite.
-J’ai créé un serveur de base de données afin de pouvoir sauvegarder les données de plusieurs utilisateurs. Le fait d’avoir utilisé PGLite facilitait beaucoup cette étape. J’ai également utilisé PostgreSQL et NodeJS ce qui m’a permis de monter en compétences sur ces technologies.
-
-2024-2025: J’ai mis à jour le code C++ pour le mettre au standard C++23.
-
-2024-2025: j’ai beaucoup amélioré le design de l’algorithme de tracé de lien, en ajoutant un algorithme pour minimiser les croisements entre liens, ce qu’il ne pouvait pas faire auparavant. Pour ce faire, j’ai découvert de nouvelles possibilités offertes par la modification du coût des liens d’un graphe par l’algorithme lui-même (mentionné au début)
-
-TODO:Progression avec des actions.
-Depuis le démarrage du stage jusqu'à l'aboutissement du projet.
-Bien vulgariser.
-Identifier les étapes importantes.
-Actions réalisées pendant le stage au démarrage. 
-TODO: transformer en actions.
-Ne Pas Raconter une Histoire.
-Faire ressortir la combinaison informatique et Mathématiques 
-J’utilise moi-même le produit pour comprendre rapidement comment sont organisées des informations chez un client.
-Gain de temps. Cela prend 2 heures pour produire une cartographie des structures de données d’un client, contre parfois plusieurs semaines pour être opérationnel.
-J’ai partagé des questions/réponses sur le forum stackoverflow et atteint un niveau de réputation de 10k.
-Présentation du retour d’expérience sur l’utilisation de PGLite au Meetup PostgreSQL Paris le 13 Mars 2025.
-Acquisition de compétences technologiques de pointe sur les langages (C++, SQL, JS) et en algorithmique.
-
-
-conception/réalisation d’une manière simple et évolutive d’une interface graphique gérant 60 champs pour les assurances vies
 
 
 Quantalys
