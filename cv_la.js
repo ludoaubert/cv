@@ -479,13 +479,26 @@ window.main = async function main()
 		WITH cte AS (
 			SELECT headline,
 				entreprise,
+				debut,
 				date_part('year', debut) AS annee_debut,
+				fin,
 				date_part('year', fin) AS annee_fin,
 				summary
 			FROM achievement
 		)
-		SELECT STRING_AGG(FORMAT('<h2>%1$s</h2><h3>%2$s %3$s %4$s</h3><p>%5$s</p><hr />',
-			headline, entreprise, annee_debut, annee_fin, summary), '\n' ORDER BY fin DESC) AS html
+		SELECT STRING_AGG(FORMAT('
+			<h2>%1$s</h2>
+			<h3>%2$s <time datetime="%3$s">%4$s</time>-<time datetime="%5$s">%6$s</time></h3>
+			<p>%7$s</p>
+		',
+			headline, --%1
+			entreprise, --%2
+			debut, --%3
+			annee_debut, --%4
+			fin, --%5
+			annee_fin, --%6
+			summary), --%7
+			'<hr />\n' ORDER BY fin DESC) AS html
 		FROM cte
 	`);
 
