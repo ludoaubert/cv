@@ -316,23 +316,37 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summa
 		'Une table avec 16000 inventeurs a été créée.'
 		'La table a permis de fiabiliser la gestion des inventeurs'
 		AS resultats,
-		'' AS summary
+		'Developed a Python-based graph algorithm to deduplicate inventor data during patent migration, consolidating'
+		'multiple records into a single inventor table. Successfully created a table with 16,000 unique inventors,'
+		'improving data reliability.'
+		AS summary
+
+	UNION ALL
+
+		SELECT 'Euronext' AS entreprise,
+		'2015-12-01' AS debut,
+		'2017-06-30' AS fin,
+		'initiation d’un portefeuille de tests de non régression en utilisant l’outil google tests' AS realisation,
+		'dans le cadre du méga projet Optiq de Euronext (environ 100 home années), refonte complète du système'
+		'de la bourse de Paris.'
+		'Dans le cadre de ce méga projet en C++, il est vital de pouvoir s’assurer en temps réel que l’on ne casse'
+		'pas des fonctionnalités déjà développées lorsqu’on en créé de nouvelles'
+		AS travail_confie,
+		'J’ai utilisé l’outil minimaliste en ligne de commande google test pour développer en C++ les premiers tests'
+		'unitaires automatisés de non régression sur le périmètre de mon équipe.'
+		'J’ai également créé des tests d’intégration avec le même outil.'
+		AS actions,
+		'Non seulement l’équipe dont je faisais partie, mais également toutes les autres équipes (environ 50 consultants)'
+		'se sont mises à  développer ces portefeuilles de test (tests unitaires et test d’intégration).'
+		'Cela a énormément contribué à la réussite du projet Optiq ainsi qu’à la tenue des délais et même à la santé'
+		'mentale des équipes'
+		AS resultats,
+		''
+		AS summary
 )
 INSERT INTO achievement(entreprise,debut,fin,realisation,travail_confie,actions,resultats,summary)
 SELECT *
 FROM cte;
-
-
-dans le cadre d’un rachat d’entreprises.
-Santarelli Group
-Mars 2021 Mars 2025 
-Dans le cadre de la migration des données des brevets, dans le système source LOLA, il n’y a pas de table des inventeurs. Les informations sur les inventeurs sont dupliquées, avec de petites erreurs ou de petits changements (n lignes par inventeur). Il faut donc dédupliquer ces informations pour créer une table des inventeurs (1 ligne par inventeur). 
-J’ai mis au point un algorithme de graphes avec un nœud par ligne et des connexions entre les lignes lorsque le nom et le dossier sont identiques. 
-J’ai codé un algorithme simple en python pour calculer les composantes connexes. Une composante connexe correspondait à un inventeur
-Cet algorithme a été utilisé avec succès pour la migration des données de brevets.
-Une table avec 16000 inventeurs a été créée.
-La table a permis de fiabiliser la gestion des inventeurs. 
-initiation d’un portefeuille de tests de non régression en utilisant l’outil google tests
 
 
 dans le cadre du méga projet Optiq de Euronext (environ 100 home années), refonte complète du système de la bourse de Paris.
