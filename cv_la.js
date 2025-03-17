@@ -479,6 +479,7 @@ window.main = async function main()
 		WITH cte AS (
 			SELECT headline,
 				entreprise,
+				entreprise || ROW_NUMBER() OVER(PARTITION BY entreprise ORDER BY idachievement) AS id,
 				debut,
 				date_part('year', debut) AS annee_debut,
 				fin,
@@ -487,17 +488,20 @@ window.main = async function main()
 			FROM achievement
 		)
 		SELECT STRING_AGG(FORMAT('
-			<h2>%1$s</h2>
-			<h3>%2$s <time datetime="%3$s">%4$s</time>-<time datetime="%5$s">%6$s</time></h3>
-			<p>%7$s</p>
+			<div id="%1$s">
+			  <h2>%2$s</h2>
+			  <h3>%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h3>
+			  <p>%8$s</p>
+			</div>
 		',
-			headline, --%1
-			entreprise, --%2
-			debut, --%3
-			annee_debut, --%4
-			fin, --%5
-			annee_fin, --%6
-			summary), --%7
+			id, --%1
+			headline, --%2
+			entreprise, --%3
+			debut, --%4
+			annee_debut, --%5
+			fin, --%6
+			annee_fin, --%7
+			summary), --%8
 			'<hr />\n' ORDER BY fin DESC) AS html
 		FROM cte
 	`);
