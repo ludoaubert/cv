@@ -393,7 +393,7 @@ WITH cte (type_code,code,libelle) AS (
 
 	UNION ALL
 
-	SELECT 'PITCH' AS type_code
+	SELECT 'PITCH' AS type_code,
 		'pitch_data' AS code,
 		'I hold an Engineering degree from the Ecole Centrale in Paris and combine a strong background in Mathematics'
 		'with 25 years of experience working on diversified software and data projects.'
