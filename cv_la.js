@@ -159,7 +159,7 @@ WITH cte(entreprise,debut,fin,category,realisation,travail_confie,actions,result
 		SELECT 'Personal project' AS entreprise,
 		'1996-03-11'::date AS debut,
 		'2025-03-20'::date AS fin,
-		'perso' AS category
+		'perso' AS category,
 		'conception sur 15 ans d’un algorithme pour comprendre rapidement la structure d’une base de données'
 		AS realisation,
 		'Projet perso de création d’un produit en ligne à base d’algorithmes'
