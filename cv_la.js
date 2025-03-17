@@ -405,6 +405,8 @@ WITH cte (type_code,code,libelle) AS (
 		'I am very interested by complex and critical data engineering projects and web technologies.'
 		AS libelle
 
+	UNION ALL
+
 	SELECT 'LINK' AS type_code,
 		'stackoverflow' AS code,
 		'https://stackoverflow.com/users/3046585/ludovic-aubert'
@@ -456,10 +458,6 @@ WITH cte(type_code,code,libelle,debut,fin) AS (
 		'Preparatory School with focus on Maths' AS libelle,
 		'1990-09-01' AS debut,
 		'1992-06-30' AS fin
-
-	UNION ALL
-
-	SELECT 'EDUCATION' AS type_code,
 )
 INSERT INTO tag(type_code, code, libelle, debut, fin)
 SELECT * FROM cte;
@@ -636,7 +634,7 @@ window.main = async function main()
 			UNION ALL
 			SELECT idtag, 4, fin FROM cte
 		)
-		SELECT '<table>' || STRING_AGG(FORMAT('<tr><td>%1$s</td></td>', content), '\n' ORDER BY idtag DESC) || '</table>' AS html
+		SELECT '<table>' || STRING_AGG(FORMAT('<tr><td>%1$s</td></td>', content), '\n' ORDER BY idtag DESC, idx) || '</table>' AS html
 		FROM cte2
 	`);
 	document.getElementById("education").innerHTML = ret8.rows[0].html;
