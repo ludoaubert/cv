@@ -488,14 +488,15 @@ window.main = async function main()
 	const ret4 = await db.query(`
 		WITH cte_achievements AS (
 			SELECT *, ROW_NUMBER() OVER(PARTITION BY entreprise ORDER BY idachievement) AS rn,
-				COUNT() OVER(PARTITION BY entreprise) AS nb
+				COUNT() OVER(PARTITION BY entreprise) AS nb,
+				REPLACE(entreprise,' ','_') AS entreprise_
 			FROM achievement
 		), cte AS (
 			SELECT headline,
 				entreprise,
 				CASE WHEN nb == 1
-					THEN entreprise
-					ELSE entreprise || '_' || rn
+					THEN entreprise_
+					ELSE entreprise_ || '_' || rn
 				END AS id,
 				category,
 				debut,
