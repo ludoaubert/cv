@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS tag(
   PRIMARY KEY (iddiagram, idtag),
   type_code VARCHAR(128),
   code VARCHAR(128),
+  libelle VARCHAR DEFAULT NULL,
   UNIQUE(iddiagram, type_code, code),
   FOREIGN KEY (iddiagram) REFERENCES diagram(iddiagram) ON DELETE CASCADE
 );
@@ -55,8 +56,10 @@ CREATE TABLE IF NOT EXISTS achievement(
   actions VARCHAR,
   resultats VARCHAR,
   headline VARCHAR(100),
-  summary VARCHAR
+  summary VARCHAR,
+  FOREIGN KEY (iddiagram) REFERENCES diagram(iddiagram) ON DELETE CASCADE
 );
+
 `;
 
 const data=`
@@ -376,12 +379,33 @@ SELECT *
 FROM cte;
 
 
-INSERT INTO tag(type_code, code) VALUES
-('COLOR','yellow'),('COLOR','pink'),('COLOR','hotpink'),('COLOR','palegreen'),('COLOR','red'),('COLOR','orange'),('COLOR','skyblue'),('COLOR','olive'),('COLOR','grey'),('COLOR','darkviolet'),
-('COLOR','lime'),('COLOR','fuchsia'),('COLOR','teal'),('COLOR','aqua'),('COLOR','aquamarine'),('COLOR','coral'),('COLOR','cornflowerblue'),('COLOR','darkgray'),('COLOR','darkkhaki'),
-('COLOR','indianred'),('COLOR','indigo'),('COLOR','ivory'),('COLOR','khaki'),('COLOR','mediumorchid'),('COLOR','mediumpurple'),('COLOR','lawngreen'),('COLOR','lemonchiffon'),
-('COLOR','lightblue'),('COLOR','lightcoral'),('COLOR','greenyellow'),('COLOR','lightgoldenrodyellow'),('COLOR','lightgray'),('COLOR','lightgreen'),('COLOR','lightgrey'),('COLOR','lightpink'),('COLOR','lightsalmon'),('COLOR','lightseagreen'),('COLOR','lightskyblue'),('COLOR','lightslategray'),
-('COLOR','chartreuse'),('COLOR','DarkOrange'),('COLOR','BlueViolet'),('COLOR','MediumSeaGreen'),('COLOR','LightSeaGreen'),('COLOR','BurlyWood');
+WITH cte (type_code,code,libelle) AS (
+	SELECT 'PITCH' AS type_code,
+		'pitch_software' AS code,
+		'I hold an Engineering degree from the Ecole Centrale in Paris and combine a strong background in Mathematics'
+		'with 25 years of experience working on diversified software and data projects.'
+		'In the first period of my career, I mostly worked on C++ projects, some of which required algorithmic design.'
+		'In the second period, I mostly worked on Data projects. Now is an exciting time, as the shift to functional programming'
+		'and queries mean that Mathematics and Software/Data Engineering are converging more than ever before.'
+		'It would be an exciting time for me to go back to C++, but I am also interested by complex and critical data engineering projects'
+		'and web technologies.'
+		AS libelle
+
+	UNION ALL
+
+	SELECT 'PITCH' AS type_code
+		'pitch_data' AS code,
+		'I hold an Engineering degree from the Ecole Centrale in Paris and combine a strong background in Mathematics'
+		'with 25 years of experience working on diversified software and data projects.'
+		'In the first period of my career, I mostly worked on C++ projects.'
+		'In the second period, I went on to work on Data projects. Now is an exciting time, as the shift to functional programming'
+		'and queries mean that Mathematics and Soft/Data Engineering are converging more than ever before.'
+		'I am very interested by complex and critical data engineering projects and web technologies.'
+		AS libelle
+)
+INSERT INTO tag(type_code, code, libelle)
+SELECT * FROM cte
+;
 
 
 WITH cte_field(box_title, field_name, stars) AS (
@@ -517,4 +541,11 @@ window.main = async function main()
 
 	document.getElementById("achievements").innerHTML = ret4.rows[0].html;
 	document.getElementById("hobby").innerHTML = ret4.rows[0].html;
+
+	const ret5 = await db.query(`
+		SELECT STRING_AGG(FORMAT('<p id="%1$s">%2$s</p>',code,libelle),'\n' ORDER BY idtag) AS html
+		FROM tag
+		WHERE type_code = 'PITCH'
+	`);
+	document.getElementById("pitch").innerHTML = ret5.rows[0].html;
 }
