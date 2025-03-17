@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS achievement(
   entreprise VARCHAR(50),
   debut DATE,
   fin DATE,
+  category VARCHAR(50),
   realisation VARCHAR,
   travail_confie VARCHAR,
   actions VARCHAR,
@@ -62,10 +63,11 @@ CREATE TABLE IF NOT EXISTS achievement(
 const data=`
 INSERT INTO diagram(iddiagram, title) VALUES (1, 'CV Ludovic Aubert');
 
-WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headline,summary) AS (
+WITH cte(entreprise,debut,fin,category,realisation,travail_confie,actions,resultats,headline,summary) AS (
 	SELECT 'Santarelli Group' AS entreprise,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
+		'data' AS category,
 		'Migration et fusion des bases de données des brevets'
 		AS realisation,
 		'dans le cadre d’un double rachat d’entreprises.'
@@ -101,6 +103,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 	SELECT 'Paprec' AS entreprise,
 		'2019-02-01'::date AS debut,
 		'2020-06-01'::date AS fin,
+		'data' AS category,
 		'création d’un script pour produire le graphe de traçabilité pour les 6 usines de recyclage de plastique'
 		AS realisation,
 		'Ma hiérarchie m’a demandé de corriger un bug sur le script pour produire le graphe de traçabilité. J’ai proposé '
@@ -128,6 +131,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		SELECT '' AS entreprise,
 		'2024-07-27'::date AS debut,
 		'2024-08-04'::date AS fin,
+		'hobby' AS category,
 		'trajet en vélo et camping pour relier Paris à Barcelone en 8 jours'
 		AS realisation,
 		'Mon fils Edouard, 20 ans , qui sort de prépa, a prévu ce voyage avec des copains qui ont abandonné.'
@@ -155,6 +159,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		SELECT 'Personal project' AS entreprise,
 		'1996-03-11'::date AS debut,
 		'2025-03-20'::date AS fin,
+		'perso' AS category
 		'conception sur 15 ans d’un algorithme pour comprendre rapidement la structure d’une base de données'
 		AS realisation,
 		'Projet perso de création d’un produit en ligne à base d’algorithmes'
@@ -231,6 +236,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		SELECT 'Quantalys' AS entreprise,
 		'2017-11-01'::date AS debut,
 		'2018-04-30'::date AS fin,
+		'software' AS category,
 		'conception/réalisation d’une manière simple et évolutive d’une interface graphique gérant 60 champs pour les assurances vies'
 		AS realisation,
 		'On me confie la création d’une interface graphique pour gérer des données sur les assurances vies.'
@@ -257,6 +263,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		SELECT 'Beatware' AS entreprise,
 		'2000-09-01'::date AS debut,
 		'2001-09-01'::date AS fin,
+		'software' AS category,
 		'conception d’un algorithme pour vectoriser des données graphiques en dimension deux'
 		AS realisation,
 		'Beatware édite un logiciel pour créer des animations Web.'
@@ -292,6 +299,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		SELECT 'AEG Zahler Gmbh' AS entreprise,
 		'1996-10-01'::date AS debut,
 		'1998-10-01'::date AS fin,
+		'software' AS category,
 		'conception d’un petit compilateur embarqué pour compteur électrique'
 		AS realisation,
 		'Racheté par Schlumberger pour lequel je suis en CSNE'
@@ -320,6 +328,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		SELECT 'Santarelli Group' AS entreprise,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
+		'data' AS category,
 		'déduplication des inventeurs des brevets'
 		AS realisation,
 		'Dans le cadre de la migration des données des brevets, dans le système source LOLA, il n’y a pas de table'
@@ -348,6 +357,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		SELECT 'Euronext' AS entreprise,
 		'2015-12-01'::date AS debut,
 		'2017-06-30'::date AS fin,
+		'software' AS category,
 		'initiation d’un portefeuille de tests de non régression en utilisant l’outil google tests'
 		AS realisation,
 		'dans le cadre du méga projet Optiq de Euronext (environ 100 home années), refonte complète du système'
@@ -487,6 +497,7 @@ window.main = async function main()
 					THEN entreprise
 					ELSE entreprise || '_' || rn
 				END AS id,
+				category,
 				debut,
 				date_part('year', debut) AS annee_debut,
 				fin,
@@ -495,24 +506,25 @@ window.main = async function main()
 			FROM cte_achievement
 		)
 		SELECT STRING_AGG(FORMAT('
-			<div id="%1$s">
-			  <h2>%2$s</h2>
-			  <h3>%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h3>
-			  <p>%8$s</p>
+			<div id="%1$s" class="%2$s">
+			  <h2>%3$s</h2>
+			  <h3>%4$s <time datetime="%5$s">%6$s</time>-<time datetime="%7$s">%8$s</time></h3>
+			  <p>%9$s</p>
 			</div>
 		',
 			id, --%1
-			headline, --%2
-			entreprise, --%3
-			debut, --%4
-			annee_debut, --%5
-			fin, --%6
-			annee_fin, --%7
+			category, --%2
+			headline, --%3
+			entreprise, --%4
+			debut, --%5
+			annee_debut, --%6
+			fin, --%7
+			annee_fin, --%8
 			summary), --%8
 			'<hr />\n' ORDER BY fin DESC) AS html
 		FROM cte
 	`);
 
 	document.getElementById("achievements").innerHTML = ret4.rows[0].html;
-
+	document.getElementById("hobby").innerHTML = ret4.rows[0].html;
 }
