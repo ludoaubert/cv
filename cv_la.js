@@ -621,8 +621,8 @@ window.main = async function main()
 	const ret8 = await db.query(`
 		WITH cte AS (
 			SELECT idtag, libelle, code,
-				FORMAT('<time datetime="%1$s">%2$s</time>', debut, date_part('year', debut)) AS debut,
-				FORMAT('<time datetime="%1$s">%2$s</time>', fin, date_part('year', fin)) AS fin
+				FORMAT('<time datetime="%1$s">%2$s</time>', to_char(debut, 'yyyy-mm-dd'), date_part('year', debut)) AS debut,
+				FORMAT('<time datetime="%1$s">%2$s</time>', to_char(fin, 'dd/mm/yyyy'), date_part('year', fin)) AS fin
 			FROM tag
 			WHERE type_code='EDUCATION'
 		), cte2(idtag, idx, content) AS (
