@@ -448,16 +448,16 @@ WITH cte(type_code,code,libelle,debut,fin) AS (
 	SELECT 'EDUCATION' AS type_code,
 		'Ecole Centrale Paris' AS code,
 		'Engineering Degree with Major in Software and Electronics' AS libelle,
-		'1992-09-01' AS debut,
-		'1996-06-30' AS fin
+		TO_DATE('1992-09-01','YYYY-MM-DD') AS debut,
+		TO_DATE('1996-06-30','YYYY-MM-DD') AS fin
 
 	UNION ALL
 
 	SELECT 'EDUCATION' AS type_code,
 		'Lycee Sainte Genevieve Versailles' AS code,
 		'Preparatory School with focus on Maths' AS libelle,
-		'1990-09-01' AS debut,
-		'1992-06-30' AS fin
+		TO_DATE('1990-09-01','YYYY-MM-DD') AS debut,
+		TO_DATE('1992-06-30','YYYY-MM-DD') AS fin
 )
 INSERT INTO tag(type_code, code, libelle, debut, fin)
 SELECT * FROM cte;
