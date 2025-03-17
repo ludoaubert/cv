@@ -422,6 +422,19 @@ WITH cte (type_code,code,libelle) AS (
 		'https://ludoaubert.github.io/pglite-linkedboxdraw/table_edit_ti.html'
 		AS libelle
 
+	UNION ALL
+
+	SELECT 'HEADLINE' AS type_code,
+		'headline_sofware' AS code,
+		'Senior Software Engineer with strong C++ and SQL skills'
+		AS libelle
+
+	UNION ALL
+
+	SELECT 'HEADLINE' AS type_code,
+		'headline_data' AS code,
+		'Senior Data Engineer with strong SQL skills'
+		AS libelle
 )
 INSERT INTO tag(type_code, code, libelle)
 SELECT * FROM cte
@@ -569,11 +582,18 @@ window.main = async function main()
 	`);
 	document.getElementById("pitch").innerHTML = ret5.rows[0].html;
 
-       const ret6 = await db.query(`
-                SELECT STRING_AGG(FORMAT('<a href="%1$s">%2$s</a>',libelle,code),'\n' ORDER BY idtag) AS html
-                FROM tag
-                WHERE type_code = 'LINK'
-        `);
-        document.getElementById("links").innerHTML = ret5.rows[0].html;
+	const ret6 = await db.query(`
+		SELECT STRING_AGG(FORMAT('<a href="%1$s">%2$s</a>',libelle,code),'\n' ORDER BY idtag) AS html
+		FROM tag
+		WHERE type_code = 'LINK'
+	`);
+	document.getElementById("links").innerHTML = ret6.rows[0].html;
+
+	const ret7 = await db.query(`
+		SELECT STRING_AGG(FORMAT('<h1 id="%1$s">%2$s</h1>',code,libelle),'\n' ORDER BY idtag) AS html
+		FROM tag
+		WHERE type_code = 'HEADLINE'
+	`);
+	document.getElementById("headline").innerHTML = ret7.rows[0].html;
 
 }
