@@ -128,7 +128,7 @@ WITH cte(entreprise,debut,fin,category,realisation,travail_confie,actions,result
 
 	UNION ALL
 
-		SELECT '' AS entreprise,
+		SELECT 'Bikepacking' AS entreprise,
 		'2024-07-27'::date AS debut,
 		'2024-08-04'::date AS fin,
 		'hobby' AS category,
