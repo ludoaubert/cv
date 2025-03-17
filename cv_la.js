@@ -40,6 +40,8 @@ CREATE TABLE IF NOT EXISTS tag(
   type_code VARCHAR(128),
   code VARCHAR(128),
   libelle VARCHAR DEFAULT NULL,
+  debut DATE DEFAULT NULL,
+  fin DATE DEFAULT NULL,
   UNIQUE(iddiagram, type_code, code),
   FOREIGN KEY (iddiagram) REFERENCES diagram(iddiagram) ON DELETE CASCADE
 );
@@ -440,6 +442,28 @@ INSERT INTO tag(type_code, code, libelle)
 SELECT * FROM cte
 ;
 
+WITH cte(type_code,code,libelle,debut,fin) AS (
+	SELECT 'EDUCATION' AS type_code,
+		'Ecole Centrale Paris' AS code,
+		'Engineering Degree with Major in Software and Electronics' AS libelle,
+		'1992-09-01' AS debut,
+		'1996-06-30' AS fin
+
+	UNION ALL
+
+	SELECT 'EDUCATION' AS type_code,
+		'Lycee Sainte Genevieve Versailles' AS code,
+		'Preparatory School with focus on Maths' AS libelle,
+		'1990-09-01' AS debut,
+		'1992-06-30' AS fin
+
+	UNION ALL
+
+	SELECT 'EDUCATION' AS type_code,
+)
+INSERT INTO tag(type_code, code, libelle, debut, fin)
+SELECT * FROM cte;
+
 
 WITH cte_field(box_title, field_name, stars) AS (
 	VALUES  ('Languages', 'C++', 6),
@@ -596,4 +620,24 @@ window.main = async function main()
 	`);
 	document.getElementById("headline").innerHTML = ret7.rows[0].html;
 
+	const ret8 = await db.query(`
+		WITH cte AS (
+			SELECT idtag, libelle, code,
+				FORMAT('<time datetime="%1$s">%2$s</time>', debut, date_part('year', debut)) AS debut,
+				FORMAT('<time datetime="%1$s">%2$s</time>', fin, date_part('year', fin)) AS fin
+			FROM tag
+			WHERE type_code='EDUCATION'
+		), cte2(idtag, idx, content) AS (
+			SELECT idtag, 1, libelle FROM cte
+			UNION ALL
+			SELECT idtag, 2, code FROM cte
+			UNION ALL
+			SELECT idtag, 3, debut FROM cte
+			UNION ALL
+			SELECT idtag, 4, fin FROM cte
+		)
+		SELECT '<table>' || STRING_AGG(FORMAT('<tr><td>%1$s</td></td>', content), '\n' ORDER BY idtag DESC) || '</table>' AS html
+		FROM cte2
+	`);
+	document.getElementById("education").innerHTML = ret8.rows[0].html;
 }
