@@ -1,0 +1,32 @@
+div#hobby > div{
+  display:none;
+}
+div#hobby > div#Bikepacking{
+  display:block;	
+}
+
+div#achievements > div{
+  display:none;
+}
+
+h1#headline_software{
+  display:block;
+}
+p#pitch_software{
+  display:block;
+}
+
+div#achievements > div#Personal_project,
+div#achievements > div#Euronext,
+div#achievements > div#Beatware,
+div#achievements > div#AEG_Zahler_Gmbh
+{
+  display:block;
+}
+
+h1#headline_data{
+  display:none;
+}
+p#pitch_data{
+  display:none;
+}
