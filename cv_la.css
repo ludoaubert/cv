@@ -107,10 +107,18 @@ td {
   width:10px;
 }
 
-div#hobby > div{
+#hobby > div{
   display:none;
 }
 
-div#hobby > div#perso{
-  dispplay:block;	
+#hobby > div#perso{
+  display:block;	
+}
+
+#achievements > div{
+  display:block;
+}
+
+#achievements > div#perso{
+  display:none;
 }
