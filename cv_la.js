@@ -630,9 +630,7 @@ window.main = async function main()
 			UNION ALL
 			SELECT idtag, 2, code FROM cte
 			UNION ALL
-			SELECT idtag, 3, debut FROM cte
-			UNION ALL
-			SELECT idtag, 4, fin FROM cte
+			SELECT idtag, 3, FORMAT('%1$s - %2$s',debut,fin) FROM cte
 		)
 		SELECT '<table>' || STRING_AGG(FORMAT('<tr><td>%1$s</td></td>', content), '\n' ORDER BY idtag DESC, idx) || '</table>' AS html
 		FROM cte2
