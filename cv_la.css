@@ -23,7 +23,7 @@ body {
 }
 
 .flex-left {
-  width: 33%;
+  width: 25%;
   display: grid;
   overflow: auto;
   place-items: left;
@@ -33,7 +33,7 @@ body {
 }
 
 .flex-right {
-  width: 67%;
+  width: 75%;
   display: grid;
   place-items: center-start;
   background-color: white;
