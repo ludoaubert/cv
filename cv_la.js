@@ -484,7 +484,7 @@ window.main = async function main()
 		WITH cte AS (
 			SELECT headline,
 				entreprise,
-				nb == 1 ? entreprise : entreprise || rn,
+				nb == 1 ? entreprise : entreprise || '_' || rn,
 				debut,
 				date_part('year', debut) AS annee_debut,
 				fin,
