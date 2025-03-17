@@ -476,16 +476,21 @@ window.main = async function main()
 	document.getElementById("left-panel").innerHTML += ret3.rows[0].html;
 
 	const ret4 = await db.query(`
+		WITH cte_achievements AS (
+			SELECT *, ROW_NUMBER() OVER(PARTITION BY entreprise ORDER BY idachievement) AS rn,
+				COUNT() OVER(PARTITION BY entreprise) AS nb
+			FROM achievement
+		)
 		WITH cte AS (
 			SELECT headline,
 				entreprise,
-				entreprise || ROW_NUMBER() OVER(PARTITION BY entreprise ORDER BY idachievement) AS id,
+				nb == 1 ? entreprise : entreprise || rn,
 				debut,
 				date_part('year', debut) AS annee_debut,
 				fin,
 				date_part('year', fin) AS annee_fin,
 				summary
-			FROM achievement
+			FROM cte_achievement
 		)
 		SELECT STRING_AGG(FORMAT('
 			<div id="%1$s">
