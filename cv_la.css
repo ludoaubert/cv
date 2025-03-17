@@ -120,18 +120,18 @@ p#pitch_data{
   display:block;
 }
 
-#hobby > div{
+div#hobby > div{
   display:none;
 }
 
-#hobby > div#Bikepacking{
+div#hobby > div#Bikepacking{
   display:block;	
 }
 
-#achievements > div{
+div#achievements > div{
   display:block;
 }
 
-#achievements > div#Bikepacking{
+div#achievements > div#Bikepacking{
   display:none;
 }
