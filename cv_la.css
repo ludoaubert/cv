@@ -124,7 +124,7 @@ p#pitch_data{
   display:none;
 }
 
-#hobby > div#perso{
+#hobby > div#Bikepacking{
   display:block;	
 }
 
@@ -132,6 +132,6 @@ p#pitch_data{
   display:block;
 }
 
-#achievements > div#perso{
+#achievements > div#Bikepacking{
   display:none;
 }
