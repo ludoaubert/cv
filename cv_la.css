@@ -107,6 +107,19 @@ td {
   width:10px;
 }
 
+h1#headline_software{
+  display:none;
+}
+h1#headline_data{
+  display:block;
+}
+p#pitch_software{
+  display:none;
+}
+p#pitch_data{
+  display:block;
+}
+
 #hobby > div{
   display:none;
 }
