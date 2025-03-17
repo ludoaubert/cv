@@ -511,6 +511,7 @@ window.main = async function main()
 			  <h2>%3$s</h2>
 			  <h3>%4$s <time datetime="%5$s">%6$s</time>-<time datetime="%7$s">%8$s</time></h3>
 			  <p>%9$s</p>
+			  <hr />
 			</div>
 		',
 			id, --%1
@@ -522,7 +523,7 @@ window.main = async function main()
 			fin, --%7
 			annee_fin, --%8
 			summary), --%8
-			'<hr />\n' ORDER BY fin DESC) AS html
+			'\n' ORDER BY fin DESC) AS html
 		FROM cte
 	`);
 
