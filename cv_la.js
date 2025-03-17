@@ -483,7 +483,10 @@ window.main = async function main()
 		), cte AS (
 			SELECT headline,
 				entreprise,
-				nb == 1 ? entreprise : entreprise || '_' || rn,
+				CASE WHEN nb == 1
+					THEN entreprise
+					ELSE entreprise || '_' || rn
+				END AS id,
 				debut,
 				date_part('year', debut) AS annee_debut,
 				fin,
