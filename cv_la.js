@@ -494,7 +494,7 @@ window.main = async function main()
 		), cte AS (
 			SELECT headline,
 				entreprise,
-				CASE WHEN nb == 1
+				CASE WHEN nb == 1::bigint
 					THEN entreprise_
 					ELSE entreprise_ || '_' || rn
 				END AS id,
