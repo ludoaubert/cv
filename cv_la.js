@@ -486,7 +486,7 @@ window.main = async function main()
 	document.getElementById("left-panel").innerHTML += ret3.rows[0].html;
 
 	const ret4 = await db.query(`
-		WITH cte_achievements AS (
+		WITH cte_achievement AS (
 			SELECT *, ROW_NUMBER() OVER(PARTITION BY entreprise ORDER BY idachievement) AS rn,
 				COUNT(*) OVER(PARTITION BY entreprise) AS nb,
 				REPLACE(entreprise,' ','_') AS entreprise_
