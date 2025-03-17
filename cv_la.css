@@ -114,6 +114,10 @@ div#hobby > div#Bikepacking{
   display:block;	
 }
 
+div#achievements > div{
+  display:none;
+}
+
 h1#headline_software{
   display:block;
 }
