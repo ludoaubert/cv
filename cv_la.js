@@ -632,7 +632,7 @@ window.main = async function main()
 			UNION ALL
 			SELECT idtag, 3, FORMAT('%1$s - %2$s',debut,fin) FROM cte
 		)
-		SELECT '<table>' || STRING_AGG(FORMAT('<tr><td>%1$s</td></td>', content), '\n' ORDER BY idtag DESC, idx) || '</table>' AS html
+		SELECT '<table>' || STRING_AGG(FORMAT('<tr><td>%1$s</td></td>', content), '\n' ORDER BY idtag, idx) || '</table>' AS html
 		FROM cte2
 	`);
 	document.getElementById("education").innerHTML = ret8.rows[0].html;
