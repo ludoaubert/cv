@@ -381,7 +381,7 @@ WITH cte(entreprise,debut,fin,category,realisation,travail_confie,actions,result
 		'integration tests, contributing to the project’s success and timely delivery.'
 		AS summary
 )
-INSERT INTO achievement(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headline,summary)
+INSERT INTO achievement(entreprise,debut,fin,category,realisation,travail_confie,actions,resultats,headline,summary)
 SELECT *
 FROM cte;
 
