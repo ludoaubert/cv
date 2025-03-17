@@ -480,8 +480,7 @@ window.main = async function main()
 			SELECT *, ROW_NUMBER() OVER(PARTITION BY entreprise ORDER BY idachievement) AS rn,
 				COUNT() OVER(PARTITION BY entreprise) AS nb
 			FROM achievement
-		)
-		WITH cte AS (
+		), cte AS (
 			SELECT headline,
 				entreprise,
 				nb == 1 ? entreprise : entreprise || '_' || rn,
