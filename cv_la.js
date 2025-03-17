@@ -429,8 +429,8 @@ WITH cte (type_code,code,libelle) AS (
 	UNION ALL
 
 	SELECT 'HEADLINE' AS type_code,
-		'headline_sofware' AS code,
-		'Senior Software Engineer with strong C++ and SQL skills'
+		'headline_software' AS code,
+		'Senior Software Engineer with strong C++ and SQL'
 		AS libelle
 
 	UNION ALL
