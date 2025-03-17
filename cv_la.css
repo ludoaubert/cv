@@ -43,7 +43,7 @@ body {
   padding: 30px;
 }
 
-div[id=achievements] h3 > time {
+div[id=achievements] h4 > time {
   font-weight: lighter;
   font-style: italic;
 }
