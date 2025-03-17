@@ -402,6 +402,26 @@ WITH cte (type_code,code,libelle) AS (
 		'and queries mean that Mathematics and Soft/Data Engineering are converging more than ever before.'
 		'I am very interested by complex and critical data engineering projects and web technologies.'
 		AS libelle
+
+	SELECT 'LINK' AS type_code,
+		'stackoverflow' AS code,
+		'https://stackoverflow.com/users/3046585/ludovic-aubert'
+		AS libelle
+
+	UNION ALL
+
+	SELECT 'LINK' AS type_code,
+		'github' AS code,
+		'https://github.com/ludoaubert'
+		AS libelle
+
+	UNION ALL
+
+	SELECT 'LINK' AS type_code,
+		'github.io' AS code,
+		'https://ludoaubert.github.io/pglite-linkedboxdraw/table_edit_ti.html'
+		AS libelle
+
 )
 INSERT INTO tag(type_code, code, libelle)
 SELECT * FROM cte
@@ -548,4 +568,12 @@ window.main = async function main()
 		WHERE type_code = 'PITCH'
 	`);
 	document.getElementById("pitch").innerHTML = ret5.rows[0].html;
+
+       const ret6 = await db.query(`
+                SELECT STRING_AGG(FORMAT('<a href="%1$s">%2$s</a>',libelle,code),'\n' ORDER BY idtag) AS html
+                FROM tag
+                WHERE type_code = 'LINK'
+        `);
+        document.getElementById("links").innerHTML = ret5.rows[0].html;
+
 }
