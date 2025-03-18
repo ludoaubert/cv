@@ -117,4 +117,5 @@ div#stats > table{
 
 div#stats > table td:first-child {
   text-align: left;
+  width="99%";
 }
