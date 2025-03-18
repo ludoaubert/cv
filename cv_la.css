@@ -110,5 +110,7 @@ img#pict {
 }
 
 div#stats > table{
-  align: right;
+  width: auto;
+  margin-right: 0px;
+  margin-left: auto;
 }
