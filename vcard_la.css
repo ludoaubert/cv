@@ -13,9 +13,10 @@ div#card {
 }
 
 h1{
-   text-align: center;
-   font-weight: bold;
-   font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  margin:0px;
 }
 
 p{
@@ -23,6 +24,7 @@ p{
   font-size: 11px;
   font-weight: lighter;
   font-style: italic;
+  margin:0px;
 }
 
 #grid-container {
