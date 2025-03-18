@@ -397,11 +397,9 @@ WITH cte (type_code,code,libelle) AS (
 
 	SELECT 'PITCH' AS type_code,
 		'pitch_data' AS code,
-		'I hold an Engineering degree from the Ecole Centrale in Paris and combine a strong background in Mathematics'
-		'with 15 years of experience working on diversified data projects.'
-		'Now is an exciting time, as the shift to modern SQL'
-		'and queries mean that Mathematics and Data Engineering are converging more than ever before.'
-		'I am very interested by complex and critical data engineering projects and web technologies.'
+		'I combine a strong background in Mathematics with 15 years of experience working on diversified data projects.'
+		'Now is an exciting time, as the shift to advanced queries with modern SQL mean that Mathematics and Data Engineering'
+		'are converging more than ever before. I am very interested by complex and critical data engineering projects and web technologies.'
 		AS libelle
 
 	UNION ALL
