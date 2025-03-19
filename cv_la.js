@@ -328,7 +328,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 
 		UNION ALL
 
-		SELECT 'AEG Zahler Gmbh' AS entreprise,
+		SELECT 'AEG_Zahler_Gmbh' AS entreprise,
 		'1996-10-01'::date AS debut,
 		'1998-10-01'::date AS fin,
 		'conception d’un petit compilateur embarqué pour compteur électrique'
