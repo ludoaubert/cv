@@ -92,6 +92,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'et réduisait les risques d’erreur. '
 		'La migration et la fusion des 3 bases de données matérialise la fusion des 3 sociétés avec un fonctionnement intégré.'
 		'Cela peut se valoriser jusqu’à des millions d’euros.'
+		'Migration aussi de 5 téraoctets de documents depuis Oracle vers le filesystem.'
 		AS resultats,
 		'Patent database migration and merge'
 		AS headline,
