@@ -15,7 +15,7 @@ body {
   padding:0;
 }
 
-.flex-container {
+#flex-container {
   display: flex;
   flex-direction: row;
   height: fit-content;
