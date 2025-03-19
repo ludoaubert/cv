@@ -622,25 +622,30 @@ window.main = async function main()
 				date_part('year', fin) AS annee_fin,
 				summary
 			FROM cte_achievement
+		), cte2 AS (
+			SELECT entreprise,
+				STRING_AGG(FORMAT('
+				<div id="%1$s">
+				  <h3 id="%1$s">%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h3>
+				  <h4>%2$s</h4>
+				  <p>%8$s</p>
+				  <hr />
+				</div>
+				',
+				id, --%1
+				headline, --%2
+				entreprise, --%3
+				debut, --%4
+				annee_debut, --%5
+				fin, --%6
+				annee_fin, --%7
+				summary), --%8
+				'\n' ORDER BY fin DESC, id) AS html
+			FROM cte
+			GROUP BY entreprise
 		)
-		SELECT STRING_AGG(FORMAT('
-			<div id="%1$s">
-			  <h3 id="%1$s">%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h3>
-			  <h4>%2$s</h4>
-			  <p>%8$s</p>
-			  <hr />
-			</div>
-		',
-			id, --%1
-			headline, --%2
-			entreprise, --%3
-			debut, --%4
-			annee_debut, --%5
-			fin, --%6
-			annee_fin, --%7
-			summary), --%8
-			'\n' ORDER BY fin DESC, id) AS html
-		FROM cte
+		SELECT STRING_AGG(FORMAT('<div id="%1$s">%2$s</div>', entreprise, html), '\n')
+		FROM cte2
 	`);
 
 	document.getElementById("achievements").innerHTML = ret4.rows[0].html;
