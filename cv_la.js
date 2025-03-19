@@ -581,8 +581,8 @@ window.main = async function main()
 		)
 		SELECT STRING_AGG(FORMAT('
 			<div id="%1$s">
-			  <h3>%2$s</h3>
-			  <h4 id="%1$s">%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h4>
+			  <h3 id="%1$s">%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h3>
+			  <h4>%2$s</h4>
 			  <p>%8$s</p>
 			  <hr />
 			</div>
@@ -595,7 +595,7 @@ window.main = async function main()
 			fin, --%6
 			annee_fin, --%7
 			summary), --%8
-			'\n' ORDER BY fin DESC) AS html
+			'\n' ORDER BY fin DESC, id) AS html
 		FROM cte
 	`);
 
