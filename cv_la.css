@@ -45,6 +45,7 @@ body {
 
 a{
   color: #29a3a3;
+  display: inline;
 }
 
 time {
