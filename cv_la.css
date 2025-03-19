@@ -86,6 +86,14 @@ hr {
    margin-top: 2px;
 }
 
+#right-panel h3{
+  display:none;
+}
+
+#right-panel h3.1{
+  display:block;
+}
+
 
 .checkbox-round-full {
     width: 1.3em;

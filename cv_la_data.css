@@ -10,12 +10,14 @@ p#pitch_data{
   display:block;
 }
 
-h3#Personal_project,
-h3#Santarelli_Group_2,
-h3#Paprec_2,
-h3#Paprec_3{
+#right-panel h3{
   display:none;
 }
+
+#right-panel h3#1{
+  display:block;
+}
+
 h1#headline_software{
   display:none;
 }
@@ -36,8 +38,9 @@ div#personal-project > div#Personal_project{
   display:block;
 }
 
-div#achievements hr#Santarelli_Group_1,
-div#achievements hr#Paprec_1,
-div#achievements hr#Paprec_2{
+div#achievements hr{
   display:none;
+}
+div#achievements hr.-1{
+  display:block;
 }

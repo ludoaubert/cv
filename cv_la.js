@@ -620,15 +620,16 @@ window.main = async function main()
 				date_part('year', debut) AS annee_debut,
 				fin,
 				date_part('year', fin) AS annee_fin,
-				summary
+				summary,
+				rn
 			FROM cte_achievement
 		)
 		SELECT STRING_AGG(FORMAT('
 			<div id="%1$s">
-			  <h3 id="%1$s">%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h3>
+			  <h3 id="%1$s" class="%9$s">%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h3>
 			  <h4>%2$s</h4>
 			  <p>%8$s</p>
-			  <hr id="%1$s"/>
+			  <hr id="%1$s" class="%10$s"/>
 			</div>
 			',
 			id, --%1
@@ -638,8 +639,10 @@ window.main = async function main()
 			annee_debut, --%5
 			fin, --%6
 			annee_fin, --%7
-			summary), --%8
-			'\n' ORDER BY fin DESC, id) AS html
+			summary, --%8
+			rn, --%9
+			nb-rn-1), --%10
+			'\n' ORDER BY fin DESC, rn) AS html
 		FROM cte
 	`);
 
