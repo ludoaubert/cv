@@ -328,7 +328,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 
 		UNION ALL
 
-		SELECT 'AEG_Zahler_Gmbh' AS entreprise,
+		SELECT 'AEG Zahler Gmbh' AS entreprise,
 		'1996-10-01'::date AS debut,
 		'1998-10-01'::date AS fin,
 		'conception d’un petit compilateur embarqué pour compteur électrique'
@@ -630,6 +630,7 @@ window.main = async function main()
 		), cte AS (
 			SELECT headline,
 				entreprise,
+				entreprise_,
 				CASE WHEN nb = 1
 					THEN entreprise_
 					ELSE entreprise_ || '_' || rn
@@ -644,7 +645,7 @@ window.main = async function main()
 			FROM cte_achievement
 		)
 		SELECT STRING_AGG(FORMAT('
-			<div id="%1$s" class="%3$s">
+			<div id="%1$s" class="%11$s">
 			  <h3 id="%1$s" class="job%9$s">%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h3>
 			  <h4>%2$s</h4>
 			  <p>%8$s</p>
@@ -660,7 +661,8 @@ window.main = async function main()
 			annee_fin, --%7
 			summary, --%8
 			rn, --%9
-			nb-rn-1), --%10
+			nb-rn-1, --%10
+			entreprise_) --%11
 			'\n' ORDER BY fin DESC, id) AS html
 		FROM cte
 	`);
