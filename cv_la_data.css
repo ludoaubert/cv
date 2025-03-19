@@ -22,7 +22,9 @@ p#pitch_software{
 
 div#achievements > div#Santarelli_Group_1,
 div#achievements > div#Santarelli_Group_2,
-div#achievements > div#Paprec
+div#achievements > div#Paprec_1,
+div#achievements > div#Paprec_2,
+div#achievements > div#Paprec_3
 {
   display:block;
 }

@@ -155,9 +155,9 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
                 '' AS travail_confie,
                 '' AS actions,
                 '' AS resultats,
-                'SQL+Python ELT for Massive geographic data.'
+                'ELT for Massive geographic data.'
                 AS headline,
-		'Paprec ESRI Geographic Data Hub: (2 months - April May) Development of a SQL+python ELT to transfer'
+		'Paprec ESRI Geographic Data Hub. Development of a SQL+python ELT to transfer'
 		' GBytes of data hosted by various providers such as Kizeo, Novacom, Simpliciti, Sigrenea for Paprec'
 		' into a geographic database hosted on the corporate infrastructure.'
 		AS summary
