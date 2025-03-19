@@ -662,7 +662,7 @@ window.main = async function main()
 			summary, --%8
 			rn, --%9
 			nb-rn-1, --%10
-			entreprise_) --%11
+			entreprise_), --%11
 			'\n' ORDER BY fin DESC, id) AS html
 		FROM cte
 	`);
