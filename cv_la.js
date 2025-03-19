@@ -155,7 +155,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
                 '' AS travail_confie,
                 '' AS actions,
                 '' AS resultats,
-                'ELT for Massive geographic data.'
+                'ELT for Massive geographic data'
                 AS headline,
 		'Paprec ESRI Geographic Data Hub. Development of a SQL+python ELT to transfer'
 		' GBytes of data hosted by various providers such as Kizeo, Novacom, Simpliciti, Sigrenea for Paprec'
@@ -417,7 +417,7 @@ FROM cte;
 
 WITH cte (type_code,code,libelle) AS (
 	SELECT 'PITCH' AS type_code,
-		'pitch_software' AS code,
+		'software' AS code,
 		'I hold an Engineering degree from the Ecole Centrale in Paris and combine a strong background in Mathematics'
 		'with 25 years of experience working on diversified software and data projects.'
 		'In the first period of my career, I mostly worked on C++ projects, some of which required algorithmic design.'
@@ -430,7 +430,7 @@ WITH cte (type_code,code,libelle) AS (
 	UNION ALL
 
 	SELECT 'PITCH' AS type_code,
-		'pitch_data' AS code,
+		'data' AS code,
 		'I combine a strong background in Mathematics with 15 years of experience working on diversified data projects.'
 		'Now is an exciting time, as the shift to advanced queries with modern SQL mean that Mathematics and Data Engineering'
 		'are converging more than ever before. I am very interested by complex and critical data engineering projects and web technologies.'
@@ -479,14 +479,14 @@ WITH cte (type_code,code,libelle) AS (
 	UNION ALL
 
 	SELECT 'HEADLINE' AS type_code,
-		'headline_software' AS code,
+		'software' AS code,
 		'Senior Software Engineer with strong C++ and SQL'
 		AS libelle
 
 	UNION ALL
 
 	SELECT 'HEADLINE' AS type_code,
-		'headline_data' AS code,
+		'data' AS code,
 		'Senior Data Engineer with strong SQL skills'
 		AS libelle
 )
@@ -626,7 +626,7 @@ window.main = async function main()
 			FROM cte_achievement
 		)
 		SELECT STRING_AGG(FORMAT('
-			<div id="%1$s">
+			<div id="%1$s" class="%3$s">
 			  <h3 id="%1$s" class="job%9$s">%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h3>
 			  <h4>%2$s</h4>
 			  <p>%8$s</p>
@@ -652,7 +652,7 @@ window.main = async function main()
 	document.getElementById("personal-project").innerHTML = ret4.rows[0].html;
 
 	const ret5 = await db.query(`
-		SELECT STRING_AGG(FORMAT('<p id="%1$s">%2$s</p>',code,libelle),'\n' ORDER BY idtag) AS html
+		SELECT STRING_AGG(FORMAT('<p id="pitch_%1$s" class="%1$s">%2$s</p>',code,libelle),'\n' ORDER BY idtag) AS html
 		FROM tag
 		WHERE type_code = 'PITCH'
 	`);
@@ -673,7 +673,7 @@ window.main = async function main()
 	document.getElementById("links").innerHTML = ret7.rows[0].html;
 
 	const ret8 = await db.query(`
-		SELECT STRING_AGG(FORMAT('<h1 id="%1$s">%2$s</h1>',code,libelle),'\n' ORDER BY idtag) AS html
+		SELECT STRING_AGG(FORMAT('<h1 id="headline_%1$s" class="%1$s">%2$s</h1>',code,libelle),'\n' ORDER BY idtag) AS html
 		FROM tag
 		WHERE type_code = 'HEADLINE'
 	`);

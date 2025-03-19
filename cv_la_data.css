@@ -1,28 +1,14 @@
 
-div#hobby div#Bikepacking{
-  display:block;	
-}
-
-h1#headline_data{
-  display:block;
-}
-p#pitch_data{
+.data{
   display:block;
 }
 
-
-h1#headline_software{
-  display:none;
-}
-p#pitch_software{
+.software{
   display:none;
 }
 
-div#achievements > div#Santarelli_Group_1,
-div#achievements > div#Santarelli_Group_2,
-div#achievements > div#Paprec_1,
-div#achievements > div#Paprec_2,
-div#achievements > div#Paprec_3
+div#achievements > div.Santarelli,
+div#achievements > div.Paprec
 {
   display:block;
 }
@@ -30,3 +16,8 @@ div#achievements > div#Paprec_3
 div#personal-project > div#Personal_project{
   display:block;
 }
+
+div#hobby div#Bikepacking{
+  display:block;        
+}
+
