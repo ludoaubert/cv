@@ -27,7 +27,7 @@ body {
   display: grid;
   overflow: auto;
   place-items: left;
-  background-color: #00b3b3;
+  background-color: #29a3a3;
   color: white;
   line-height: 20px;
 }
@@ -37,14 +37,14 @@ body {
   display: grid;
   place-items: center-start;
   background-color: white;
-  color: #00b3b3;
+  color: #29a3a3;
   line-height: 20px;
   height: 20px;
   padding: 30px;
 }
 
 a{
-  color: #00b3b3;
+  color: #29a3a3;
 }
 
 time {
@@ -68,7 +68,7 @@ hr {
     color: white;
 }
 .flex-right > hr {
-    color: #00b3b3;
+    color: #29a3a3;
 }
 
 .flex-left > h1 {
@@ -94,7 +94,7 @@ hr {
 .checkbox-round-empty {
     width: 1.3em;
     height: 1.3em;
-    background-color: #00b3b3;
+    background-color: #29a3a3;
     border-radius: 50%;
     vertical-align: middle;
     border: 2px solid white;

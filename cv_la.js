@@ -405,6 +405,18 @@ WITH cte (type_code,code,libelle) AS (
 
 	UNION ALL
 
+	SELECT 'CONTACT' AS type_code,
+		'mailto:EMAIL' AS code,
+		'ludo.aubert@gmail.com' AS libelle
+
+	UNION ALL
+
+	SELECT 'CONTACT' AS type_code,
+		'tel:+33-6-68-40-98-26' AS code,
+		'(+33) 06 68 40 98 26' AS libelle
+
+	UNION ALL
+
 	SELECT 'LINK' AS type_code,
 		'stackoverflow' AS code,
 		'https://stackoverflow.com/users/3046585/ludovic-aubert'
@@ -609,21 +621,29 @@ window.main = async function main()
 	`);
 	document.getElementById("pitch").innerHTML = ret5.rows[0].html;
 
-	const ret6 = await db.query(`
+       const ret6 = await db.query(`
+                SELECT STRING_AGG(FORMAT('<a href="%1$s">%2$s</a>',code, libelle),'\n' ORDER BY idtag) AS html
+                FROM tag
+                WHERE type_code = 'CONTACT'
+        `);
+        document.getElementById("contacts").innerHTML = ret6.rows[0].html;
+
+
+	const ret7 = await db.query(`
 		SELECT STRING_AGG(FORMAT('<a href="%1$s">%2$s</a>',libelle,code),'\n' ORDER BY idtag) AS html
 		FROM tag
 		WHERE type_code = 'LINK'
 	`);
-	document.getElementById("links").innerHTML = ret6.rows[0].html;
+	document.getElementById("links").innerHTML = ret7.rows[0].html;
 
-	const ret7 = await db.query(`
+	const ret8 = await db.query(`
 		SELECT STRING_AGG(FORMAT('<h1 id="%1$s">%2$s</h1>',code,libelle),'\n' ORDER BY idtag) AS html
 		FROM tag
 		WHERE type_code = 'HEADLINE'
 	`);
-	document.getElementById("headline").innerHTML = ret7.rows[0].html;
+	document.getElementById("headline").innerHTML = ret8.rows[0].html;
 
-	const ret8 = await db.query(`
+	const ret9 = await db.query(`
 		WITH cte AS (
 			SELECT idtag, libelle, code,
 				FORMAT('<time datetime="%1$s">%2$s</time>', to_char(debut, 'YYYY-MM-DD'), date_part('year', debut)) AS debut,
@@ -640,5 +660,5 @@ window.main = async function main()
 		SELECT '<table>' || STRING_AGG(FORMAT('<tr><td>%1$s</td></td>', content), '\n' ORDER BY idtag, idx) || '</table>' AS html
 		FROM cte2
 	`);
-	document.getElementById("education").innerHTML = ret8.rows[0].html;
+	document.getElementById("education").innerHTML = ret9.rows[0].html;
 }
