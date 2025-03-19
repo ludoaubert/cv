@@ -1,3 +1,4 @@
+
 import { PGlite } from "https://cdn.jsdelivr.net/npm/@electric-sql/pglite/dist/index.js";
 
 const db = new PGlite();
@@ -127,6 +128,38 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'After identifying a bug, I suggested rewriting the script, which was accepted, and I developed'
 		'a more efficient version using advanced SQL features, resulting in a scalable solution'
 		'that produced up to 6 million rows.'
+		AS summary
+
+	UNION ALL
+
+		SELECT 'Paprec' AS entreprise,
+               '2019-02-01'::date AS debut,
+                '2020-06-01'::date AS fin,
+                '' AS realisation,
+                '' AS travail_confie,
+                '' AS actions,
+                ''  AS resultats,
+                'Flexible HR database with tracking'
+                AS headline,
+		'Design from scratch of a motivation and tracking database for HR. Due to integration of COVED, PAPREC '
+		'needs a more flexible database design. Design of a test prototype to validate the structure.'
+		'Integration of paid vacation trackers with a 3 year record.'
+		AS summary
+
+	UNION ALL
+
+		SELECT 'Paprec' AS entreprise,
+               '2019-02-01'::date AS debut,
+                '2020-06-01'::date AS fin,
+                '' AS realisation,
+                '' AS travail_confie,
+                '' AS actions,
+                ''  AS resultats,
+                'SQL+Python ELT for GB of geographic data.'
+                AS headline,
+		'Paprec ESRI Geographic Data Hub: (2 months - April May) Development of a SQL+python ELT to transfer'
+		' GBytes of data hosted by various providers such as Kizeo, Novacom, Simpliciti, Sigrenea for Paprec'
+		' into a geographic database hosted on the corporate infrastructure.'
 		AS summary
 
 	UNION ALL
