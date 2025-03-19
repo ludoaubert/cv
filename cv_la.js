@@ -471,7 +471,7 @@ WITH cte(type_code,code,libelle,debut,fin) AS (
 	UNION ALL
 
 	SELECT 'EDUCATION' AS type_code,
-		'Lycee Sainte Genevieve Versailles' AS code,
+		'Lycee Sainte Genevieve' AS code,
 		'Preparatory School with focus on Maths' AS libelle,
 		TO_DATE('1990-09-01','YYYY-MM-DD') AS debut,
 		TO_DATE('1992-06-30','YYYY-MM-DD') AS fin
@@ -652,9 +652,7 @@ window.main = async function main()
 		), cte2(idtag, idx, content) AS (
 			SELECT idtag, 1, libelle FROM cte
 			UNION ALL
-			SELECT idtag, 2, code FROM cte
-			UNION ALL
-			SELECT idtag, 3, FORMAT('%1$s - %2$s',debut,fin) FROM cte
+			SELECT idtag, 2, FORMAT('%1$s %2$s - %3$s',code, debut,fin) FROM cte
 		)
 		SELECT '<table>' || STRING_AGG(FORMAT('<tr><td>%1$s</td></td>', content), '\n' ORDER BY idtag, idx) || '</table>' AS html
 		FROM cte2
