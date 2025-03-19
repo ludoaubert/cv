@@ -425,6 +425,13 @@ WITH cte (type_code,code,libelle) AS (
 
 	UNION ALL
 
+	SELECT 'LINK' AS type_code,
+		'linkedin' AS code,
+		'https://www.linkedin.com/in/ludovic-aubert-831bb875/'
+		AS libelle
+
+	UNION ALL
+
 	SELECT 'HEADLINE' AS type_code,
 		'headline_software' AS code,
 		'Senior Software Engineer with strong C++ and SQL'
