@@ -43,6 +43,10 @@ body {
   padding: 30px;
 }
 
+a{
+  color: #00b3b3;
+}
+
 time {
   font-weight: lighter;
   font-style: italic;
