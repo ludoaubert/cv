@@ -1,5 +1,5 @@
 
-div#hobby > div#Bikepacking{
+div#hobby div#Bikepacking{
   display:block;	
 }
 
@@ -22,15 +22,15 @@ p#pitch_software{
   display:none;
 }
 
-div#achievements > div#Santarelli_Group_1,
-div#achievements > div#Santarelli_Group_2,
-div#achievements > div#Paprec_1,
-div#achievements > div#Paprec_2,
-div#achievements > div#Paprec_3
+div#achievements div#Santarelli_Group_1,
+div#achievements div#Santarelli_Group_2,
+div#achievements div#Paprec_1,
+div#achievements div#Paprec_2,
+div#achievements div#Paprec_3
 {
   display:block;
 }
 
-div#personal-project > div#Personal_project{
+div#personal-project div#Personal_project{
   display:block;
 }

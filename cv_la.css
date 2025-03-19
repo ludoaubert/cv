@@ -133,8 +133,8 @@ div#stats > table td:first-child {
   width: 150px;
 }
 
-div#hobby > div,
-div#personal-project > div,
-div#achievements > div{
+div#hobby div,
+div#personal-project div,
+div#achievements  div{
   display:none;
 }
