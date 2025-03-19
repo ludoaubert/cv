@@ -612,6 +612,7 @@ window.main = async function main()
 
 	document.getElementById("achievements").innerHTML = ret4.rows[0].html;
 	document.getElementById("hobby").innerHTML = ret4.rows[0].html;
+	document.getElementById("personal-project").innerHTML = ret4.rows[0].html;
 
 	const ret5 = await db.query(`
 		SELECT STRING_AGG(FORMAT('<p id="%1$s">%2$s</p>',code,libelle),'\n' ORDER BY idtag) AS html

@@ -126,3 +126,9 @@ div#stats > table td:first-child {
   text-align: left;
   width: 150px;
 }
+
+div#hobby > div,
+div#personal-project > div,
+div#achievements > div{
+  display:none;
+}
