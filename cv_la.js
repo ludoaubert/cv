@@ -543,17 +543,16 @@ window.main = async function main()
 {
 	const rt1 = await db.exec(schema);
 	const rt2 = await db.exec(data);
-	const N=6;
 
 	const ret3 = await db.query(`
 		WITH cte_values(val) AS (
 			VALUES(1),(2),(3),(4),(5),(6)
 		), cte_field_(idbox, idfield, name, val, state) AS (
 			SELECT idbox, idfield, name, val,
-				CASE WHEN ${N}*stars/6 >=val THEN 'full' ELSE 'empty' END AS state
+				CASE WHEN stars >=val THEN 'full' ELSE 'empty' END AS state
 			FROM field
 			CROSS JOIN cte_values
-			WHERE val <= ${N}
+			WHERE val <= 6
 		), cte_field(idbox, idfield, name,  html) AS (
 			SELECT idbox, idfield, name,
 				STRING_AGG(FORMAT('<td><input type="checkbox" class="checkbox-round-%1$s" /></td>', state), '\n' ORDER BY val) AS html
@@ -621,13 +620,12 @@ window.main = async function main()
 	`);
 	document.getElementById("pitch").innerHTML = ret5.rows[0].html;
 
-       const ret6 = await db.query(`
-                SELECT STRING_AGG(FORMAT('<a href="%1$s">%2$s</a>',code, libelle),'\n' ORDER BY idtag) AS html
-                FROM tag
-                WHERE type_code = 'CONTACT'
-        `);
-        document.getElementById("contacts").innerHTML = ret6.rows[0].html;
-
+	const ret6 = await db.query(`
+		SELECT STRING_AGG(FORMAT('<a href="%1$s">%2$s</a>',code, libelle),'\n' ORDER BY idtag) AS html
+		FROM tag
+		WHERE type_code = 'CONTACT'
+	`);
+	document.getElementById("contacts").innerHTML = ret6.rows[0].html;
 
 	const ret7 = await db.query(`
 		SELECT STRING_AGG(FORMAT('<a href="%1$s">%2$s</a>',libelle,code),'\n' ORDER BY idtag) AS html
