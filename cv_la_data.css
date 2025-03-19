@@ -35,3 +35,9 @@ div#achievements > div#Paprec_3
 div#personal-project > div#Personal_project{
   display:block;
 }
+
+div#achievements > hr#Santarelli_Group_1,
+div#achievements > hr#Paprec_1,
+div#achievements > hr#Paprec_2{
+  display:none;
+}

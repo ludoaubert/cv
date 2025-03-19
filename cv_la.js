@@ -628,7 +628,7 @@ window.main = async function main()
 			  <h3 id="%1$s">%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h3>
 			  <h4>%2$s</h4>
 			  <p>%8$s</p>
-			  <hr />
+			  <hr id="%1$s"/>
 			</div>
 			',
 			id, --%1
