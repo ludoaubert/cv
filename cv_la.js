@@ -623,7 +623,7 @@ window.main = async function main()
 				summary
 			FROM cte_achievement
 		), cte2 AS (
-			SELECT entreprise,
+			SELECT entreprise, fin,
 				STRING_AGG(FORMAT('
 				<div id="%1$s">
 				  <h3 id="%1$s">%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h3>
@@ -640,11 +640,11 @@ window.main = async function main()
 				fin, --%6
 				annee_fin, --%7
 				summary), --%8
-				'\n' ORDER BY fin DESC, id) AS html
+				'\n' ORDER BY id) AS html
 			FROM cte
-			GROUP BY entreprise
+			GROUP BY entreprise, fin
 		)
-		SELECT STRING_AGG(FORMAT('<div id="%1$s">%2$s</div>', entreprise, html), '\n')
+		SELECT STRING_AGG(FORMAT('<div id="%1$s">%2$s</div>', entreprise, html), '\n' ORDER BY fin DESC) AS html
 		FROM cte2
 	`);
 
