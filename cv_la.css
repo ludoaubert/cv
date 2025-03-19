@@ -111,6 +111,7 @@ td {
 img#pict {
   margin: auto;
   height:120px;
+  margin-top: 5px;
 }
 
 div#stats > table{
