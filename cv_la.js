@@ -409,6 +409,24 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'features didn’t impact existing functionality. This initiative led to widespread adoption of automated unit and'
 		'integration tests, contributing to the project’s success and timely delivery.'
 		AS summary
+
+		UNION ALL
+
+		SELECT 'Euronext' AS entreprise,
+		'2015-12-01'::date AS debut,
+		'2017-06-30'::date AS fin,
+		'' AS realisation,
+                '' AS travail_confie,
+                '' AS actions,
+                '' AS resultats,
+		'Development of 3 modules in C++'
+		AS headline,
+		'I developed 3 sub modules for the MDSpy module of the flagship Optiq project:'
+		'MDSpyReader: application that listens to what customers receive and persists it to Kafka.'
+		'Spy deduplication: deduplication of market data which is sent on 2 independent physical lines.'
+		'Implementation and test of a UDP flow control algorithm (shaping).'
+		AS summary
+
 )
 INSERT INTO achievement(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headline,summary)
 SELECT *
