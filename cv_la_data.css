@@ -10,13 +10,6 @@ p#pitch_data{
   display:block;
 }
 
-#right-panel h3{
-  display:none;
-}
-
-#right-panel h3#1{
-  display:block;
-}
 
 h1#headline_software{
   display:none;
@@ -35,12 +28,5 @@ div#achievements > div#Paprec_3
 }
 
 div#personal-project > div#Personal_project{
-  display:block;
-}
-
-div#achievements hr{
-  display:none;
-}
-div#achievements hr.-1{
   display:block;
 }

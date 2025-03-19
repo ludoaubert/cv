@@ -86,12 +86,17 @@ hr {
    margin-top: 2px;
 }
 
-#right-panel h3{
-  display:none;
+#right-panel h3 {
+  display: none;
 }
-
-#right-panel h3.1{
-  display:block;
+#right-panel h3.job1 {
+  display: block;
+}
+#right-panel div#achievements hr {
+  display: none;
+}
+#right-panel div#achievements hr.job-1 {
+  display: block;
 }
 
 
