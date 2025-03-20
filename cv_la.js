@@ -535,7 +535,6 @@ WITH cte_field(box_title, field_name, stars) AS (
 	VALUES  ('Languages', 'C++', 6),
 		('Languages', 'SQL', 6),
 		('Languages', 'Css', 5),
-		('Languages', 'regexp', 5),
 		('Languages', 'JS', 5),
  		('Languages', 'JSON', 4),
 		('Languages', 'Html', 4),
