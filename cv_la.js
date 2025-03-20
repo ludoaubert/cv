@@ -257,9 +257,9 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'Acquisition de compétences technologiques de pointe sur les langages (C++, SQL, JS, HTML, SVG, CSS),'
 		' les produits (PostgreSQL, PGLite, NodeJS) et en algorithmique.'
 		AS resultats,
-		'15-year algorithm development for database structure understanding'
+		'algorithm development for database structure understanding'
 		AS headline,
-		'Over 15 years, I developed an algorithm to quickly understand database structures, initially conceived'
+		'I developed an algorithm to quickly understand database structures, initially conceived'
 		'during an internship at EDF. Later, I refined this algorithm and expanded its capabilities,'
 		'integrating various technologies like C++, PostgreSQL, and NodeJS to create an interactive web-based'
 		'solution for visualizing data relationships.'
