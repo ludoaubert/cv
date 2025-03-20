@@ -184,8 +184,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS resultats,
 		'Bike trip and camping: Paris to Barcelona, 8 days'
 		AS headline,
-		'A bike trip and camping journey from Paris to Barcelona in 8 days, initially planned'
-		'by my son Edouard and his friends who later dropped out. I accompanied him, handling the camping gear,'
+		'A bike trip and camping journey from Paris to Barcelona in 8 days.'
+		'I accompanied my son, handling the camping gear, riding 120 km dayly through beautiful landscape,'
 		'planning the route, and ensuring the trip ran smoothly within a budget of 10 euros per day.'
 		AS summary
 
