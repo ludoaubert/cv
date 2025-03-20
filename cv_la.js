@@ -382,7 +382,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'improving data reliability.'
 		AS summary
 
-		UNION ALL
+	UNION ALL
 
                SELECT 'Santarelli Group' AS entreprise,
 		'2021-04-01'::date AS debut,
@@ -394,6 +394,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'Extraction of 4 million documents' AS headline,
                 'Wrote scripts and ran the extraction of 4TB of archived corporate documents from Oracle (files stored in DB) into the filesystem.'
 		AS summary
+
+	UNION ALL
 
 		SELECT 'Santarelli Group' AS entreprise,
 		'2021-04-01'::date AS debut,
