@@ -534,12 +534,12 @@ SELECT * FROM cte;
 WITH cte_field(box_title, field_name, stars) AS (
 	VALUES  ('Languages', 'C++', 6),
 		('Languages', 'SQL', 6),
+		('Languages', 'Css', 5),
 		('Languages', 'regexp', 5),
 		('Languages', 'JS', 5),
  		('Languages', 'JSON', 4),
 		('Languages', 'Html', 4),
 		('Languages', 'SVG', 4),
-		('Languages', 'Css', 4),
 		('Languages', 'Python', 3),
 		('Tools', 'SQL Server', 6),
 		('Tools', 'Web Browsers', 5),
