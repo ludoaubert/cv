@@ -385,14 +385,26 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		UNION ALL
 
                SELECT 'Santarelli Group' AS entreprise,
-                '2021-04-01'::date AS debut,
-                '2025-03-01'::date AS fin,
-                '' AS realisation,
-                '' AS travail_confie,
-                '' AS actions,
-                '' AS resultats,
+		'2021-04-01'::date AS debut,
+		'2025-03-01'::date AS fin,
+		'' AS realisation,
+		'' AS travail_confie,
+		'' AS actions,
+		'' AS resultats,
 		'Extraction of 4 million documents' AS headline,
                 'Wrote scripts and ran the extraction of 4TB of archived corporate documents from Oracle (files stored in DB) into the filesystem.'
+		AS summary
+
+		SELECT 'Santarelli Group' AS entreprise,
+		'2021-04-01'::date AS debut,
+		'2025-03-01'::date AS fin,
+		'' AS realisation,
+		'' AS travail_confie,
+		'' AS actions,
+		'' AS resultats,
+		'Prototype development of a patent web interface' AS headline,
+		'Created a Proof of concept using NodeJS and new SQL JSON capabilities to navigate the patent database in a web browser.'
+		'Developed a quick prototype of web interface to navigate patent information.'
 		AS summary
 
 	UNION ALL
