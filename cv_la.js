@@ -546,6 +546,11 @@ WITH cte (type_code,code,libelle) AS (
 		'https://www.linkedin.com/in/ludovic-aubert-831bb875/'
 		AS libelle
 
+	SELECT 'LINK' AS type_code,
+		'detailed resume' AS code,
+		'https://docs.google.com/document/d/1yZ_4XxycUee3KCFx05UK89hRCZmEOxVz30StJLCe6OI/edit?tab=t.0'
+		AS libelle
+
 	UNION ALL
 
 	SELECT 'HEADLINE' AS type_code,
