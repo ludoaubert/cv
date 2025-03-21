@@ -1,9 +1,10 @@
 
-.data{
+.data,
+.software{
   display:none;
 }
 
-.software{
+.full_stack{
   display:block;
 }
 
