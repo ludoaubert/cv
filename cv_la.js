@@ -95,7 +95,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'Cela peut se valoriser jusqu’à des millions d’euros.'
 		'Migration aussi de 5 téraoctets de documents depuis Oracle vers le filesystem.'
 		AS resultats,
-		'Patent database migration and merge'
+		'Patent database schema migration and merge'
 		AS headline,
 		'I performed the migration into a new schema and merger of patent databases during '
 		'a company acquisition, developing scripts and resolving critical issues. This initiative saved hundreds '
