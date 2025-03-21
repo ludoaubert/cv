@@ -24,7 +24,8 @@ body {
 
 #left-panel {
   width: 25%;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   overflow: auto;
   place-items: left;
   background-color: #29a3a3;
@@ -34,7 +35,8 @@ body {
 
 #right-panel {
   width: 75%;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   place-items: center-start;
   background-color: white;
   color: #29a3a3;
