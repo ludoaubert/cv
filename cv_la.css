@@ -134,6 +134,7 @@ img#pict {
   margin: auto;
   height:120px;
   margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 div#stats > table{
