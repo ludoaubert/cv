@@ -611,6 +611,7 @@ WITH cte_field(box_title, field_name, stars) AS (
 		('Tools', 'PostgreSQL', 4),
 		('Tools', 'PGLite', 4),
 		('Tools', 'GIT', 4),
+		('Tools', 'Linux', 4),
 		('Tools', 'Oracle', 3),
 		('Tools', 'NodeJS', 3),
 		('Experience', 'Queries', 6),
