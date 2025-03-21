@@ -97,7 +97,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS resultats,
 		'Patent database migration and merge'
 		AS headline,
-		'I performed the migration and merger of patent databases during '
+		'I performed the migration into a new schema and merger of patent databases during '
 		'a company acquisition, developing scripts and resolving critical issues. This initiative saved hundreds '
 		'of thousands in cloud costs, streamlined data management, and supported the integration of three companies, '
 		'valued in millions.'
@@ -393,6 +393,20 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'' AS resultats,
 		'Extraction of 4 million documents' AS headline,
                 'Wrote scripts and ran the extraction of 4TB of archived corporate documents from Oracle (files stored in DB) into the filesystem.'
+		AS summary
+
+	UNION ALL
+
+		SELECT 'Santarelli Group' AS entreprise,
+		'2021-04-01'::date AS debut,
+		'2025-03-01'::date AS fin,
+		'' AS realisation,
+		'' AS travail_confie,
+		'' AS actions,
+		'' AS resultats,
+		'developed a module using C++' AS headline,
+		'development in C++ of a functionality to create a directory structure to store legal documents on the migration'
+		' target system. The structure depends on a set of parameters specific to a patent.'
 		AS summary
 
 	UNION ALL
