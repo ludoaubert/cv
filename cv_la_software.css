@@ -1,4 +1,8 @@
 
+#flex-container{
+  min-height: 1550px;
+}
+
 .data,
 .full_stack{
   display:none;
