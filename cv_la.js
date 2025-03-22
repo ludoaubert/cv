@@ -476,7 +476,7 @@ FROM cte;
 
 WITH cte (type_code,code,libelle) AS (
 	SELECT 'PITCH' AS type_code,
-		'senior_software_engineer' AS code
+		'senior_software_engineer' AS code,
 		'I hold an Engineering degree from the Ecole Centrale in Paris and combine a strong background in Mathematics'
 		'with 25 years of experience working on diversified software and data projects.'
 		'In the first period of my career, I mostly worked on C++ projects, some of which required algorithmic design.'
