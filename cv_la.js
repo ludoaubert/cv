@@ -476,6 +476,17 @@ FROM cte;
 
 WITH cte (type_code,code,libelle) AS (
 	SELECT 'PITCH' AS type_code,
+		'senior_software_engineer' AS code
+		'I hold an Engineering degree from the Ecole Centrale in Paris and combine a strong background in Mathematics'
+		'with 25 years of experience working on diversified software and data projects.'
+		'In the first period of my career, I mostly worked on C++ projects, some of which required algorithmic design.'
+		'In the second period, I mostly worked on Data projects. I am looking for complex and critical projects'
+		'using a mix of data, software and web technologies.'
+		AS libelle
+
+	UNION ALL
+
+	SELECT 'PITCH' AS type_code,
 		'full_stack' AS code,
 		'I hold an Engineering degree from the Ecole Centrale in Paris and combine a strong background in Mathematics'
 		'with 25 years of experience working on diversified software and data projects.'
@@ -551,6 +562,13 @@ WITH cte (type_code,code,libelle) AS (
 	SELECT 'LINK' AS type_code,
 		'detailed resume' AS code,
 		'https://docs.google.com/document/d/1yZ_4XxycUee3KCFx05UK89hRCZmEOxVz30StJLCe6OI/edit?tab=t.0'
+		AS libelle
+
+	UNION ALL
+
+	SELECT 'HEADLINE' AS type_code,
+		'senior_software_engineer' AS code,
+		'Senior Software Engineer'
 		AS libelle
 
 	UNION ALL

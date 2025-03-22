@@ -4,11 +4,12 @@
 
 
 .data,
-.software{
+.software,
+.full_stack{
   display:none;
 }
 
-.full_stack{
+.senior_software_engineer{
   display:block;
 }
 
