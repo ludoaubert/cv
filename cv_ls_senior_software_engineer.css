@@ -1,0 +1,31 @@
+#flex-container{
+  min-height: 2310px;
+}
+
+
+.data,
+.software{
+  display:none;
+}
+
+.full_stack{
+  display:block;
+}
+
+
+div#achievements > div.Santarelli_Group,
+div#achievements > div.Paprec,
+div#achievements > div.Euronext,
+div#achievements > div.Beatware,
+div#achievements > div.AEG_Zahler_Gmbh
+{
+  display:block;
+}
+
+div#personal-project > div#Personal_project{
+  display:block;
+}
+
+div#hobby > div#Bikepacking{
+  display:block;        
+}
