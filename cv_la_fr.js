@@ -601,7 +601,7 @@ SELECT * FROM cte
 WITH cte(type_code,code,libelle,debut,fin) AS (
 	SELECT 'EDUCATION' AS type_code,
 		'Ecole Centrale Paris' AS code,
-		'Dimpôme d''ingénieur avec option informatique et électronique' AS libelle,
+		'Diplôme d''ingénieur avec option informatique et électronique' AS libelle,
 		TO_DATE('1992-09-01','YYYY-MM-DD') AS debut,
 		TO_DATE('1996-06-30','YYYY-MM-DD') AS fin
 
