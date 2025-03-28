@@ -649,9 +649,9 @@ WITH cte_field(box_title, field_name, stars) AS (
 		('Skills', 'Recherche', 4),
 		('Skills', 'Abstraction', 4),
 		('Skills', 'Pragmatique', 4),
-		('International', 'Germany', 5),
+		('International', 'Allemagne', 5),
 		('International', 'USA', 4),
-		('International', 'Switzerland', 3)
+		('International', 'Suisse', 3)
 ), cte_field__ AS (
 	SELECT *, ROW_NUMBER() OVER() AS rn
 	FROM cte_field
