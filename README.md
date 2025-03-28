@@ -8,4 +8,6 @@ https://ludoaubert.github.io/cv/cv_la_fs.html
 
 https://ludoaubert.github.io/cv/cv_la_sse.html
 
+https://ludoaubert.github.io/cv/cv_la_sse_fr.html
+
 https://ludoaubert.github.io/cv/vcard_la.html
