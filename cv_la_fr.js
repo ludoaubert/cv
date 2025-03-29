@@ -645,7 +645,6 @@ WITH cte_field(box_title, field_name, stars) AS (
 		('Skills', 'Curiosité', 6),
 		('Skills', 'Persistence', 5),
 		('Skills', 'Fiabilité', 5),
-		('Skills', 'Vision', 4),
 		('Skills', 'Recherche', 4),
 		('Skills', 'Abstraction', 4),
 		('Skills', 'Pragmatique', 4),
