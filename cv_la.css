@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  height: 2300px;
+  height: 2450px;
   font-family: sans-serif;
   font-size: 15px;
   margin:0;
@@ -30,7 +30,7 @@ body {
 }
 
 #left-panel {
-  height:2300px;
+  height:2450px;
   width: 33%;
   display: flex;
   flex-direction: column;
