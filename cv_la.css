@@ -55,7 +55,7 @@ body {
 
 a{
   color: #FFF;
-  display: inline;
+  display: block;
 }
 
 time {
