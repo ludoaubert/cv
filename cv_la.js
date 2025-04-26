@@ -613,7 +613,7 @@ WITH cte(type_code,code,libelle,debut,fin) AS (
 )
 INSERT INTO tag(type_code, code, libelle, debut, fin)
 SELECT * FROM cte;
-
+`;
 
 window.main = async function main()
 {
