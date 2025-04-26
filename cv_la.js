@@ -615,90 +615,10 @@ INSERT INTO tag(type_code, code, libelle, debut, fin)
 SELECT * FROM cte;
 
 
-WITH cte_field(box_title, field_name, stars) AS (
-	VALUES  ('Languages', 'C++', 6),
-		('Languages', 'SQL', 6),
-		('Languages', 'Css', 5),
-		('Languages', 'JS', 5),
- 		('Languages', 'JSON', 4),
-		('Languages', 'Html', 4),
-		('Languages', 'SVG', 4),
-		('Languages', 'Python', 3),
-		('Tools', 'SQL Server', 6),
-		('Tools', 'Web Browsers', 5),
-		('Tools', 'PostgreSQL', 4),
-		('Tools', 'PGLite', 4),
-		('Tools', 'GIT', 4),
-		('Tools', 'Linux', 4),
-		('Tools', 'Oracle', 3),
-		('Tools', 'NodeJS', 3),
-		('Experience', 'Queries', 6),
-		('Experience', 'Functional', 5),
-		('Experience', 'Regression Monitoring', 5),
-		('Experience', 'Information Structure', 4),
-		('Experience', 'Multi Language', 4),
-		('Experience', 'Integrity', 4),
-		('Experience', 'Speed', 4),
-		('Skills', 'Endurance', 6),
-		('Skills', 'Curiosity', 6),
-		('Skills', 'Persistence', 5),
-		('Skills', 'Dependable', 5),
-		('Skills', 'Research', 4),
-		('Skills', 'Abstraction', 4),
-		('Skills', 'Practical', 4),
-		('International', 'Germany', 5),
-		('International', 'USA', 4),
-		('International', 'Switzerland', 3)
-), cte_field__ AS (
-	SELECT *, ROW_NUMBER() OVER() AS rn
-	FROM cte_field
-), cte_field_ AS (
-	SELECT *,ROW_NUMBER() OVER(PARTITION BY box_title) AS rn2
-	FROM cte_field__
-),cte_box AS (
-	INSERT INTO box(title)
-	SELECT box_title
-	FROM cte_field_
-	WHERE rn2=1
-	ORDER BY rn
-	RETURNING *
-)
-INSERT INTO field(idbox, name, stars)
-SELECT cte_box.idbox, cte_field.field_name, cte_field.stars
-FROM cte_field
-JOIN cte_box ON cte_field.box_title = cte_box.title;
-`;
-
 window.main = async function main()
 {
 	const rt1 = await db.exec(schema);
 	const rt2 = await db.exec(data);
-
-	const ret3 = await db.query(`
-		WITH cte_values(val) AS (
-			VALUES(1),(2),(3),(4),(5),(6)
-		), cte_field_(idbox, idfield, name, val, state) AS (
-			SELECT idbox, idfield, name, val,
-				CASE WHEN stars >=val THEN 'full' ELSE 'empty' END AS state
-			FROM field
-			CROSS JOIN cte_values
-			WHERE val <= 6
-		), cte_field(idbox, idfield, name,  html) AS (
-			SELECT idbox, idfield, name,
-				STRING_AGG(FORMAT('<td><input type="checkbox" class="checkbox-round-%1$s" /></td>', state), '\n' ORDER BY val) AS html
-			FROM cte_field_
-			GROUP BY idbox, idfield, name
-		), cte_box AS (
-			SELECT idbox, STRING_AGG(FORMAT('<tr><td>%1$s</td> %2$s</tr>', name, html), '\n' ORDER BY idfield) AS html
-			FROM cte_field
-			GROUP BY idbox
-		)
-		SELECT STRING_AGG(FORMAT('<h1>%1$s</h1><table>%2$s</table>', UPPER(title), html), '\n<hr />\n' ORDER BY box.idbox) AS html
-		FROM cte_box
-		JOIN box ON box.idbox = cte_box.idbox
-	`);
-
-	document.getElementById("stats").innerHTML = ret3.rows[0].html;
 
 	const ret4 = await db.query(`
 		WITH cte_achievement AS (
