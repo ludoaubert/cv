@@ -6,6 +6,11 @@ text {
         inline-size: 100px;
 }
 
+html {
+  max-width: 1000px;
+  background-color: #000;
+  margin: auto;
+}
 
 body {
   height: 100vh;
@@ -14,6 +19,7 @@ body {
   margin:0;
   padding:0;
   max-width: 1000px;
+  background-color: #FFF;
 }
 
 #flex-container {
