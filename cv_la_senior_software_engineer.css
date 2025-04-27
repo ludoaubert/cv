@@ -33,3 +33,15 @@ h3#Personal_project{
 div#hobby > div#Bikepacking{
   display:block;        
 }
+
+h3#Bikepacking{
+  display:none;
+}
+
+hr#Personal_project{
+  display:none;
+}
+
+hr#Bikepacking{
+  display:none;
+}
