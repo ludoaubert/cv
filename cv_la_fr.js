@@ -182,9 +182,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS resultats,
 		'Voyage en vélo et camping: Paris Barcelone, 8 jours'
 		AS headline,
-		'Un voyage à vélo et en camping de Paris à Barcelone en 8 jours.'
-		'J''ai accompagné mon fils, en roulant 120 km par jour à travers de magnifiques paysages, en planifiant l''itinéraire '
-		'et en veillant à ce que le voyage se déroule sans accroc avec un budget de 10 euros par jour.'
+		'Voyage à vélo et en camping de Paris à Barcelone en 8 jours. J''ai accompagné mon fils, en roulant 120 km par jour, en planifiant'
+		' l''itinéraire et en veillant à ce que le voyage se déroule sans accroc avec un budget de 10 euros par jour.'
 		AS summary
 
 	UNION ALL
