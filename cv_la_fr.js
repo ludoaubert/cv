@@ -125,9 +125,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'Creation de graphes de tracabilité'
 		AS headline,
 		'J''ai créé un script pour générer des graphes de traçabilité pour six usines de recyclage de plastique.'
-		' Après avoir identifié un bug, j''ai suggéré de réécrire le script, ce qui a été accepté, et j''ai développé'
-		' une version plus efficace en utilisant des fonctionnalités avancées de SQL, ce qui a permis d''obtenir une solution '
-		' évolutive produisant jusqu''à 6 millions de lignes.'
+		' J''ai re-développé une version plus efficace et évolutive du script en utilisant des fonctionnalités avancées de SQL,'
+		' ce qui a permis de produire jusqu''à 6 millions de lignes.'
 		AS summary
 
 	UNION ALL
@@ -159,7 +158,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
                 AS headline,
 		'Paprec ESRI Geographic Data Hub. Développement d''un processus ELT SQL+Python pour transférer des gigaoctets de données '
 		'hébergées par divers fournisseurs tels que Kizeo, Novacom, Simpliciti, Sigrenea pour Paprec dans une base de données '
-		'géographique hébergée sur l''infrastructure de l''entreprise.'
+		'géographique on premise.'
 		AS summary
 
 	UNION ALL
@@ -287,8 +286,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS headline,
 		'Conception et développement d''une interface graphique simple et évolutive pour gérer 60 champs d''assurance vie, '
 		' remplaçant une solution trop complexe et difficile à maintenir. Le projet a duré 3 mois, permettant d''économiser '
-		' l''équivalent d''une année de travail à plein temps, avec des retours positifs des utilisateurs concernant sa '
-		' fonctionnalité.'
+		' l''équivalent d''une année de travail, avec des retours positifs des utilisateurs fonctionnalité.'
 		AS summary
 
 		UNION ALL
@@ -446,7 +444,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'Cela a énormément contribué à la réussite du projet Optiq ainsi qu’à la tenue des délais et même à la santé'
 		'mentale des équipes'
 		AS resultats,
-		'Développement d''un portefeuille de tests de non-regression avec Google Tests'
+		'Développement d''un portefeuille de tests de non-regression'
 		AS headline,
 		'J''ai développé un portefeuille de tests de régression en utilisant Google Test pour le projet Optiq chez Euronext.'
 		' Cette initiative a conduit à une adoption généralisée des tests unitaires et d''intégration automatisés, contribuant '
