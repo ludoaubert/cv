@@ -474,10 +474,10 @@ FROM cte;
 WITH cte (type_code,code,libelle) AS (
 	SELECT 'PITCH' AS type_code,
 		'senior_software_engineer' AS code,
-		'Je suis ingénieur diplômé de l''École Centrale de Paris et je combine une solide formation en mathématiques avec 25 ans '
+		'Diplômé de l''École Centrale, je combine une solide formation en mathématiques avec 25 ans '
 		' d''expérience dans des projets diversifiés de logiciels et de data. '
 		' Au début de ma carrière, j''ai principalement travaillé sur des projets en C++, dont certains nécessitaient la conception d''algorithmes.'
-		' Dans un deuxième temps, j''ai principalement travaillé sur des projets liés aux données. '
+		' Dans un deuxième temps, sur des projets liés aux données. '
 		' Je suis à la recherche de projets complexes et critiques, utilisant un mélange de données, de logiciels et de web.'
 		AS libelle
 
@@ -529,28 +529,28 @@ WITH cte (type_code,code,libelle) AS (
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'stackoverflow' AS code,
+		'https://stackoverflow.com/users/3046585/ludovic-aubert' AS code,
 		'https://stackoverflow.com/users/3046585/ludovic-aubert'
 		AS libelle
 
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'github' AS code,
+		'https://github.com/ludoaubert' AS code,
 		'https://github.com/ludoaubert'
 		AS libelle
 
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'github.io' AS code,
+		'ludoaubert.github.io/pglite-linkedboxdraw/table_edit_ti.html' AS code,
 		'https://ludoaubert.github.io/pglite-linkedboxdraw/table_edit_ti.html'
 		AS libelle
 
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'linkedin' AS code,
+		'www.linkedin.com/in/ludovic-aubert-831bb875' AS code,
 		'https://www.linkedin.com/in/ludovic-aubert-831bb875/'
 		AS libelle
 
