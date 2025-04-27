@@ -445,9 +445,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS resultats,
 		'Développement d''un portefeuille de tests de non-regression'
 		AS headline,
-		'J''ai développé un portefeuille de tests de régression en utilisant Google Test pour le projet Optiq chez Euronext.'
-		' Cette initiative a conduit à une adoption généralisée des tests unitaires et d''intégration automatisés, contribuant '
-		' ainsi au succès du projet et à sa livraison dans les délais.'
+		'J''ai développé un portefeuille de tests de régression en utilisant Google Test pour le projet Optiq. Cette initiative a conduit'
+		' à une adoption généralisée des tests automatisés, contribuant ainsi au succès du projet et à sa livraison dans les délais.'
 		AS summary
 
 		UNION ALL
