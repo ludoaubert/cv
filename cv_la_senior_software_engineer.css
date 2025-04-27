@@ -34,8 +34,8 @@ div#hobby > div#Bikepacking{
   display:block;        
 }
 
-h3#Bikepacking{
-  display:none;
+#right-panel h3#Bikepacking.job1 {
+  display: none;
 }
 
 hr#Personal_project{
