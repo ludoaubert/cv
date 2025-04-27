@@ -113,36 +113,6 @@ hr {
   display: block;
 }
 
-
-.checkbox-round-full {
-    width: 1.3em;
-    height: 1.3em;
-    background-color: white;
-    border-radius: 50%;
-    vertical-align: middle;
-    border: 2px solid white;
-    appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-}
-
-.checkbox-round-empty {
-    width: 1.3em;
-    height: 1.3em;
-    background-color: #2e2478;
-    border-radius: 50%;
-    vertical-align: middle;
-    border: 2px solid white;
-    appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-}
-/*
-td {
-  width:10px;
-}
-*/
-
 img#pict {
   margin: auto;
   height:240px;
@@ -150,16 +120,6 @@ img#pict {
   margin-bottom: 40px;
 }
 
-div#stats > table{
-  width: auto;
-  margin-right: 0px;
-  margin-left: auto;
-}
-
-div#stats > table td:first-child {
-  text-align: left;
-  width: 150px;
-}
 
 div#hobby div,
 div#personal-project div,
