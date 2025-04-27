@@ -546,7 +546,7 @@ WITH cte (type_code,code,libelle) AS (
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'ludoaubert.github.io' AS code,
+		'https://ludoaubert.github.io/pglite-linkedboxdraw/table_edit_ti.html' AS code,
 		'https://ludoaubert.github.io/pglite-linkedboxdraw/table_edit_ti.html'
 		AS libelle
 
