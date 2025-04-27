@@ -98,8 +98,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'Migration de schema et fusion de base de données'
 		AS headline,
 		'J''ai effectué la migration vers un nouveau schéma et la fusion des bases de données de brevets lors d''une'
-		' acquisition d''entreprise, en développant des scripts et en résolvant des problèmes critiques.'
-		' Cette initiative a permis d''économiser plusieurs centaines de milliers de dollars en coûts cloud,'
+		' acquisition d''entreprise. Cette initiative a permis d''économiser plusieurs centaines de milliers de dollars en coûts cloud,'
 		' a simplifié la gestion des données et a soutenu l''intégration de trois entreprises, d''une valeur de plusieurs millions.'
 		AS summary
 
@@ -140,9 +139,9 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
                 '' AS resultats,
                 'Flexible HR database with tracking'
                 AS headline,
-		'Conception de zéro d''une base de données de motivation et de suivi pour les ressources humaines. En raison de '
-		'l''intégration de COVED, PAPREC nécessite une conception de base de données plus flexible. Conception d''un prototype '
-		' de test pour valider la structure. Intégration des traceurs de congés payés avec un enregistrement sur 3 ans.'
+		'Conception de zéro d''une base de données de motivation et de suivi pour les RH. En raison de l''intégration de COVED,'
+		' PAPREC nécessite une conception de base de données plus flexible. Conception d''un prototype de test pour valider la'
+		' structure. Intégration des traceurs de congés payés avec un enregistrement sur 3 ans.'
 		AS summary
 
 	UNION ALL
