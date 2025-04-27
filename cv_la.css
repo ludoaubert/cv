@@ -30,7 +30,7 @@ body {
 }
 
 #left-panel {
-  height:2390px;
+  height:1980px;
   width: 33%;
   display: flex;
   flex-direction: column;
