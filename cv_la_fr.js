@@ -101,9 +101,9 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'réduction coûts cloud de plusieurs centaines de milliers d’euros, intégration de 3 entreprises. A simplifié la gestion des données et a soutenu l’intégration de trois entreprises, d’une valeur de plusieurs millions.'
 		AS summary
 /*
-		'J''ai effectué la migration vers un nouveau schéma et la fusion des bases de données de brevets lors d''une'
-		' acquisition d''entreprise. Cette initiative a permis d''économiser plusieurs centaines de milliers de dollars en coûts cloud,'
-		' a simplifié la gestion des données et a soutenu l''intégration de trois entreprises, d''une valeur de plusieurs millions.'
+		'J’ai effectué la migration vers un nouveau schéma et la fusion des bases de données de brevets lors d’une'
+		' acquisition d’entreprise. Cette initiative a permis d’économiser plusieurs centaines de milliers de dollars en coûts cloud,'
+		' a simplifié la gestion des données et a soutenu l’intégration de trois entreprises, d’une valeur de plusieurs millions.'
 		AS summary
 */
 	UNION ALL
@@ -128,9 +128,9 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		AS resultats,
 		'Creation de graphes de tracabilité'
 		AS headline,
-		'J''ai créé un script pour générer des graphes de traçabilité pour six usines de recyclage de plastique.'
-		' J''ai re-développé une version plus efficace et évolutive du script en utilisant des fonctionnalités avancées de SQL,'
-		' ce qui a permis de produire jusqu''à 6 millions de lignes.'
+		'J’ai créé un script pour générer des graphes de traçabilité pour six usines de recyclage de plastique.'
+		' J’ai re-développé une version plus efficace et évolutive du script en utilisant des fonctionnalités avancées de SQL,'
+		' ce qui a permis de produire jusqu’à 6 millions de lignes.'
 		AS summary
 
 	UNION ALL
@@ -145,8 +145,8 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
                 '' AS resultats,
                 'Flexible HR database with tracking'
                 AS headline,
-		'Conception de zéro d''une base de données de motivation et de suivi pour les RH. En raison de l''intégration de COVED,'
-		' PAPREC nécessite une conception de base de données plus flexible. Conception d''un prototype de test pour valider la'
+		'Conception de zéro d’une base de données de motivation et de suivi pour les RH. En raison de l’intégration de COVED,'
+		' PAPREC nécessite une conception de base de données plus flexible. Conception d’un prototype de test pour valider la'
 		' structure. Intégration des traceurs de congés payés avec un enregistrement sur 3 ans.'
 		AS summary
 
@@ -162,7 +162,7 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
                 '' AS resultats,
                 'ELT pour des données geographiques massives'
                 AS headline,
-		'Paprec ESRI Geographic Data Hub. Développement d''un processus ELT SQL+Python pour transférer des gigaoctets de données '
+		'Paprec ESRI Geographic Data Hub. Développement d’un processus ELT (SQL+Python) pour transférer des gigaoctets de données '
 		'hébergées par divers fournisseurs tels que Kizeo, Novacom, Simpliciti, Sigrenea pour Paprec dans une base de données '
 		'géographique on premise.'
 		AS summary
@@ -188,12 +188,16 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'Budget: environ 10 euros par jour.'
 		'Nous avons toujours été en sécurité.'
 		AS resultats,
-		'Voyage en vélo et camping: Paris Barcelone, 8 jours'
+		'Voyage en vélo et camping'
 		AS headline,
-		'J''ai accompagné mon fils, en roulant 120 km par jour, en planifiant l''itinéraire et en veillant à ce que le voyage'
+
+		'Paris-Barcelone en 8 jours (logistique, autonomie, planification)'
+		AS summary
+/*
+		'J’ai accompagné mon fils, en roulant 120 km par jour, en planifiant l’itinéraire et en veillant à ce que le voyage'
 		' se déroule sans accroc avec un budget de 10 euros par jour.'
 		AS summary
-
+*/
 	UNION ALL
 
 		SELECT 'Personal project' AS entreprise,
@@ -263,10 +267,10 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'Acquisition de compétences technologiques de pointe sur les langages (C++, SQL, JS, HTML, SVG, CSS),'
 		' les produits (PostgreSQL, PGLite, NodeJS) et en algorithmique.'
 		AS resultats,
-		'developpement d''algorithmes pour cartographier des structures de données complexes'
+		'developpement d’algorithmes pour cartographier des structures de données complexes'
 		AS headline,
-		'J''ai développé un algorithme permettant de comprendre rapidement les structures de bases de données, initialement conçu '
-		' lors d''un stage chez EDF. Par la suite, j''ai affiné cet algorithme et élargi ses fonctionnalités, en intégrant diverses '
+		'J’ai développé un algorithme permettant de comprendre rapidement les structures de bases de données, initialement conçu '
+		' lors d’un stage chez EDF. Par la suite, j’ai affiné cet algorithme et élargi ses fonctionnalités, en intégrant diverses '
 		' technologies telles que C++, PostgreSQL et NodeJS pour créer une solution interactive basée sur le web.'
 		AS summary
 
@@ -290,11 +294,11 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'On a gagné 1 homme année.'
 		'Une des utilisatrices m’a donné un feedback très positif sur le fonctionnement de l’outil.'
 		AS resultats,
-		'Design d''une interface flexible pour editer 60 champs'
+		'Design d’une interface flexible pour editer 60 champs'
 		AS headline,
-		'Conception et développement d''une interface graphique simple et évolutive pour gérer 60 champs d''assurance vie, '
-		' remplaçant une solution trop complexe et difficile à maintenir. Le projet a duré 3 mois, permettant d''économiser '
-		' l''équivalent d''une année de travail, avec des retours positifs des utilisateurs fonctionnalité.'
+		'Conception et développement d’une interface graphique simple et évolutive pour gérer 60 champs d’assurance vie, '
+		' remplaçant une solution trop complexe et difficile à maintenir. Le projet a duré 3 mois, permettant d’économiser '
+		' l’équivalent d’une année de travail, avec des retours positifs des utilisateurs fonctionnalité.'
 		AS summary
 
 		UNION ALL
@@ -325,7 +329,7 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'Il a subi avec succès un test  de performance très intense réalisé par ma hiérarchie.'
 		'En 2004, Beatware a été racheté par la branche Business Intelligence de Oracle (Hyperion).'
 		AS resultats,
-		'Conception d''un algorithme pour la visualisation en 2D'
+		'Conception d’un algorithme pour la visualisation en 2D'
 		AS headline,
 		'I developed an algorithm in C++ to vectorize 2D graphical data, converting mouse-drawn points into Bézier curves'
 		'while minimizing the number of curves and detecting shapes like polylines, polygons, and ellipses.'
@@ -384,13 +388,13 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'Une table avec 16000 inventeurs a été créée.'
 		'La table a permis de fiabiliser la gestion des inventeurs'
 		AS resultats,
-		'Conception d''un processus de déduplication'
+		'Conception d’un processus de déduplication'
 		AS headline,
 		'Développement en Python d’un algorithme de déduplication pour 16 000 inventeurs.'
 		AS summary
 /*
-		'Développement en Python d''un algorithme pour dédupliquer les données des inventeurs lors de la migration des brevets, '
-		' consolidant plusieurs enregistrements en une seule table des inventeurs. Création réussie d''une table avec 16 000 '
+		'Développement en Python d’un algorithme pour dédupliquer les données des inventeurs lors de la migration des brevets, '
+		' consolidant plusieurs enregistrements en une seule table des inventeurs. Création réussie d’une table avec 16 000 '
 		' inventeurs uniques, améliorant ainsi la fiabilité des données.'
 		AS summary
 */
@@ -409,7 +413,7 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'Extraction de 4 millions de documents depuis Oracle → scripts automatisés (SQL).'
 		AS summary
 /*
-		'J''ai rédigé des scripts et exécuté l''extraction de 4 To de documents d''archives d''entreprise depuis Oracle (fichiers '
+		'J’ai rédigé des scripts et exécuté l’extraction de 4 To de documents d’archives d’entreprise depuis Oracle (fichiers '
 		' stockés dans la base de données) vers des fichiers.'
 		AS summary
 */
@@ -427,8 +431,8 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'Développement C++ d’un module structurant les documents légaux selon les paramètres brevets.'
 		AS summary
 /*
-		'Développement en C++ d''une fonctionnalité permettant de créer une structure de répertoires pour stocker des documents '
-		' légaux. La structure dépend d''un ensemble de paramètres spécifiques à un brevet.'
+		'Développement en C++ d’une fonctionnalité permettant de créer une structure de répertoires pour stocker des documents '
+		' légaux. La structure dépend d’un ensemble de paramètres spécifiques à un brevet.'
 		AS summary
 */
 	UNION ALL
@@ -471,9 +475,9 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'Cela a énormément contribué à la réussite du projet Optiq ainsi qu’à la tenue des délais et même à la santé'
 		'mentale des équipes'
 		AS resultats,
-		'Développement d''un portefeuille de tests de non-regression'
+		'Développement d’un portefeuille de tests de non-regression'
 		AS headline,
-		'J''ai développé un portefeuille de tests de régression en utilisant Google Test pour le projet Optiq. Cette initiative a conduit'
+		'J’ai développé un portefeuille de tests de régression en utilisant Google Test pour le projet Optiq. Cette initiative a conduit'
 		' à une adoption généralisée des tests automatisés, contribuant ainsi au succès du projet et à sa livraison dans les délais.'
 		AS summary
 
@@ -489,12 +493,15 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
                 '' AS resultats,
 		'Developpement de 3 modules en C++'
 		AS headline,
-		'J''ai développé 3 sous-modules pour le module MDSpy du projet phare Optiq : '
+		'Conception de 3 modules C++ (MDSpyReader, déduplication UDP, shaping) intégrés dans l’infrastructure Optiq'
+		AS summary
+/*
+		'J’ai développé 3 sous-modules pour le module MDSpy du projet phare Optiq : '
     		'1-MDSpyReader : application qui écoute ce que les clients reçoivent et le persiste dans Kafka.'
     		'2-Déduplication : déduplication des données de marché envoyées sur 2 lignes physiques indépendantes.'
-		'3-Implémentation et test d''un algorithme de contrôle de flux UDP (shaping).'
+		'3-Implémentation et test d’un algorithme de contrôle de flux UDP (shaping).'
 		AS summary
-
+*/
 )
 INSERT INTO achievement(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resultats,headline,summary)
 SELECT *
@@ -506,9 +513,9 @@ WITH cte (type_code,code,libelle) AS (
 		'senior_software_engineer' AS code,
 		'Ingénieur diplômé de l’École Centrale Paris, je combine 25 ans d’expérience en développement logiciel, traitement de données, et conception d’architectures robustes. Mon parcours couvre le développement C++, l’ingénierie de données, le SQL avancé, le prototypage web, et l’optimisation des performances. Je recherche des projets critiques impliquant cloud, big data, et intégration continue.' AS libelle
 /*
-		'Diplômé de l''École Centrale, je combine une solide formation en mathématiques avec 25 ans '
-		' d''expérience dans des projets diversifiés de logiciels et de data. '
-		' Au début de ma carrière, j''ai principalement travaillé sur des projets en C++, dont certains nécessitaient la conception d''algorithmes.'
+		'Diplômé de l’École Centrale, je combine une solide formation en mathématiques avec 25 ans '
+		' d’expérience dans des projets diversifiés de logiciels et de data. '
+		' Au début de ma carrière, j’ai principalement travaillé sur des projets en C++, dont certains nécessitaient la conception d’algorithmes.'
 		' Dans un deuxième temps, sur des projets liés aux données. '
 		' Je suis à la recherche de projets complexes et critiques, utilisant un mélange de données, de logiciels et de web.'
 		AS libelle
@@ -628,7 +635,7 @@ SELECT * FROM cte
 WITH cte(type_code,code,libelle,debut,fin) AS (
 	SELECT 'EDUCATION' AS type_code,
 		'Ecole Centrale Paris' AS code,
-		'Diplôme d''ingénieur avec option informatique et électronique' AS libelle,
+		'Diplôme d’ingénieur, spécialité Informatique et Électronique' AS libelle,
 		TO_DATE('1992-09-01','YYYY-MM-DD') AS debut,
 		TO_DATE('1996-06-30','YYYY-MM-DD') AS fin
 
@@ -636,7 +643,7 @@ WITH cte(type_code,code,libelle,debut,fin) AS (
 
 	SELECT 'EDUCATION' AS type_code,
 		'Lycee Sainte Genevieve' AS code,
-		'Classe Préparatoires option Mathématiques' AS libelle,
+		'Classe Préparatoires Math Sup/Math Spé' AS libelle,
 		TO_DATE('1990-09-01','YYYY-MM-DD') AS debut,
 		TO_DATE('1992-06-30','YYYY-MM-DD') AS fin
 )
