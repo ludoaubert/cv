@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS achievement(
   iddiagram INTEGER DEFAULT 1,
   PRIMARY KEY (iddiagram, idachievement),
   entreprise VARCHAR(50),
-  job_titel VARCHAR(50),
+  job_title VARCHAR(50),
   debut DATE,
   fin DATE,
   realisation VARCHAR,
