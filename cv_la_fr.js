@@ -675,7 +675,7 @@ window.main = async function main()
 		)
 		SELECT STRING_AGG(FORMAT('
 			<div id="%1$s" class="%12$s">
-			  <h3 id="%1$s" class="job%9$s">%3$s - %4$s<time datetime="%5$s">%6$s</time>-<time datetime="%7$s">%8$s</time></h3>
+			  <h3 id="%1$s" class="job%10$s">%3$s - %4$s<time datetime="%5$s">%6$s</time>-<time datetime="%7$s">%8$s</time></h3>
 			  <h4>%2$s</h4>
 			  <p>%9$s</p>
 			  <hr id="%1$s" class="job%11$s"/>
