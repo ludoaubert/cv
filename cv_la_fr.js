@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS achievement(
   iddiagram INTEGER DEFAULT 1,
   PRIMARY KEY (iddiagram, idachievement),
   entreprise VARCHAR(50),
+  job_titel VARCHAR(50),
   debut DATE,
   fin DATE,
   realisation VARCHAR,
@@ -68,7 +69,8 @@ const data=`
 INSERT INTO diagram(iddiagram, title) VALUES (1, 'CV Ludovic Aubert');
 
 WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headline,summary) AS (
-	SELECT 'Santarelli Group - Ingénieur Data et Logiciel' AS entreprise,
+	SELECT 'Santarelli Group' AS entreprise,
+		'Ingénieur Data et Logiciel' AS job_title,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
 		'Migration et fusion des bases de données des brevets'
@@ -106,7 +108,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 */
 	UNION ALL
 
-	SELECT 'Paprec - Ingénieur Data et Logiciel' AS entreprise,
+	SELECT 'Paprec' AS entreprise,
+		'Ingénieur Data et Logiciel' AS job_title,
 		'2019-02-01'::date AS debut,
 		'2020-06-01'::date AS fin,
 		'création d’un script pour produire le graphe de traçabilité pour les 6 usines de recyclage de plastique'
@@ -132,7 +135,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 
 	UNION ALL
 
-		SELECT 'Paprec - Ingénieur Data et Logiciel' AS entreprise,
+		SELECT 'Paprec' AS entreprise,
+		'Ingénieur Data et Logiciel' AS job_title,
                '2019-02-01'::date AS debut,
                 '2020-06-01'::date AS fin,
                 '' AS realisation,
@@ -148,7 +152,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 
 	UNION ALL
 
-		SELECT 'Paprec - Ingénieur Data et Logiciel' AS entreprise,
+		SELECT 'Paprec' AS entreprise,
+		'Ingénieur Data et Logiciel' AS job_title,
                '2019-02-01'::date AS debut,
                 '2020-06-01'::date AS fin,
                 '' AS realisation,
@@ -165,6 +170,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 	UNION ALL
 
 		SELECT 'Bikepacking' AS entreprise,
+		'' AS job_title,
 		'2024-07-27'::date AS debut,
 		'2024-08-04'::date AS fin,
 		'trajet en vélo et camping pour relier Paris à Barcelone en 8 jours'
@@ -191,6 +197,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 	UNION ALL
 
 		SELECT 'Personal project' AS entreprise,
+		'' AS job_title,
 		'1996-03-11'::date AS debut,
 		'2025-03-20'::date AS fin,
 		'conception sur 15 ans d’un algorithme pour comprendre rapidement la structure d’une base de données'
@@ -266,6 +273,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		UNION ALL
 
 		SELECT 'Quantalys' AS entreprise,
+		'Développeur Fullstack' AS job_title,
 		'2017-11-01'::date AS debut,
 		'2018-04-30'::date AS fin,
 		'conception/réalisation d’une manière simple et évolutive d’une interface graphique gérant 60 champs pour les assurances vies'
@@ -292,6 +300,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		UNION ALL
 
 		SELECT 'Beatware' AS entreprise,
+		'C++ developer' AS job_title,
 		'2000-09-01'::date AS debut,
 		'2001-09-01'::date AS fin,
 		'conception d’un algorithme pour vectoriser des données graphiques en dimension deux'
@@ -327,6 +336,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		UNION ALL
 
 		SELECT 'AEG Zahler Gmbh' AS entreprise,
+		'C++ developer' AS job_title,
 		'1996-10-01'::date AS debut,
 		'1998-10-01'::date AS fin,
 		'conception d’un petit compilateur embarqué pour compteur électrique'
@@ -354,7 +364,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 
 	UNION ALL
 
-		SELECT 'Santarelli Group - Ingénieur Data et Logiciel' AS entreprise,
+		SELECT 'Santarelli Group' AS entreprise,
+		'Ingénieur Data et Logiciel' AS job_title,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
 		'déduplication des inventeurs des brevets'
@@ -385,7 +396,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 */
 	UNION ALL
 
-               SELECT 'Santarelli Group - Ingénieur Data et Logiciel' AS entreprise,
+               SELECT 'Santarelli Group' AS entreprise,
+		'Ingénieur Data et Logiciel' AS job_title,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
 		'' AS realisation,
@@ -403,7 +415,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 */
 	UNION ALL
 
-		SELECT 'Santarelli Group - Ingénieur Data et Logiciel' AS entreprise,
+		SELECT 'Santarelli Group' AS entreprise,
+		'Ingénieur Data et Logiciel' AS job_title,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
 		'' AS realisation,
@@ -420,7 +433,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 */
 	UNION ALL
 
-		SELECT 'Santarelli Group - Ingénieur Data et Logiciel' AS entreprise,
+		SELECT 'Santarelli Group' AS entreprise,
+		'Ingénieur Data et Logiciel' AS job_title,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
 		'' AS realisation,
@@ -438,6 +452,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 	UNION ALL
 
 		SELECT 'Euronext' AS entreprise,
+		'Ingénieur C++ et Tests' AS job_title,
 		'2015-12-01'::date AS debut,
 		'2017-06-30'::date AS fin,
 		'initiation d’un portefeuille de tests de non régression en utilisant l’outil google tests'
@@ -465,6 +480,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		UNION ALL
 
 		SELECT 'Euronext' AS entreprise,
+		'Ingénieur C++ et Tests' AS job_title,
 		'2015-12-01'::date AS debut,
 		'2017-06-30'::date AS fin,
 		'' AS realisation,
@@ -480,7 +496,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS summary
 
 )
-INSERT INTO achievement(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headline,summary)
+INSERT INTO achievement(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resultats,headline,summary)
 SELECT *
 FROM cte;
 
@@ -657,24 +673,25 @@ window.main = async function main()
 			FROM cte_achievement
 		)
 		SELECT STRING_AGG(FORMAT('
-			<div id="%1$s" class="%11$s">
-			  <h3 id="%1$s" class="job%9$s">%3$s <time datetime="%4$s">%5$s</time>-<time datetime="%6$s">%7$s</time></h3>
+			<div id="%1$s" class="%12$s">
+			  <h3 id="%1$s" class="job%9$s">%3$s - %4%s<time datetime="%5$s">%6$s</time>-<time datetime="%7$s">%8$s</time></h3>
 			  <h4>%2$s</h4>
-			  <p>%8$s</p>
-			  <hr id="%1$s" class="job%10$s"/>
+			  <p>%9$s</p>
+			  <hr id="%1$s" class="job%11$s"/>
 			</div>
 			',
 			id, --%1
 			headline, --%2
 			entreprise, --%3
-			debut, --%4
-			annee_debut, --%5
-			fin, --%6
-			annee_fin, --%7
-			summary, --%8
-			rn, --%9
-			nb-rn-1, --%10
-			entreprise_), --%11
+			job_title, --%4
+			debut, --%5
+			annee_debut, --%6
+			fin, --%7
+			annee_fin, --%8
+			summary, --%9
+			rn, --%10
+			nb-rn-1, --%11
+			entreprise_), --%12
 			'\n' ORDER BY fin DESC, id) AS html
 		FROM cte
 	`);
