@@ -511,7 +511,7 @@ FROM cte;
 WITH cte (type_code,code,libelle) AS (
 	SELECT 'PITCH' AS type_code,
 		'senior_software_engineer' AS code,
-		'Ingénieur diplômé de l’École Centrale Paris, je combine 25 ans d’expérience en développement logiciel, traitement de données, et conception d’architectures robustes. Mon parcours couvre le développement C++, l’ingénierie de données, le SQL avancé, le prototypage web, et l’optimisation des performances. Je recherche des projets critiques impliquant cloud, big data, et intégration continue.' AS libelle
+		'Ingénieur diplômé de l’École Centrale Paris, je combine 25 ans d’expérience en développement logiciel, traitement de données, et conception d’architectures robustes. Mon parcours couvre le développement C++, l’ingénierie de données, le SQL avancé, le prototypage web, et l’optimisation des performances. Je recherche des projets complexes et critiques impliquant ces technologies.' AS libelle
 /*
 		'Diplômé de l’École Centrale, je combine une solide formation en mathématiques avec 25 ans '
 		' d’expérience dans des projets diversifiés de logiciels et de data. '
