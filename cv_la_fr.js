@@ -474,13 +474,15 @@ FROM cte;
 WITH cte (type_code,code,libelle) AS (
 	SELECT 'PITCH' AS type_code,
 		'senior_software_engineer' AS code,
+		'Ingénieur diplômé de l’École Centrale Paris, je combine 25 ans d’expérience en développement logiciel, traitement de données, et conception d’architectures robustes. Mon parcours couvre le développement C++, l’ingénierie de données, le SQL avancé, le prototypage web, et l’optimisation des performances. Je recherche des projets critiques impliquant cloud, big data, et intégration continue.' AS libelle
+/*
 		'Diplômé de l''École Centrale, je combine une solide formation en mathématiques avec 25 ans '
 		' d''expérience dans des projets diversifiés de logiciels et de data. '
 		' Au début de ma carrière, j''ai principalement travaillé sur des projets en C++, dont certains nécessitaient la conception d''algorithmes.'
 		' Dans un deuxième temps, sur des projets liés aux données. '
 		' Je suis à la recherche de projets complexes et critiques, utilisant un mélange de données, de logiciels et de web.'
 		AS libelle
-
+*/
 	UNION ALL
 
 	SELECT 'PITCH' AS type_code,
@@ -529,28 +531,28 @@ WITH cte (type_code,code,libelle) AS (
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'https://stackoverflow.com/users/3046585/ludovic-aubert' AS code,
+		'stackoverflow.com/ludovic-aubert' AS code,
 		'https://stackoverflow.com/users/3046585/ludovic-aubert'
 		AS libelle
 
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'https://github.com/ludoaubert' AS code,
+		'github.com/ludoaubert' AS code,
 		'https://github.com/ludoaubert'
 		AS libelle
 
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'ludoaubert.github.io/pglite-linkedboxdraw/table_edit_ti.html' AS code,
+		'ludoaubert.github.io' AS code,
 		'https://ludoaubert.github.io/pglite-linkedboxdraw/table_edit_ti.html'
 		AS libelle
 
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'www.linkedin.com/in/ludovic-aubert-831bb875' AS code,
+		'www.linkedin.com/ludovic-aubert' AS code,
 		'https://www.linkedin.com/in/ludovic-aubert-831bb875/'
 		AS libelle
 
@@ -565,7 +567,7 @@ WITH cte (type_code,code,libelle) AS (
 
 	SELECT 'HEADLINE' AS type_code,
 		'senior_software_engineer' AS code,
-		'Senior Software Engineer'
+		'Senior Software Engineer - Data, Backend, C++, Cloud'
 		AS libelle
 
 	UNION ALL
