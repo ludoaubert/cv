@@ -659,6 +659,7 @@ window.main = async function main()
 			SELECT headline,
 				entreprise,
 				entreprise_,
+				job_title,
 				CASE WHEN nb = 1
 					THEN entreprise_
 					ELSE entreprise_ || '_' || rn
