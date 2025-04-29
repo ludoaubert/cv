@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS achievement(
 const data=`
 INSERT INTO diagram(iddiagram, title) VALUES (1, 'CV Ludovic Aubert');
 
-WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headline,summary) AS (
+WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resultats,headline,summary) AS (
 	SELECT 'Santarelli Group' AS entreprise,
 		'Ingénieur Data et Logiciel' AS job_title,
 		'2021-04-01'::date AS debut,
