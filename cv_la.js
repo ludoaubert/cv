@@ -532,28 +532,28 @@ WITH cte (type_code,code,libelle) AS (
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'stackoverflow.com/users/3046585/ludovic-aubert' AS code,
+		'stackoverflow.com/ludovic-aubert' AS code,
 		'https://stackoverflow.com/users/3046585/ludovic-aubert'
 		AS libelle
 
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'https://github.com/ludoaubert' AS code,
+		'github.com/ludoaubert' AS code,
 		'https://github.com/ludoaubert'
 		AS libelle
 
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'https://ludoaubert.github.io/pglite-linkedboxdraw/table_edit_ti.html' AS code,
+		'ludoaubert.github.io' AS code,
 		'https://ludoaubert.github.io/pglite-linkedboxdraw/table_edit_ti.html'
 		AS libelle
 
 	UNION ALL
 
 	SELECT 'LINK' AS type_code,
-		'linkedin.com/in/ludovic-aubert-831bb875' AS code,
+		'linkedin.com/ludovic-aubert' AS code,
 		'https://www.linkedin.com/in/ludovic-aubert-831bb875/'
 		AS libelle
 
