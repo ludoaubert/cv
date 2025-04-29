@@ -296,7 +296,7 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		AS resultats,
 		'Design d’une interface flexible pour editer 60 champs'
 		AS headline,
-		'Conception et développement d’une interface graphique simple et évolutive pour gérer 60 champs d’assurance vie, '
+		'Conception et développement (SQL, C++) d’une interface graphique simple et évolutive pour gérer 60 champs d’assurance vie, '
 		' remplaçant une solution trop complexe et difficile à maintenir. Le projet a duré 3 mois, permettant d’économiser '
 		' l’équivalent d’une année de travail, avec des retours positifs des utilisateurs fonctionnalité.'
 		AS summary
