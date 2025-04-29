@@ -1,4 +1,3 @@
-
 import { PGlite } from "https://cdn.jsdelivr.net/npm/@electric-sql/pglite/dist/index.js";
 
 const db = new PGlite();
@@ -69,7 +68,7 @@ const data=`
 INSERT INTO diagram(iddiagram, title) VALUES (1, 'CV Ludovic Aubert');
 
 WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headline,summary) AS (
-	SELECT 'Santarelli Group' AS entreprise,
+	SELECT 'Santarelli Group - Ingénieur Data et Logiciel' AS entreprise,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
 		'Migration et fusion des bases de données des brevets'
@@ -95,16 +94,19 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'Cela peut se valoriser jusqu’à des millions d’euros.'
 		'Migration aussi de 5 téraoctets de documents depuis Oracle vers le filesystem.'
 		AS resultats,
-		'Migration de schema et fusion de base de données'
+		'Migration de schémas et fusion de base de données brevets'
 		AS headline,
+		'réduction coûts cloud de plusieurs centaines de milliers d’euros, intégration de 3 entreprises. A simplifié la gestion des données et a soutenu l’intégration de trois entreprises, d’une valeur de plusieurs millions.'
+		AS summary
+/*
 		'J''ai effectué la migration vers un nouveau schéma et la fusion des bases de données de brevets lors d''une'
 		' acquisition d''entreprise. Cette initiative a permis d''économiser plusieurs centaines de milliers de dollars en coûts cloud,'
 		' a simplifié la gestion des données et a soutenu l''intégration de trois entreprises, d''une valeur de plusieurs millions.'
 		AS summary
-
+*/
 	UNION ALL
 
-	SELECT 'Paprec' AS entreprise,
+	SELECT 'Paprec - Ingénieur Data et Logiciel' AS entreprise,
 		'2019-02-01'::date AS debut,
 		'2020-06-01'::date AS fin,
 		'création d’un script pour produire le graphe de traçabilité pour les 6 usines de recyclage de plastique'
@@ -130,7 +132,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 
 	UNION ALL
 
-		SELECT 'Paprec' AS entreprise,
+		SELECT 'Paprec - Ingénieur Data et Logiciel' AS entreprise,
                '2019-02-01'::date AS debut,
                 '2020-06-01'::date AS fin,
                 '' AS realisation,
@@ -146,7 +148,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 
 	UNION ALL
 
-		SELECT 'Paprec' AS entreprise,
+		SELECT 'Paprec - Ingénieur Data et Logiciel' AS entreprise,
                '2019-02-01'::date AS debut,
                 '2020-06-01'::date AS fin,
                 '' AS realisation,
@@ -352,7 +354,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 
 	UNION ALL
 
-		SELECT 'Santarelli Group' AS entreprise,
+		SELECT 'Santarelli Group - Ingénieur Data et Logiciel' AS entreprise,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
 		'déduplication des inventeurs des brevets'
@@ -373,14 +375,17 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS resultats,
 		'Conception d''un processus de déduplication'
 		AS headline,
+		'Développement en Python d’un algorithme de déduplication pour 16 000 inventeurs.'
+		AS summary
+/*
 		'Développement en Python d''un algorithme pour dédupliquer les données des inventeurs lors de la migration des brevets, '
 		' consolidant plusieurs enregistrements en une seule table des inventeurs. Création réussie d''une table avec 16 000 '
 		' inventeurs uniques, améliorant ainsi la fiabilité des données.'
 		AS summary
-
+*/
 	UNION ALL
 
-               SELECT 'Santarelli Group' AS entreprise,
+               SELECT 'Santarelli Group - Ingénieur Data et Logiciel' AS entreprise,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
 		'' AS realisation,
@@ -389,38 +394,47 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'' AS resultats,
 		'Extraction de 4 million de documents'
 		AS headline,
+		'Extraction de 4 millions de documents depuis Oracle → scripts automatisés (SQL).'
+		AS summary
+/*
 		'J''ai rédigé des scripts et exécuté l''extraction de 4 To de documents d''archives d''entreprise depuis Oracle (fichiers '
 		' stockés dans la base de données) vers des fichiers.'
 		AS summary
-
+*/
 	UNION ALL
 
-		SELECT 'Santarelli Group' AS entreprise,
+		SELECT 'Santarelli Group - Ingénieur Data et Logiciel' AS entreprise,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
 		'' AS realisation,
 		'' AS travail_confie,
 		'' AS actions,
 		'' AS resultats,
-		'developpement d''un module en C++' AS headline,
+		'developpement d’un module en C++' AS headline,
+		'Développement C++ d’un module structurant les documents légaux selon les paramètres brevets.'
+		AS summary
+/*
 		'Développement en C++ d''une fonctionnalité permettant de créer une structure de répertoires pour stocker des documents '
 		' légaux. La structure dépend d''un ensemble de paramètres spécifiques à un brevet.'
 		AS summary
-
+*/
 	UNION ALL
 
-		SELECT 'Santarelli Group' AS entreprise,
+		SELECT 'Santarelli Group - Ingénieur Data et Logiciel' AS entreprise,
 		'2021-04-01'::date AS debut,
 		'2025-03-01'::date AS fin,
 		'' AS realisation,
 		'' AS travail_confie,
 		'' AS actions,
 		'' AS resultats,
-		'Développement d''un prototype d''interface web' AS headline,
-		'Création d''un proof of concept utilisant NodeJS et les nouvelles fonctionalités SQL JSON pour naviguer dans la base de données '
-		' des brevets via un navigateur web. Développement rapide d''un prototype.'
+		'Développement d’un prototype d’interface web' AS headline,
+		'Création d’une interface web prototype (NodeJS, SQL JSON) pour la navigation base brevets'
 		AS summary
-
+/*
+		'Création d’un proof of concept utilisant NodeJS et les nouvelles fonctionalités SQL JSON pour naviguer dans la base de données '
+		' des brevets via un navigateur web. Développement rapide d’un prototype.'
+		AS summary
+*/
 	UNION ALL
 
 		SELECT 'Euronext' AS entreprise,
