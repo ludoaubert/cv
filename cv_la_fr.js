@@ -453,7 +453,7 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		' des brevets via un navigateur web. Développement rapide d’un prototype.'
 		AS summary
 */
-	UNION ALL
+		UNION ALL
 
 		SELECT 'Euronext' AS entreprise,
 		'Ingénieur C++ et Tests' AS job_title,
@@ -553,6 +553,8 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'principales du système de gestion des empreintes digitales.'
 		'Reverse enginering d’un logiciel de reconnaissance de visage, procédures statistiques (PCA,LDA), machine learning en C++ avec des support vector machines.'
 		AS summary
+
+		UNION ALL
 
 		SELECT 'Matra Nortel Network' AS entreprise,
 		'Développeur C embarqué' AS job_title,
