@@ -493,7 +493,8 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
                 '' AS resultats,
 		'Developpement de 3 modules en C++ multicore low latency'
 		AS headline,
-		'Conception de 3 modules C++ (MDSpyReader, déduplication UDP, shaping) intégrés dans l’infrastructure Optiq'
+		'Conception de 3 modules C++ (MDSpyReader, déduplication UDP, shaping) intégrés dans l’infrastructure Optiq.'
+		'Développement low latency utilisant un équivalent de C++26 fibers.'
 		AS summary
 /*
 		'J’ai développé 3 sous-modules pour le module MDSpy du projet phare Optiq : '
