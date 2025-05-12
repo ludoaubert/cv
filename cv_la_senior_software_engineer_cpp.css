@@ -1,0 +1,47 @@
+#flex-container{
+  min-height: 2130px;
+}
+
+
+.data,
+.software,
+.full_stack{
+  display:none;
+}
+
+.senior_software_engineer{
+  display:block;
+}
+
+
+div#achievements > div.Santarelli_Group,
+div#achievements > div.Paprec,
+div#achievements > div.Quantalys,
+div#achievements > div.Euronext
+{
+  display:block;
+}
+
+div#personal-project > div#Personal_project{
+  display:block;
+}
+
+h3#Personal_project{
+  display:none;
+}
+
+div#hobby > div#Bikepacking{
+  display:block;        
+}
+
+#right-panel h3#Bikepacking.job1 {
+  display: none;
+}
+
+hr#Personal_project{
+  display:none;
+}
+
+hr#Bikepacking{
+  display:none;
+}
