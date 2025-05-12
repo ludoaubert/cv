@@ -4,6 +4,9 @@ https://ludoaubert.github.io/cv/cv_ludovic_aubert.html
 CV Software Engineer
 https://ludoaubert.github.io/cv/cv_la_s.html
 
+CV Software Engineer C++
+https://ludoaubert.github.io/cv/cv_la_sse_cpp_fr.html
+
 CV Data Engineer
 https://ludoaubert.github.io/cv/cv_la_d.html
 
