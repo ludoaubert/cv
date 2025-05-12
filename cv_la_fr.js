@@ -491,7 +491,7 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
                 '' AS travail_confie,
                 '' AS actions,
                 '' AS resultats,
-		'Developpement de 3 modules en C++'
+		'Developpement de 3 modules en C++ multicore low latency'
 		AS headline,
 		'Conception de 3 modules C++ (MDSpyReader, déduplication UDP, shaping) intégrés dans l’infrastructure Optiq'
 		AS summary
