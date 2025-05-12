@@ -502,6 +502,71 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'3-Implémentation et test d’un algorithme de contrôle de flux UDP (shaping).'
 		AS summary
 */
+		UNION ALL
+
+		SELECT 'BNPP CIB' AS entreprise,
+		'Développeur C++' AS job_title,
+		'2010-09-01'::date AS debut,
+		'2012-03-01'::date AS fin,
+		'' AS realisation,
+		'' AS travail_confie,
+		'' AS actions,
+		'' AS resultats,
+		'Développement et maintenance Référentiel de données de Marché'
+		AS headline,
+		'Implémentation en C++ d’un update en masse des données sous une base Versant en appelant des pricers distants.'
+		'Maintenance et évolution du système gérant la réplication des données sur 3 sites (Paris, HK, NY)'
+		'et du portefeuille de tests automatisés de non regression. Développement GUI.'
+		AS summary
+
+		UNION ALL
+
+		SELECT 'Société Générale ITEC DFI' AS entreprise,
+		'Développeur C++' AS job_title,
+		'2006-09-01'::date AS debut,
+		'2007-09-01'::date AS fin,
+		'' AS realisation,
+		'' AS travail_confie,
+		'' AS actions,
+		'' AS resultats,
+		'Evolution, maintenance et support niveau 2 application de trading'
+		AS headline,
+		'Upgrade de la chaine de compilation (Visual C++ 2005). Développement d’un composant partagé pour l’édition des prix.'
+		'Développement d’une nouvelle fonctionalité pour les "propositions multi leg".'
+		'Upgrade du client Oracle. Optimization de requêtes SQL avec un serveur en Australie.'
+		AS summary
+
+		UNION ALL
+
+		SELECT 'Sagem Sécurité' AS entreprise,
+		'Développeur C++' AS job_title,
+		'2002-03-01'::date AS debut,
+		'2005-05-01'::date AS fin,
+		'' AS realisation,
+		'' AS travail_confie,
+		'' AS actions,
+		'' AS resultats,
+		'Développent, maintenance et reverse engineering'
+		AS headline,
+		'Développement et maintenance, système de gestion des release notes.'
+		'Développement d’un portefeuille de tests automatisés pour tester les fonctionalités'
+		'principales du système de gestion des empreintes digitales.'
+		'Reverse enginering d’un logiciel de reconnaissance de visage, procédures statistiques (PCA,LDA), machine learning en C++ avec des support vector machines.'
+		AS summary
+
+		SELECT 'Matra Nortel Network' AS entreprise,
+		'Développeur C embarqué' AS job_title,
+		'1998-11-01'::date AS debut,
+		'2000-08-01'::date AS fin,
+		'' AS realisation,
+		'' AS travail_confie,
+		'' AS actions,
+		'' AS resultats,
+		'Développeur mobile Tetrapol'
+		AS headline,
+		'Développement de la nouvelle version d’une couche de protocole pour la selection de la cellule.'
+		'Mise à jour d’un équipement de test utilisé pour le développement du terminal.'
+		AS summary
 )
 INSERT INTO achievement(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resultats,headline,summary)
 SELECT *
