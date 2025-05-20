@@ -19,7 +19,10 @@ https://ludoaubert.github.io/cv/cv_la_sse.html
 https://ludoaubert.github.io/cv/cv_la_sse_fr.html
 
 Business Cards
-https://ludoaubert.github.io/cv/vcard_la.html
+
+https://ludoaubert.github.io/cv/vcard-la-sse.html
+
+https://ludoaubert.github.io/cv/vcard-la-cpp.html
 
 CV created with overleaf Latex online editor:
 https://ludoaubert.github.io/cv/CV_LAX-FR.pdf
