@@ -98,14 +98,15 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		AS resultats,
 		'Migration de schémas et fusion de base de données brevets'
 		AS headline,
+/*
 		'réduction coûts cloud de plusieurs centaines de milliers d’euros, intégration de 3 entreprises. A simplifié la gestion des données et a soutenu l’intégration de trois entreprises, d’une valeur de plusieurs millions.'
 		AS summary
-/*
+*/
 		'J’ai effectué la migration vers un nouveau schéma et la fusion des bases de données de brevets lors d’une'
 		' acquisition d’entreprise. Cette initiative a permis d’économiser plusieurs centaines de milliers de dollars en coûts cloud,'
 		' a simplifié la gestion des données et a soutenu l’intégration de trois entreprises, d’une valeur de plusieurs millions.'
 		AS summary
-*/
+
 	UNION ALL
 
 	SELECT 'Paprec' AS entreprise,
@@ -390,14 +391,15 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		AS resultats,
 		'Conception d’un processus de déduplication'
 		AS headline,
+/*
 		'Développement en Python d’un algorithme de déduplication pour 16 000 inventeurs.'
 		AS summary
-/*
+*/
 		'Développement en Python d’un algorithme pour dédupliquer les données des inventeurs lors de la migration des brevets, '
 		' consolidant plusieurs enregistrements en une seule table des inventeurs. Création réussie d’une table avec 16 000 '
 		' inventeurs uniques, améliorant ainsi la fiabilité des données.'
 		AS summary
-*/
+
 	UNION ALL
 
                SELECT 'Santarelli Group' AS entreprise,
@@ -410,13 +412,14 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'' AS resultats,
 		'Extraction de 4 million de documents'
 		AS headline,
+/*
 		'Extraction de 4 millions de documents depuis Oracle → scripts automatisés (SQL).'
 		AS summary
-/*
+*/
 		'J’ai rédigé des scripts et exécuté l’extraction de 4 To de documents d’archives d’entreprise depuis Oracle (fichiers '
 		' stockés dans la base de données) vers des fichiers.'
 		AS summary
-*/
+
 	UNION ALL
 
 		SELECT 'Santarelli Group' AS entreprise,
@@ -427,14 +430,16 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'' AS travail_confie,
 		'' AS actions,
 		'' AS resultats,
-		'developpement d’un module en C++' AS headline,
+		'developpement d’un module en C++'
+		AS headline,
+/*
 		'Développement C++ d’un module structurant les documents légaux selon les paramètres brevets.'
 		AS summary
-/*
+*/
 		'Développement en C++ d’une fonctionnalité permettant de créer une structure de répertoires pour stocker des documents '
 		' légaux. La structure dépend d’un ensemble de paramètres spécifiques à un brevet.'
 		AS summary
-*/
+
 	UNION ALL
 
 		SELECT 'Santarelli Group' AS entreprise,
@@ -445,14 +450,16 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'' AS travail_confie,
 		'' AS actions,
 		'' AS resultats,
-		'Développement d’un prototype d’interface web' AS headline,
+		'Développement d’un prototype d’interface web'
+		AS headline,
+/*
 		'Création d’une interface web prototype (NodeJS, SQL JSON) pour la navigation base brevets'
 		AS summary
-/*
+*/
 		'Création d’un proof of concept utilisant NodeJS et les nouvelles fonctionalités SQL JSON pour naviguer dans la base de données '
 		' des brevets via un navigateur web. Développement rapide d’un prototype.'
 		AS summary
-*/
+
 		UNION ALL
 
 		SELECT 'Euronext' AS entreprise,
@@ -493,16 +500,18 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
                 '' AS resultats,
 		'Developpement de 3 modules en C++ multicore low latency'
 		AS headline,
+/*
 		'Conception de 3 modules C++ (MDSpyReader, déduplication UDP, shaping) intégrés dans l’infrastructure Optiq.'
 		'Développement low latency utilisant un équivalent de C++26 fibers.'
 		AS summary
-/*
+*/
 		'J’ai développé 3 sous-modules pour le module MDSpy du projet phare Optiq : '
     		'1-MDSpyReader : application qui écoute ce que les clients reçoivent et le persiste dans Kafka.'
     		'2-Déduplication : déduplication des données de marché envoyées sur 2 lignes physiques indépendantes.'
 		'3-Implémentation et test d’un algorithme de contrôle de flux UDP (shaping).'
+		'Développement low latency utilisant un équivalent de C++26 fibers.'
 		AS summary
-*/
+
 		UNION ALL
 
 		SELECT 'BNPP CIB' AS entreprise,
