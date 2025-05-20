@@ -271,8 +271,7 @@ WITH cte(entreprise,job_title,debut,fin,realisation,travail_confie,actions,resul
 		'developpement d’algorithmes pour cartographier des structures de données complexes'
 		AS headline,
 		'J’ai développé un algorithme permettant de comprendre rapidement les structures de bases de données, initialement conçu '
-		' lors d’un stage chez EDF. Par la suite, j’ai affiné cet algorithme et élargi ses fonctionnalités, en intégrant diverses '
-		' technologies telles que C++, PostgreSQL et NodeJS pour créer une solution interactive basée sur le web.'
+		' lors d’un stage chez EDF. J’ai affiné cet algorithme, en utilisant  C++, PostgreSQL et NodeJS.'
 		AS summary
 
 		UNION ALL
