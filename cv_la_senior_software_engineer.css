@@ -26,7 +26,7 @@ div#personal-project > div#Personal_project{
   display:block;
 }
 
-div#Personal_project > h4{
+h4#Personal_project{
   display:none;
 }
 
