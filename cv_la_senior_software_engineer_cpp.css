@@ -32,6 +32,10 @@ div#personal-project > div#Personal_project{
   display:block;
 }
 
+div#personal-project > h4{
+  display:none;
+}
+
 h3#Personal_project{
   display:none;
 }
