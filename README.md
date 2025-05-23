@@ -24,6 +24,10 @@ https://ludoaubert.github.io/cv/vcard-la-sse.html
 
 https://ludoaubert.github.io/cv/vcard-la-cpp.html
 
+https://ludoaubert.github.io/cv/vcard-la-sse.pdf
+
+https://ludoaubert.github.io/cv/vcard-la-cpp.pdf
+
 CV created with overleaf Latex online editor:
 https://ludoaubert.github.io/cv/CV_LAX-FR.pdf
 
