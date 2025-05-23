@@ -7,9 +7,10 @@
 }
 
 div#card {
-  border: 1px solid #e7e7e7;
+  border: 40px solid white;
+/*  border: 1px solid #e7e7e7;*/
   border-radius: 4px;
-  padding: 2.1rem 3.1rem;
+  padding: .5rem;
 }
 
 h1{
