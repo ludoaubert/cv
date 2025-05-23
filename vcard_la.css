@@ -7,10 +7,11 @@
 }
 
 div#card {
-  border: 70px solid white;
+/*  border: 70px solid white;*/
 /*  border: 1px solid #e7e7e7;*/
-  border-radius: 4px;
-  padding: .5rem;
+  border-radius: 0px;
+  padding: 6.5rem;
+  width: fit-content;
 }
 
 h1{
@@ -32,6 +33,7 @@ p{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+  width: fit-content;
 }
 
 img#pict{
