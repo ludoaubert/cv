@@ -1,3 +1,7 @@
+Detailed resume
+
+https://docs.google.com/document/d/1yZ_4XxycUee3KCFx05UK89hRCZmEOxVz30StJLCe6OI/edit?tab=t.0
+
 Skill Pie Charts
 https://ludoaubert.github.io/cv/cv_ludovic_aubert.html
 
