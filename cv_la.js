@@ -417,7 +417,6 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'' AS resultats,
 		'Prototype development of a patent web interface' AS headline,
 		'Created a Proof of concept using NodeJS and SQL JSON capabilities to navigate the patent database in a web browser.'
-		'Developed a quick prototype of web interface to navigate patent information.'
 		AS summary
 
 	UNION ALL
