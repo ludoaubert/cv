@@ -480,9 +480,9 @@ WITH cte (type_code,code,libelle) AS (
 		'With a Master’s in Engineering, I bring 25 years of experience working on diversified software and data projects.'
 		'I have an interest in harnessing the potential of artifical intelligence to maximize clients’ integration of their'
 		'database to envision growth.'
-		'Having worked for multi-national corporations the Silicon Valley, France, Germany, and Switzerland; and directly with'
-		'private clients, I bring deep experience in C++, web design, and data projects to support businesses in  managing their'
-		'daily technology needs and growth potential'
+		'Having worked for multi-national corporations in the Silicon Valley, France, Germany, and Switzerland; and directly with'
+		'private clients, I bring deep experience in C++, web design, and data projects to support businesses in managing their'
+		'daily technology needs and growth potential.'
 		AS libelle
 
 	UNION ALL
