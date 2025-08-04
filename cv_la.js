@@ -142,7 +142,6 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
                 AS headline,
 		'Design from scratch of a motivation and tracking database for HR. Due to integration of COVED, PAPREC '
 		'needs a more flexible database design. Design of a test prototype to validate the structure.'
-		'Integration of paid vacation trackers with a 3 year record.'
 		AS summary
 
 	UNION ALL
