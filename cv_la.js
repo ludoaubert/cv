@@ -184,9 +184,9 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS resultats,
 		'Cycling, Hiking, Cooking'
 		AS headline,
-		'Cycling: Paris to Bretagne, Paris to Barcelona, Ile de France'
-		'Hiking: Northern Tuscany, Calanques, uraban settings'
-		'Cooking: Mexican, Vietnamese, and baking'
+		'Cycling: Paris to Bretagne, Paris to Barcelona, Ile de France.'
+		'Hiking: Northern Tuscany, Calanques, urban settings.'
+		'Cooking: Mexican, Vietnamese, and baking.'
 		AS summary
 
 	UNION ALL
