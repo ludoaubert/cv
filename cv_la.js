@@ -182,11 +182,11 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'Budget: environ 10 euros par jour.'
 		'Nous avons toujours été en sécurité.'
 		AS resultats,
-		'Bike trip and camping: Paris to Barcelona, 8 days'
+		'Cycling, Hiking, Cooking'
 		AS headline,
-		'A bike trip and camping journey from Paris to Barcelona in 8 days.'
-		'I accompanied my son, handling the camping gear, riding 120 km dayly through beautiful landscape,'
-		'planning the route, and ensuring the trip ran smoothly within a budget of 10 euros per day.'
+		'Cycling: Paris to Bretagne, Paris to Barcelona, Ile de France'
+		'Hiking: Northern Tuscany, Calanques, uraban settings'
+		'Cooking: Mexican, Vietnamese, and baking'
 		AS summary
 
 	UNION ALL
