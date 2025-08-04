@@ -403,7 +403,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'' AS resultats,
 		'developed a module using C++' AS headline,
 		'Developed in C++ a functionality to create a directory structure to store legal documents on the migration'
-		' target system. The structure depends on a set of parameters specific to a patent.'
+		' target system.'
 		AS summary
 
 	UNION ALL
