@@ -97,10 +97,9 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS resultats,
 		'Patent database schema migration and merge'
 		AS headline,
-		'I performed the migration into a new schema and merger of patent databases during '
-		'a company acquisition, developing scripts and resolving critical issues. This initiative saved hundreds '
-		'of thousands in cloud costs, streamlined data management, and supported the integration of three companies, '
-		'valued in millions.'
+		'Performed the migration into a new schema and merger of patent databases during '
+		'a company acquisition. This initiative saved hundreds of thousands in cloud costs, streamlined data management,'
+		' and supported the integration of 3 companies, valued in millions.'
 		AS summary
 
 	UNION ALL
