@@ -123,8 +123,8 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS resultats,
 		'Plastic recycling plants traceability graph'
 		AS headline,
-		'I created a script to generate traceability graphs for six plastic recycling plants.'
-		'After identifying a bug, I suggested rewriting the script, which was accepted, and I developed'
+		'Created a script to generate traceability graphs for six plastic recycling plants.'
+		'After identifying a bug, Suggested rewriting the script, which was accepted, and developed'
 		'a more efficient version using advanced SQL features, resulting in a scalable solution'
 		'that produced up to 6 million rows.'
 		AS summary
@@ -377,8 +377,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'Patent inventor deduplication process'
 		AS headline,
 		'Developed a Python-based graph algorithm to deduplicate inventor data during patent migration, consolidating'
-		'multiple records into a single inventor table. Successfully created a table with 16,000 unique inventors,'
-		'improving data reliability.'
+		'multiple records into a single inventor table. Successfully created a table with 16,000 unique inventors.'
 		AS summary
 
 	UNION ALL
@@ -391,7 +390,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'' AS actions,
 		'' AS resultats,
 		'Extraction of 4 million documents' AS headline,
-                'Wrote scripts and ran the extraction of 4TB of archived corporate documents from Oracle (files stored in DB) into the filesystem.'
+                'Wrote scripts and ran the extraction of 4TB of archived corporate documents from Oracle into the filesystem.'
 		AS summary
 
 	UNION ALL
@@ -404,7 +403,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'' AS actions,
 		'' AS resultats,
 		'developed a module using C++' AS headline,
-		'development in C++ of a functionality to create a directory structure to store legal documents on the migration'
+		'Developed in C++ a functionality to create a directory structure to store legal documents on the migration'
 		' target system. The structure depends on a set of parameters specific to a patent.'
 		AS summary
 
@@ -418,7 +417,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		'' AS actions,
 		'' AS resultats,
 		'Prototype development of a patent web interface' AS headline,
-		'Created a Proof of concept using NodeJS and new SQL JSON capabilities to navigate the patent database in a web browser.'
+		'Created a Proof of concept using NodeJS and SQL JSON capabilities to navigate the patent database in a web browser.'
 		'Developed a quick prototype of web interface to navigate patent information.'
 		AS summary
 
@@ -445,7 +444,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS resultats,
 		'Non-regression test portfolio using Google Tests'
 		AS headline,
-		'I developed a regression testing portfolio using Google Test for the Optiq project at Euronext, ensuring new'
+		'Developed a regression testing portfolio using Google Test for the Optiq project at Euronext, ensuring new'
 		'features didn’t impact existing functionality. This initiative led to widespread adoption of automated unit and'
 		'integration tests, contributing to the project’s success and timely delivery.'
 		AS summary
@@ -461,7 +460,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
                 '' AS resultats,
 		'Development of 3 modules in C++'
 		AS headline,
-		'I developed 3 sub modules for the MDSpy module of the flagship Optiq project:'
+		'Developed 3 sub modules for the MDSpy module of the flagship Optiq project:'
 		'MDSpyReader: application that listens to what customers receive and persists it to Kafka.'
 		'Spy deduplication: deduplication of market data which is sent on 2 independent physical lines.'
 		'Implementation and test of a UDP flow control algorithm (shaping).'
