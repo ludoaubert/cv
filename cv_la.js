@@ -477,11 +477,12 @@ FROM cte;
 WITH cte (type_code,code,libelle) AS (
 	SELECT 'PITCH' AS type_code,
 		'senior_software_engineer' AS code,
-		'I hold an Engineering degree from the Ecole Centrale in Paris and combine a strong background in Mathematics'
-		'with 25 years of experience working on diversified software and data projects.'
-		'In the first period of my career, I mostly worked on C++ projects, some of which required algorithmic design.'
-		'In the second period, I mostly worked on Data projects. I am looking for complex and critical projects'
-		'using a mix of data, software and web technologies.'
+		'With a Master’s in Engineering, I bring 25 years of experience working on diversified software and data projects.'
+		'I have an interest in harnessing the potential of artifical intelligence to maximize clients’ integration of their'
+		'database to envision growth.'
+		'Having worked for multi-national corporations the Silicon Valley, France, Germany, and Switzerland; and directly with'
+		'private clients, I bring deep experience in C++, web design, and data projects to support businesses in  managing their'
+		'daily technology needs and growth potential'
 		AS libelle
 
 	UNION ALL
