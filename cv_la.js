@@ -258,7 +258,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS resultats,
 		'algorithm development for database structure understanding'
 		AS headline,
-		'I developed an algorithm to quickly understand database structures, initially conceived'
+		'Developed an algorithm to quickly understand database structures, initially conceived'
 		'during an internship at EDF. Later, I refined this algorithm and expanded its capabilities,'
 		'integrating various technologies like C++, PostgreSQL, and NodeJS to create an interactive web-based'
 		'solution for visualizing data relationships.'
@@ -319,7 +319,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS resultats,
 		'Algorithm design for 2D data vectorization'
 		AS headline,
-		'I developed an algorithm in C++ to vectorize 2D graphical data, converting mouse-drawn points into Bézier curves'
+		'Developed an algorithm in C++ to vectorize 2D graphical data, converting mouse-drawn points into Bézier curves'
 		'while minimizing the number of curves and detecting shapes like polylines, polygons, and ellipses.'
 		'The algorithm was successfully integrated into Beatware’s software, passed rigorous performance tests,'
 		'and was later adopted by Oracle’s Hyperion after the acquisition in 2004.'
@@ -462,7 +462,7 @@ WITH cte(entreprise,debut,fin,realisation,travail_confie,actions,resultats,headl
 		AS headline,
 		'Developed 3 sub modules for the MDSpy module of the flagship Optiq project:'
 		'MDSpyReader: application that listens to what customers receive and persists it to Kafka.'
-		'Spy deduplication: deduplication of market data which is sent on 2 independent physical lines.'
+		'Spy deduplication: deduplication of market data sent on 2 independent physical lines.'
 		'Implementation and test of a UDP flow control algorithm (shaping).'
 		AS summary
 
