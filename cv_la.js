@@ -477,7 +477,7 @@ FROM cte;
 WITH cte (type_code,code,libelle) AS (
 	SELECT 'PITCH' AS type_code,
 		'senior_software_engineer' AS code,
-		'With a Master’s in Engineering, I bring 25 years of experience working on diversified software and data projects.'
+		'I bring 25 years of experience working on diversified software and data projects.'
 		'I have an interest in harnessing the potential of artifical intelligence to maximize clients’ integration of their'
 		'database to envision growth.'
 		'Having worked for multi-national corporations in the Silicon Valley, France, Germany, and Switzerland; and directly with'
@@ -600,7 +600,7 @@ SELECT * FROM cte
 WITH cte(type_code,code,libelle,debut,fin) AS (
 	SELECT 'EDUCATION' AS type_code,
 		'Ecole Centrale Paris' AS code,
-		'Engineering Degree with Major in Software and Electronics' AS libelle,
+		'Master’s in Engineering with Major in Software and Electronics' AS libelle,
 		TO_DATE('1992-09-01','YYYY-MM-DD') AS debut,
 		TO_DATE('1996-06-30','YYYY-MM-DD') AS fin
 
